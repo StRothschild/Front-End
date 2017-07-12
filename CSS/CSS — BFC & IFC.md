@@ -4,9 +4,9 @@
 
 ##### 哪些元素会产生BFC
 1. ###### 根标签（是 html 而不是 body）
-2. ###### float 元素
+2. ###### display 为 inline-block, flex, inline-flex, table-cell, table-caption
 3. ###### position 为 absolute 或 fixed
-4. ###### display 为 inline-block, flex,  inline-flex, table-cell, table-caption
+4. ###### float 元素
 5. ###### overflow 不为 visible（默认值）
 
 ##### BFC 布局规则
