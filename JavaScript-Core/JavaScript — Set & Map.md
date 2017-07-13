@@ -13,7 +13,6 @@ var s = new Set([1]);
 s.add(4);                       // 方法二   Set {1, 4}
 
 
-
 /* 自动过滤重复的元素 */
 var s = new Set([1, 2, 3, 3, '3']);    // Set {1, 2, 3, "3"}
 
@@ -21,10 +20,12 @@ var s = new Set([1, 2, 3, '3']);
 set.add(2);                            // Set {1, 2, 3, "3"}
 
 
-
 /* 删除 set 中的 value */
 var s = new Set([1, 2, 3]);    // Set {1, 2, 3}
 s.delete(3);                   // Set {1, 2}
+
+
+
 ```
 
 
@@ -72,6 +73,19 @@ m.delete('Bob');     // 删除 key, 成功返回 true
 
 
 
+
+
+---
+### 方法对比
+
+方法 | Array | Set | Map
+---|---|---|---
+增 | push / unshift | add | set
+删 | pot / shift | delete / clear | delete
+改 | [] / . |  | set
+查 | [] / . |  | get
+遍历 | forEach / for...of | forEach / for...of | forEach / for...of
+
 ---
 ### 总结
 
@@ -80,6 +94,8 @@ m.delete('Bob');     // 删除 key, 成功返回 true
 Array| 索引 | value | 不可 | 可 | 无序，但可以通过 sort 方法变成有序
 Set | value | value | 不可 | 不可，因为 Set 中的 key 就是 value | 无序
 Map | key | value | 不可 | 不可 | 无序
+
+
 
 
 ---
