@@ -23,9 +23,6 @@ set.add(2);                            // Set {1, 2, 3, "3"}
 /* 删除 set 中的 value */
 var s = new Set([1, 2, 3]);    // Set {1, 2, 3}
 s.delete(3);                   // Set {1, 2}
-
-
-
 ```
 
 
@@ -81,9 +78,10 @@ m.delete('Bob');     // 删除 key, 成功返回 true
 方法 | Array | Set | Map
 ---|---|---|---
 增 | push / unshift | add | set
-删 | pot / shift | delete / clear | delete
+删 | pot / shift | delete / clear | delete / clear
 改 | [] / . |  | set
 查 | [] / . |  | get
+存在 | indexOf | has | has
 遍历 | forEach / for...of | forEach / for...of | forEach / for...of
 
 ---
