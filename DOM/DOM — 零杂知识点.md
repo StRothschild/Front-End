@@ -16,3 +16,6 @@
       }
   </script>
   ```
+  ##### 由于上述两个属性并不是标准的，所以各个浏览器的支持也不一致，具体如下：
+
+  ![docment获取元素的浏览器支持](https://github.com/StRothschild/Front-End/blob/master/DOM/resource/DOM%20%E2%80%94%20document%20%E8%8E%B7%E5%8F%96%E5%85%83%E7%B4%A0.jpg?raw=true)
