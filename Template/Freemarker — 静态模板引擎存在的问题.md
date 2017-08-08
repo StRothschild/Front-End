@@ -19,6 +19,12 @@
 如果是 null 值则设置为空字符串 ""
 {$nullValue!''}
 
-如果是 null 值则返回 false，否则返回 true
-{$nullValue??}
+
+? 后面加关键字来指定功能
+{$nullValue?exists}        // 如果不为 null 值则返回 true，否则返回 false
+{$nullValue??}             // 如果不为 null 值则返回 true，否则返回 false
+
+{$value?string}            // 以 String 形式返回这个值
+{$nowDate?date}            // 以 日期 格式返回 nowDate（当前时间）
+{$nowDate?time}            // 以 时间 格式返回 nowDate（当前时间）
 ```
