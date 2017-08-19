@@ -24,3 +24,15 @@
 ---
 #### RequireJs API
 ##### RequireJs 有 3 个最主要的 API 需要了解 ：config（配置）， require（加载）和 define（创建）。
+
+
+
+---
+#### RequireJs 加载路径的处理方式
+##### 在加载模块时，默认加载 JavaScript 文件，所以可以省略加载文件的 .js 后缀，并默认从 baseUrl 开始查找。如果带有 .js 后缀、或以 "/" 开始、或包含URL协议（http/https）则将根据具体的路径来查找。
+
+##### config > data-main > 默认baseUrl
+
+##### 配置 config 时，可以显式的设置 baseUrl，也可为每一个模块单独设置路径
+##### 如果没有对 config 和 data-main 进行设置，则默认 baseUrl 为引用 require.js 的那个 HTML 页面所在目录
+##### 设置data-main，则baseUrl为主模块所在目录（如第一段HTML中的主模块为page1.js，因此以其所在目录/scripts为根目录）
