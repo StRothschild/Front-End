@@ -23,13 +23,15 @@
 
 ---
 #### RequireJs API
-##### RequireJs 有 3 个最主要的 API 需要了解 ：config（配置）， require（加载）和 define（创建）。
+##### RequireJs 有 3 个最主要的 API 需要了解 ：requirejs.config（配置）， require（加载）和 define（创建）。
 
 
 
 ---
 #### RequireJs 加载路径的处理方式
 ##### 在加载模块时，默认加载 JavaScript 文件，所以可以省略加载文件的 .js 后缀，并默认从 baseUrl 开始查找。如果带有 .js 后缀、或以 "/" 开始、或包含URL协议（http/https）则将根据具体的路径来查找。
+
+##### 由于模块中不仅只有 JavaScript，还有 hmtl 模板或 css 文件，当要加载这些资源时，需要使用 RequireJs 的 text 插件。
 
 ##### config > data-main > 默认baseUrl
 
