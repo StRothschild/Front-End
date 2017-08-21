@@ -52,3 +52,18 @@
 {$nowDate?date}            // 以 日期 格式返回 nowDate（当前时间）
 {$nowDate?time}            // 以 时间 格式返回 nowDate（当前时间）
 ```
+
+
+
+
+---
+#### 大于小于
+```freemarker
+freemarker 里面不能包含 '>' 和 '<' 所以要用到大于和小于就要用 gt（ Greater than） 和 lt（Less than）
+
+<#if content?length gt 100>  
+    ${content[0..100]}...  
+<#elseif content?length lt 50>      
+    ${content}  
+</#if>
+```

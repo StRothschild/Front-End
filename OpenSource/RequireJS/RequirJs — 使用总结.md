@@ -11,7 +11,7 @@
 
 ---
 #### 支持 AMD 规范的库
-##### JQuery 大于 1.7 版本（大部分 JQuery 插件还没有遵循 AMD 规范，所以需用使用 shim 配置）
+##### JQuery 大于 1.7 版本（大部分 JQuery 插件还没有遵循 AMD 规范，所以需用使用 shim config 来明确这些插件的依赖）
 
 
 
@@ -34,7 +34,7 @@
 ##### config > data-main > 默认baseUrl
 
 
-##### 在加载模块时，默认加载 JavaScript 文件，所以可以省略加载文件的 .js 后缀。如果
+##### 在加载模块时，默认加载 JavaScript 文件，所以可以省略加载文件的 .js 后缀。如果：
 1. 带有 .js 后缀
 2. 以 "/" 开始
 3. 包含URL协议（http/https）
