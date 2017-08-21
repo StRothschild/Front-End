@@ -29,12 +29,16 @@
 
 ---
 #### RequireJs 加载路径的处理方式
-##### 在加载模块时，默认加载 JavaScript 文件，所以可以省略加载文件的 .js 后缀，并默认从 baseUrl 开始查找。如果带有 .js 后缀、或以 "/" 开始、或包含URL协议（http/https）则将根据具体的路径来查找。
 
-##### 由于模块中不仅只有 JavaScript，还有 hmtl 模板或 css 文件，当要加载这些资源时，需要使用 RequireJs 的 text 插件。
-
+##### RequireJS 加载文件是通过 baseUrl 来作为路径的参照起点。 baseUrl 属性可以通过 requirejs.config 方法指定。如果没有 requirejs.config 方法指定，则 data-main 属性指定的 script 文件路径作为 baseUrl。如果两者都不存在则以引用 require.js 的那个 HTML 页面所在目录为 baseUrl。
 ##### config > data-main > 默认baseUrl
 
-##### 配置 config 时，可以显式的设置 baseUrl，也可为每一个模块单独设置路径
-##### 如果没有对 config 和 data-main 进行设置，则默认 baseUrl 为引用 require.js 的那个 HTML 页面所在目录
-##### 设置data-main，则baseUrl为主模块所在目录（如第一段HTML中的主模块为page1.js，因此以其所在目录/scripts为根目录）
+
+##### 在加载模块时，默认加载 JavaScript 文件，所以可以省略加载文件的 .js 后缀。如果
+1. 带有 .js 后缀
+2. 以 "/" 开始
+3. 包含URL协议（http/https）
+##### 则将这个路径作为普通的 url，根据其具体的路径来查找。
+
+
+##### 由于模块中不仅只有 JavaScript，还有 hmtl 模板或 css 文件，当要加载这些资源时，需要使用 RequireJs 的 text 插件。
