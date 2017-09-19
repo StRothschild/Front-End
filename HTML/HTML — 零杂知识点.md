@@ -1,9 +1,9 @@
 # HTML 的零杂知识点
 - #### ol/ul 与 dl 的区别
 
-  ##### ol 是有序普通列表，每个 li 元素前都会有一个顺序的数字
+  ##### ol 是有序普通列表，每个 li 元素前都会有一个顺序的数字（decimal）
 
-  ##### ul 是有序普通列表，每个 li 元素前都会有一个默认的小点
+  ##### ul 是有序普通列表，每个 li 元素前都会有一个默认的小点（disc）
 
   ##### dl 是（title-description）关系对的列表，每一个 dt 对应一个 dd
 
@@ -14,10 +14,10 @@
 - #### li 的 list-style-type 样式
 ```
 none : 取消样式
-disc : 实心圆
+disc : 实心圆（ul 下的 li 默认样式）
 circle : 空心圆
 square : 实心方块
-decimal : 阿拉伯数字
+decimal : 阿拉伯数字（ol 下的 li 默认样式）
 lower-roman : 小写罗马数字
 upper-roman : 大写罗马数字
 lower-alpha : 小写英文字母
