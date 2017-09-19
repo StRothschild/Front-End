@@ -10,6 +10,17 @@
 
 
 
+
+
+---
+- #### li 默认样式
+
+  ##### list-style-type : 符号名称
+
+
+
+
+
 ---
 - #### url 与 src 与 href 与 \@import 的区别
 
@@ -26,6 +37,7 @@
   ##### 2. link引用CSS时，==在页面载入时同时加载==；@import需要页面网页完全载入以后加载。
 
   ##### 3. link支持==使用Javascript控制DOM去改变样式==；而@import不支持。
+
 
 
 
