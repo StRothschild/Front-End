@@ -12,29 +12,43 @@
 
 ---
 - #### li 的 list-style-type 样式
-```
-none : 取消样式
-disc : 实心圆（ul 下的 li 默认样式）
-circle : 空心圆
-square : 实心方块
-decimal : 阿拉伯数字（ol 下的 li 默认样式）
-lower-roman : 小写罗马数字
-upper-roman : 大写罗马数字
-lower-alpha : 小写英文字母
-upper-alpha : 大写英文字母
-none : 不使用项目符号
-armenian : 传统的亚美尼亚数字
-cjk-ideographic : 浅白的表意数字
-georgian : 传统的乔治数字
-lower-greek : 基本的希腊小写字母
-hebrew : 传统的希伯莱数字
-hiragana : 日文平假名字符
-hiragana-iroha :　日文平假名序号
-katakana : 日文片假名字符
-katakana-iroha : 日文片假名序号
-lower-latin : 小写拉丁字母
-upper-latin : 大写拉丁字母
-```
+  ```
+    none : 取消样式
+    disc : 实心圆（ul 下的 li 默认样式）
+    circle : 空心圆
+    square : 实心方块
+    decimal : 阿拉伯数字（ol 下的 li 默认样式）
+    lower-roman : 小写罗马数字
+    upper-roman : 大写罗马数字
+    lower-alpha : 小写英文字母
+    upper-alpha : 大写英文字母
+    none : 不使用项目符号
+    armenian : 传统的亚美尼亚数字
+    cjk-ideographic : 浅白的表意数字
+    georgian : 传统的乔治数字
+    lower-greek : 基本的希腊小写字母
+    hebrew : 传统的希伯莱数字
+    hiragana : 日文平假名字符
+    hiragana-iroha :　日文平假名序号
+    katakana : 日文片假名字符
+    katakana-iroha : 日文片假名序号
+    lower-latin : 小写拉丁字母
+    upper-latin : 大写拉丁字母
+  ```
+
+
+
+
+---
+- #### \<a> 标签
+  ```
+    * 单独的 <a> 标签是没有默认样式和事件的
+    * 在添加了 href 属性之后，<a> 标签会有默认的样式 text-decoration（下划线）和 cursor（hover样式）
+    * 可以通过设置 href 属性来进行本页跳转，例如 <a href="#test"> 点击后会跳转到本页面的 <div id="test"> 元素
+  ```
+
+
+
 
 
 
