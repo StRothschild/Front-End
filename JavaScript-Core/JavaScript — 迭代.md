@@ -152,7 +152,7 @@ for (let value of Array/Map/Set/String) {
 ### 总结
 适用情况 | for | for...in | forEach(不能 break/continue/return) | for...of
 ---|---|---|---|---
-Object |  | [x] |  |
+Object |  | [x] |  | 
 Array | [x] | 遍历所有的可枚举属性,用在数组上不合适 | [x] | [x]
 Set | | | [x] | [x]
 Map | | | [x] | [x]

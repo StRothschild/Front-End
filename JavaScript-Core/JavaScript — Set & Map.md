@@ -67,7 +67,20 @@ m.delete('Bob');     // 删除 key, 成功返回 true
 ##### 3. 通过 Map 中的 size 属性， 可以很方便地获取到 Map 长度， 要获取 Object 的长度， 只能用别的方法，比如 Object.getOwnPrototypeNames(obj).length
 
 ##### 4. Map 对象实例中数据的排序是根据用户 push 的顺序进行排序的， 而 Object 实例中 value 的顺序就是有些规律了 (他们会先排数字开头的 key 值，然后才是字符串开头的 key 值)
+  ```
+    /* Object 的属性会按一定顺序自动排列 */
+    var obj = {};
+    obj.str = "string";
+    obj.[5] = "number5";
+    obj.[1] = "number1";
 
+    则 obj 的输出属性结果是：
+    {
+      1 : "number1"
+      5 : "number5"
+      str : "string"
+    }
+  ```
 
 
 
@@ -87,11 +100,13 @@ m.delete('Bob');     // 删除 key, 成功返回 true
 ---
 ### 总结
 
-类型 | 键名（key） | 键值（value） | 键名称有重复 | 键值有重复 | 有序（指的是 value 的有序）
+类型 | 键名（key） | 键值（value） | 键名称有重复 | 键值有重复 | 是否有序
 ---|---|---|---|---|---
-Array| 索引 | value | 不可 | 可 | 无序，但可以通过 sort 方法变成有序
-Set | value | value | 不可 | 不可，因为 Set 中的 key 就是 value | 无序
-Map | key | value | 不可 | 不可 | 无序
+Object | String | value | 不可 | 可 | key有序，先数字后文本的顺序
+Map | key | value | 不可 | 不可 | key无序
+Array | 索引 | value | 不可 | 可 | value无序，但可以通过 sort 方法变成有序
+Set | value | value | 不可 | 不可，因为 Set 中的 key 就是 value | value无序
+
 
 
 
