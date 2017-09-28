@@ -17,7 +17,7 @@
   $ npm install -g cnpm --registry=https://registry.npm.taobao.org
 
   /* 通过 cnpm 安装模块 */
-  $ cnpm install [name]
+  $ cnpm install <name>
   ```
 
 
@@ -42,16 +42,18 @@
   ##### npm 中的包，也可以理解为一个模块，类似于 Java 中的 jar 包。
   ```
   /* 安装本地 npm 包 */
-  $ npm install [packageName]
+  $ npm install <packageName>
 
   /* 安装全局 npm 包，用 -g 参数来代表 glabol */
-  $ npm install [packageName] -g
+  $ npm install <packageName> -g
+  $ npm install --global <packageName>
 
   /* 卸载本地 npm 包 */
-  $ npm uninstall [packageName]
+  $ npm uninstall <packageName>
 
   /* 卸载全局 npm 包 */
-  $ npm uninstall [packageName] -g
+  $ npm uninstall <packageName> -g
+  $ npm uninstall --global <packageName>
   ```
 
 
@@ -63,11 +65,15 @@
   ##### 本地安装的 npm 包，会被下载至在当前命令行所在路径下的 node_module 目录中。
   ##### 全局安装的 npm 包，会被下载至 prefix 属性设置的路径下。此属性值可以通过  npm config ls 查看。
   ```
-  /* 全局 npm 包在 windows 中的默认下载路径 */
-  C:\Users\[userName]\AppData\Roaming\npm\node_modules
+  /* 全局 npm 包在 Windows 中的默认下载路径 */
+  prefix = "C:\Users\<userName>\AppData\Roaming\npm"
+  {prefix}\node_modules
+
+  /* 全局 npm 包在 Linux 中的默认下载路径 */
+  {prefix}/lib/node_modules
 
   /* 修改全局 npm 包的默认下载路径 */
-  $ npm config set prefix [path]
+  $ npm config set prefix <path>
   ```
 
 
@@ -78,4 +84,11 @@
 - #### 本地/全局 npm 包的区别
   ##### 本地安装的包，可以在工程中通过 require() 来引入。
   ##### 全局安装的包，可以直接在命令行中使用。
-  ##### 如果需要兼有两者的功能，可以用两种方法各安装一次，或使用 npm link。
+  ##### 如果需要兼有两者的功能，可以用两种方法各安装一次。或使用 npm link 将全局包和本地包做一个软链接。
+  ```Node
+  /* 如果当前路径是在包路径下，可以直接使用 npm link 将当前包链接到全局的同名包上 */
+  $ npm link
+
+  /* 如果不在包路径下，则需要使用 npm link <packageName> 命令。如果在全局包目录下不存在同名包, 那么 npm 就会先在全局安装这个包。当全局包存在后，复制这个包到当前路径的 node_modules 目录（如果没有会自动创建）下，同时建立本地包到全局包的软链接 */
+  $ npm link <packageName>
+  ```
