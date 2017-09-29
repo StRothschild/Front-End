@@ -115,9 +115,17 @@
 
   ##### package.json 文件可以手工编写，也可以使用 npm init 命令生成。
 
-  ```json
-  /* 以下是 package.json 的例子，注意 json 文件是不能有注释的，以下煮熟仅供参考 */
+  ```
+  /* 以下是通过 $ npm init 生成的 package.json（仅有元信息），注意 json 文件是不能有注释的，以下注释仅供参考 */
   {
-
+    "name": "packageName",        // 必须          
+    "version": "1.0.0",           // 必须   
+    "description": "",
+    "main": "index.js",           // 模块的入口文件
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC"
   }
   ```
