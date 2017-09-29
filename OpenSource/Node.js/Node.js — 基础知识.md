@@ -1,5 +1,6 @@
 # Node.js 基础知识
-#### Node.js 是基于 V8 引擎的服务器端 JavaScript 执行环境。
+#### Node.js 提供基于 V8 引擎的服务器端 JavaScript 执行环境。
+#### Node.js 提供基于 npm 的模块管理服务。
 
 ---
 - #### npm
@@ -54,6 +55,16 @@
   /* 卸载全局 npm 包 */
   $ npm uninstall <packageName> -g
   $ npm uninstall --global <packageName>
+
+
+  /* 基于 package.json 依赖配置（dependencies 和 devDependencies）的包安装，详见 package.json 介绍 */
+  $ npm install
+  /* --save 参数会将包写入到 package.json 的 dependencies */
+  $ npm install <packageName> --save
+  /* --save-dev 参数会将包写入到 package.json 的 devDependencies */
+  $ npm install <packageName> --save-dev
+
+  // --save 和 --save-dev 参数的好处在于，即使删除了项目的 node_modules，依然可以通过 package.json 内保存的依赖配置，用 $ npm intall 命令来恢复 node_modules。
   ```
 
 
@@ -91,4 +102,22 @@
 
   /* 如果不在包路径下，则需要使用 npm link <packageName> 命令。如果在全局包目录下不存在同名包, 那么 npm 就会先在全局安装这个包。当全局包存在后，复制这个包到当前路径的 node_modules 目录（如果没有会自动创建）下，同时建立本地包到全局包的软链接 */
   $ npm link <packageName>
+  ```
+
+
+
+
+
+
+---
+- #### package.json 文件
+  ##### 每个 Node 项目的根路径下都有一个 package.json 文件，用于定义项目的元数据（比如名称、版本、许可证等），以及所依赖的各种模块。
+
+  ##### package.json 文件可以手工编写，也可以使用 npm init 命令生成。
+
+  ```json
+  /* 以下是 package.json 的例子，注意 json 文件是不能有注释的，以下煮熟仅供参考 */
+  {
+
+  }
   ```
