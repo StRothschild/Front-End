@@ -33,7 +33,7 @@
   /* 配置 gulp 的 watch 任务 */
   gulp.task('watch', function(){
     livereload.listen();                         // Starts a livereload server
-    gulp.watch('src/main/webapp/WEB-INF/stylus/**/*.styl', ['pageStylus']);  // 可以添加多个 watch
+    gulp.watch('src/main/webapp/WEB-INF/stylus/**/*.styl', ['pageStylus']);  // 可以添加多个 watch
   });
   /* 配置 gulp 的 default 任务 */
   gulp.task('default', ['pageStylus', 'watch']);
