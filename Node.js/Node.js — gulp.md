@@ -27,12 +27,13 @@
   gulp.task('pageStylus', function () {
     return gulp.src('src/main/webapp/WEB-INF/stylus/**/*.styl')  // gulp-stylus 可以支持 ** 通配符，而原生 stylus 不支持
       .pipe(stylus())                            // 执行 stylus                     
-      .pipe(gulp.dest('src/main/webapp/css'));   // gulp.dest 表示输出路径
-  });
+      .pipe(gulp.dest('src/main/webapp/css'))    // gulp.dest 表示输出路径
+      .pipe(livereload());                       // Creates a stream which notifies the livereload server on what changed
+  });
   /* 配置 gulp 的 watch 任务 */
   gulp.task('watch', function(){
-    livereload.listen();
-    gulp.watch('src/main/webapp/WEB-INF/stylus/**/*.styl', ['pageStylus']);   // 可以添加多个 watch
+    livereload.listen();                         // Starts a livereload server
+    gulp.watch('src/main/webapp/WEB-INF/stylus/**/*.styl', ['pageStylus']);  // 可以添加多个 watch
   });
   /* 配置 gulp 的 default 任务 */
   gulp.task('default', ['pageStylus', 'watch']);
