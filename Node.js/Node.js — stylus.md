@@ -26,7 +26,11 @@
   ##### gulp-stylus 是基于 gulp 的 stylus 插件。相对于 stylus, gulp-stylus 可以支持 ** 通配符。
   ```node
   /* stylus 只支持 * 通配符  */
-  $ stylus -w stylusFilePath/*.style -o cssFilePath
+  $ stylus -w stylusFilePath/*.style -o cssFilePath/
   
   /* gulp-stylus 支持 ** 通配符 */
+  gulp.task('pageStylus', function () {
+    return gulp.src('src/main/webapp/WEB-INF/stylus/**/*.styl')  // gulp-stylus 可以支持 ** 通配符，而原生 stylus 不支持
+      .pipe(stylus());                 
+  });
   ```
