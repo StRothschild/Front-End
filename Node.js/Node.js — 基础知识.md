@@ -1,5 +1,5 @@
 # Node.js 基础知识
-#### Node.js 提供基于 V8 引擎的服务器端 JavaScript 执行环境。
+#### Node.js 提供基于 V8 引擎的服务器端(系统级) JavaScript 执行环境。
 #### Node.js 提供基于 npm 的模块管理服务。
 
 
