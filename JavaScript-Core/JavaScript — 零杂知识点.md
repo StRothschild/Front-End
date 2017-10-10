@@ -11,10 +11,10 @@
 ---
 - #### JavaScript 模块化的实现
 
-浏览器（异步） | NodeJS（同步）
----|---
-RequireJS（AMD ）| CommonJS
-SeaJS（CMD）|
+  浏览器（异步） | NodeJS（同步）
+  ---|---
+  RequireJS（AMD ）| CommonJS
+  SeaJS（CMD）|
 
 
 
@@ -47,25 +47,24 @@ SeaJS（CMD）|
 
 ---
 - #### var a = b = "foo";
-
-```javascript
-var a = b = "foo";
-//等于以下
-b = "foo"; var a = b;
-
-/* 下例中的 b 会变成全集变量，a 是函数级变量 */
-(function (){
+  ```javascript
   var a = b = "foo";
-})();
-console.log(b);  // “foo”
-console.log(a);  // ReferenceError: a is not defined
+  //等于以下
+  b = "foo"; var a = b;
 
-/* 避免以上情况 */
-(function (){
-  "use strict"  // 开启严格模式，b 未定义会报错而不会在全局对象上定义
-  var a = b = "foo";  // ReferenceError: b is not defined
-})();
-```
+  /* 下例中的 b 会变成全集变量，a 是函数级变量 */
+  (function (){
+    var a = b = "foo";
+  })();
+  console.log(b);  // “foo”
+  console.log(a);  // ReferenceError: a is not defined
+
+  /* 避免以上情况 */
+  (function (){
+    "use strict"  // 开启严格模式，b 未定义会报错而不会在全局对象上定义
+    var a = b = "foo";  // ReferenceError: b is not defined
+  })();
+  ```
 
 
 
@@ -75,25 +74,25 @@ console.log(a);  // ReferenceError: a is not defined
 ---
 - #### 异步方法的执行时间一定在主线程执行完毕之后
   ##### 异步方法是在异步队列中执行的，当异步方法被触发之后，会被添加到异步队列中，按序执行
-```javascript
-var i = t = 0;
-var xhr = new XMLHttpRequest();
-xhr.open('GET', 'http://www.zealer.com/test', true);
-xhr.onload = function() {             // 异步回调，在主线程执行结束后，并且被触发时添加到异步队列中执行
-	i = 1;
-  console.log("async: " + i);
-};
-xhr.send();
-while(t < 10000){                     // 同步函数，按序执行，在异步队列之前执行
-  t++;
-	i = 2;
-  console.log("sync: " + i);          // 注意 console.log() 本身也是异步方法，被添加到异步队列中按顺序执行
-}
+  ```javascript
+  var i = t = 0;
+  var xhr = new XMLHttpRequest();
+  xhr.open('GET', 'http://www.zealer.com/test', true);
+  xhr.onload = function() {             // 异步回调，在主线程执行结束后，并且被触发时添加到异步队列中执行
+  	i = 1;
+    console.log("async: " + i);
+  };
+  xhr.send();
+  while(t < 10000){                     // 同步函数，按序执行，在异步队列之前执行
+    t++;
+  	i = 2;
+    console.log("sync: " + i);          // 注意 console.log() 本身也是异步方法，被添加到异步队列中按顺序执行
+  }
 
-/* 执行结果*/
-sync: 2              // 输出10000遍，表明先执行完同步
-async: 1             // 再执行异步
-```
+  /* 执行结果*/
+  sync: 2              // 输出10000遍，表明先执行完同步
+  async: 1             // 再执行异步
+  ```
 
 
 
@@ -105,11 +104,10 @@ async: 1             // 再执行异步
 
 ---
 - #### 用 new 调用构造函数时，如果没有参数，括号可以省略
-
-```javascript
-/* 例如 */
-new Foo() == new Foo
-```
+  ```javascript
+  /* 例如 */
+  new Foo() == new Foo
+  ```
 
 
 
@@ -117,23 +115,22 @@ new Foo() == new Foo
 
 ---
 - #### 对于部分引用类型的构造函数来说，关键字 new 不用也可以
+  ```javascript
+  /* 原因是，在这些 JavaScript 的原生构造函数中，返回值都是相应的数据类型;
+  对于大部分引用类型的构造函数来说，这个返回值是个引用值，所以即使用
+  new 来调用，这个返回值依然不变。但对于基本类型的构造函数来说，它的返回值
+  是个基本类型值，所以用 new 来调用和不用 new 调用返回的是不同的结果。 */
 
-```javascript
-/* 原因是，在这些 JavaScript 的原生构造函数中，返回值都是相应的数据类型;
-对于大部分引用类型的构造函数来说，这个返回值是个引用值，所以即使用
-new 来调用，这个返回值依然不变。但对于基本类型的构造函数来说，它的返回值
-是个基本类型值，所以用 new 来调用和不用 new 调用返回的是不同的结果。 */
+  new Object() == Object()
+  new Array() == Array()
+  new Function() == Function()
 
-new Object() == Object()
-new Array() == Array()
-new Function() == Function()
+  new Error() == Error()
+  new RegExp() == RegExp()
 
-new Error() == Error()
-new RegExp() == RegExp()
-
-/* new Date() 返回时间对象 Date() 返回时间对象字符串 */
-new Date() != Date()
-```
+  /* new Date() 返回时间对象 Date() 返回时间对象字符串 */
+  new Date() != Date()
+  ```
 
 
 
@@ -163,76 +160,72 @@ new Date() != Date()
 
 ---
 - #### null 与 undefined
+  ```
+  // null 表示的是意料中的，特意的空
+  // undefined 表示的往往是意料之外的空
+  /* 在传递空的实参时，最好用 null */
+  function f(x, y){};
+  f(null, "test");
 
-```
-// null 表示的是意料中的，特意的空
-// undefined 表示的往往是意料之外的空
-/* 在传递空的实参时，最好用 null */
-function f(x, y){};
-f(null, "test");
-
-// null 转换成 number 时是 0 ，undefined 是 NaN
-```
+  // null 转换成 number 时是 0 ，undefined 是 NaN
+  ```
 
 
 ---
 - #### 取整
+  ```
+  /* Math.round() 四舍五入取整 */
+  // 只对小数点后第一位进行计算，四舍五入后返回一个整数
+  Math.round(5.45);           // 5
+  Math.round(5.54);           // 6
 
-```
-/* Math.round() 四舍五入取整 */
-// 只对小数点后第一位进行计算，四舍五入后返回一个整数
-Math.round(5.45);           // 5
-Math.round(5.54);           // 6
+  /* Math.ceil() 向上取整 */
+  // 只对小数点后第一位进行计算，只要小数第一位大于0，则进位
+  Math.ceil(5.4);            // 6
+  Math.ceil(5.0);            // 5
 
-/* Math.ceil() 向上取整 */
-// 只对小数点后第一位进行计算，只要小数第一位大于0，则进位
-Math.ceil(5.4);            // 6
-Math.ceil(5.0);            // 5
-
-/* Math.floor() 向下取整 */
-// 直接取整
-Math.floor(5.2);           // 5
-Math.floor(5.0);           // 5
-```
+  /* Math.floor() 向下取整 */
+  // 直接取整
+  Math.floor(5.2);           // 5
+  Math.floor(5.0);           // 5
+  ```
 
 
 
 ---
 - #### 取随机数
+  ```
+  /* random 返回 0~1 之间的一个随机数，精确到小数点后 15 位 */
+  Math.random();                      // 0.551302460829546
 
-```
-/* random 返回 0~1 之间的一个随机数，精确到小数点后 15 位 */
-Math.random();                      // 0.551302460829546
-
-/* 返回 1~100 之内的一个随机数 */
-Math.floor(Math.random()*100+1);      // 55
-```
+  /* 返回 1~100 之内的一个随机数 */
+  Math.floor(Math.random()*100+1);      // 55
+  ```
 
 
 
 ---
 - #### 对象属性如果不存在会返回 undefined，但对象的属性值也可以是 undefined，比如属性 delete 之后值就被赋予了 undefined
+  ```
+  /* 可以通过 in 来区别属性 undefined 的具体是哪一种含义 */
+  var o = {x:undefined};
+  o.x;       // undefined
+  o.y;       // undefined
+  "x" in o;    // true
+  "y" in o;    // false
 
-```
-/* 可以通过 in 来区别属性 undefined 的具体是哪一种含义 */
-var o = {x:undefined};
-o.x;       // undefined
-o.y;       // undefined
-"x" in o;    // true
-"y" in o;    // false
-
-/* 对于数组来说，delete 数组项后长度不变，因为数组项只是被赋予了 undefined 值 */
-var arr = [1,2,3];
-arr.length;            // 3
-delete arr[2];
-arr.length;            // 3 长度不变
+  /* 对于数组来说，delete 数组项后长度不变，因为数组项只是被赋予了 undefined 值 */
+  var arr = [1,2,3];
+  arr.length;            // 3
+  delete arr[2];
+  arr.length;            // 3 长度不变
 
 
-/* 两种新建特定长度的数组的方法 */
-var arr = new Array(3);      // 只是设置了 length 属性为3
-"0" in arr;                  // false
+  /* 两种新建特定长度的数组的方法 */
+  var arr = new Array(3);      // 只是设置了 length 属性为3
+  "0" in arr;                  // false
 
-var arr = Array.apply(null, {length:3});  // 不但 length 属性为3，0，1，2都赋值为 undefined
-// Array.apply(null, {length:3}) == [undefined, undefined, undefined]
-"0" in arr;                               // true
-```
+  var arr = Array.apply(null, {length:3});  // 不但 length 属性为3，0，1，2都赋值为 undefined
+  // Array.apply(null, {length:3}) == [undefined, undefined, undefined]
+  "0" in arr;                               // true
+  ```
