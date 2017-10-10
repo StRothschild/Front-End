@@ -32,8 +32,9 @@
   /* 配置 gulp 的 watch 任务 */
   gulp.task('watch', function(){
     livereload.listen();                         // Starts a livereload server
-    // 可以添加多个 watch
+    // 任务中可以添加多个 gulp.watch
     gulp.watch('src/main/webapp/WEB-INF/stylus/**/*.styl', ['pageStylus']);
+    // 这个 gulp.watch 用来启动 livereload，实测在 IDEA + chrome 中不太好用，虽然浏览器配合插件可以自动刷新，但仍然需要手动 update resources 才能更新资源
     gulp.watch('src/main/webapp/**/*.*', function(event) {
         livereload.changed(event.path);
     });
