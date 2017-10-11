@@ -26,7 +26,7 @@
   /* 配置 stylus 的编译任务 */
   gulp.task('pageStylus', function () {
      /* gulp-stylus 可以支持 ** 通配符，而原生 stylus 不支持 */
-    return gulp.src(['src/main/webapp/WEB-INF/stylus/**/*.styl','!src/main/webapp/WEB-INF/stylus/components/**/*.styl'])                                    // 支持 ！符号来 ignore 部分文件
+    return gulp.src(['src/main/webapp/WEB-INF/stylus/**/*.styl','!src/main/webapp/WEB-INF/stylus/components/**/*.styl']) // 支持 ！符号来 ignore 部分文件
       .pipe(stylus())                            // 执行 stylus                     
       .pipe(gulp.dest('src/main/webapp/css'));   // gulp.dest 表示输出路径
   });
