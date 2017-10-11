@@ -25,7 +25,8 @@
 
   /* 配置 stylus 的编译任务 */
   gulp.task('pageStylus', function () {
-    return gulp.src('src/main/webapp/WEB-INF/stylus/**/*.styl')  // gulp-stylus 可以支持 ** 通配符，而原生 stylus 不支持
+     /* gulp-stylus 可以支持 ** 通配符，而原生 stylus 不支持 */
+    return gulp.src(['src/main/webapp/WEB-INF/stylus/**/*.styl','!src/main/webapp/WEB-INF/stylus/components/**/*.styl'])                                    // 支持 ！符号来 ignore 部分文件
       .pipe(stylus())                            // 执行 stylus                     
       .pipe(gulp.dest('src/main/webapp/css'));   // gulp.dest 表示输出路径
   });
@@ -33,7 +34,7 @@
   gulp.task('watch', function(){
     livereload.listen();                         // Starts a livereload server
     // 任务中可以添加多个 gulp.watch
-    gulp.watch('src/main/webapp/WEB-INF/stylus/**/*.styl', ['pageStylus']);
+    gulp.watch(['src/main/webapp/WEB-INF/stylus/**/*.styl','!src/main/webapp/WEB-INF/stylus/components/**/*.styl'], ['pageStylus']);
     // 这个 gulp.watch 用来启动 livereload，实测在 IDEA + chrome 中不太好用，虽然浏览器配合插件可以自动刷新，但仍然需要手动 update resources 才能更新资源
     gulp.watch('src/main/webapp/**/*.*', function(event) {
         livereload.changed(event.path);
