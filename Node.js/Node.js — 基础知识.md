@@ -2,7 +2,7 @@
 #### Node.js 提供基于 V8 引擎的服务器端(系统级) JavaScript 执行环境。
 #### Node.js 提供基于 npm 的模块管理服务。
 
-
+![Node.js概念图](https://github.com/StRothschild/Front-End/blob/master/Node.js/resouces/Node.js%20%E2%80%94%20%E6%A6%82%E5%BF%B5.jpg?raw=true)
 ---
 - #### 高性能 I/O
   ##### Node.js 的一个主要特点是可以实现基于异步（并行）处理的高性能 I/O。 I/O 的概念包括了从文件系统中读写数据，也包括从数据库中读写数据。
