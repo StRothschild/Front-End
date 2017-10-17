@@ -52,7 +52,7 @@ data 属性 | 组件中的 data 只能是函数，并返回一个对象 | 对象
 
 ---
 #### Vue.extend
-- ##### Vue.extend 方法用于拓展定义(组件)。
+- ##### Vue.extend 方法用于拓展定义(组件)，Vue.extend(obj) 会返回一个构造函数，类似于 Vue，可以直接使用 new 来生成一个拓展实例。
 - ##### 通过 new Vue() 方式创建的实例叫做根实例，而还有一种通过实例化 Vue.extend() 后的构造函数来实现的叫扩展实例，可以认为是一个从 Vue 根实例中拓展出来的组件。
 - ##### 所有的 Vue.js 组件都是被扩展的 Vue 实例（官方）。
 - ##### 扩展实例和根实例一样，需要先被实例化，然后挂载。
@@ -62,7 +62,7 @@ data 属性 | 组件中的 data 只能是函数，并返回一个对象 | 对象
 
 
 ---
-#### Vue.component
+#### Vue.component 与 Vue.extend 的区别和联系
 - ##### Vue.component 与 Vue.data 和 Vue.props 类似，可以定义组件内的 data 数据
 - ##### Vue.component 与 Vue.watch 类似，根据所需数据的变化来触发回调函数的执行
   ```javascript
