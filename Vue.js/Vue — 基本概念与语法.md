@@ -1,4 +1,14 @@
-## Vue 基本语法
+## Vue 基本概念与语法
+
+- #### Vue 的基本概念
+  ##### 1. 传统的页面生命周期是通过事件来驱动的，Vue 页面的生命周期在事件驱动外，主要是通过数据来驱动的。
+
+
+
+
+
+
+---
 - #### 通过 Vue 构造器来实例化一个 Vue 实例
 ```javascript
   /* 实例化一个 Vue 对象 */
@@ -80,11 +90,11 @@ data 属性 | 组件中的 data 只能是函数，并返回一个对象 | 对象
 ```javascript
    /* Vue 实例的挂载有两种方式：设置 el 属性和 $mount 手动挂载 */
    new Vue({
-       el: '#hookElement'        // 挂载元素
+       el: '#hookElement'        // 在生成 Vue 实例的同时挂载元素
    });
    
-  var vue = new Vue();
-  vue.$mount('#target');         // 挂载元素
+  var foo = new Vue();           // 生成 Vue 实例
+  foo.$mount('#target');         // 手动挂载挂载元素
 ```
 
 
