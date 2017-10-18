@@ -78,7 +78,7 @@ data 属性 | 组件中的 data 只能是函数，并返回一个对象 | 对象
 
 ---
 #### Vue 的挂载
-  ```javascript
+```javascript
    /* Vue 实例的挂载有两种方式：设置 el 属性和 $mount 手动挂载 */
    new Vue({
        el: '#hookElement'        // 挂载元素
@@ -86,7 +86,7 @@ data 属性 | 组件中的 data 只能是函数，并返回一个对象 | 对象
    
   var vue = new Vue();
   vue.$mount('#target');         // 挂载元素
-  ```
+```
 
 
 
