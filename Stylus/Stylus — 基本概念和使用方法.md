@@ -1,4 +1,4 @@
-# stylus
+# Stylus 的基本概念和使用方法
 > stylus 是基于 Node.js 的 CSS 预编译器
 
 - #### 安装 stylus
@@ -6,9 +6,9 @@
   $ npm install stylus -g
   ```
  
- 
- 
- 
+
+
+
 ---  
 - #### 生成 CSS
   ```node
@@ -27,7 +27,7 @@
   ```node
   /* stylus 只支持 * 通配符  */
   $ stylus -w stylusFilePath/*.style -o cssFilePath/
-  
+
   /* gulp-stylus 支持 ** 通配符 */
   gulp.task('pageStylus', function () {
     return gulp.src('src/main/webapp/WEB-INF/stylus/**/*.styl')  // gulp-stylus 可以支持 ** 通配符，而原生 stylus 不支持
