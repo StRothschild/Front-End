@@ -19,7 +19,7 @@
 ---
 - #### Vue.computed
   ##### Vue.computed 和 data 以及 props 类似，可以设置一个组件作用域内的变量。
-  ##### Vue.computed 提供的变量可以通过函数计算得出。
+  ##### Vue.computed 提供的变量可以通过函数计算得出。
   ```javascript
   computed: function(){
     return this.foo + this.bar;
@@ -31,13 +31,12 @@
 
 
 ---
-- #### Vue.set
-  ##### Vue.set 方法可以设置
-  ##### Vue.computed 提供的变量可以通过函数计算得出。
+- #### Vue.set(targetObject, key, value)
+  ##### 这个方法主要用于避开 Vue 不能检测对象属性被添加/修改的限制。
+  ##### Vue.set 方法可以设置对象的属性。如果对象是响应式的，确保属性被创建后也是响应式的，同时触发视图更新。
+  ##### 注意对象不能是 Vue 实例，或者 Vue 实例的根数据对象。
   ```javascript
-  computed: function(){
-    return this.foo + this.bar;
-  }
+  Vue.set(obj, key, value);   // 改变 obj 的 key 属性后，然后触发图更新
   ```
 
 
