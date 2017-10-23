@@ -18,7 +18,7 @@
 
 ---
 - #### Vue.computed
-  ##### Vue.computed 和 data 以及 props 类似，可以设置一个组件作用域内的变量。
+  ##### Vue.computed 和 data 以及 props 类似，可以设置一个组件作用域内的变量。
   ##### Vue.computed 提供的变量可以通过函数计算得出。
   ```javascript
   computed: function(){
@@ -29,12 +29,26 @@
 
 
 
+
+---
+- #### Vue.set
+  ##### Vue.set 方法可以设置
+  ##### Vue.computed 提供的变量可以通过函数计算得出。
+  ```javascript
+  computed: function(){
+    return this.foo + this.bar;
+  }
+  ```
+
+
+
+
+
 ---
 - #### Vue 与 RequireJs 的区别
   > 两者都有工程模块化管理的功能，但两者的模块化是有很大区别的。
   ##### RequireJs 的模块化是物理上的模块化，是针对各个文件进行的模块化管理。
   ##### Vue 的模块化是针对页面结构上的模块化，是针对页面组件进行的模块化管理。
-
 
 
 
