@@ -41,7 +41,7 @@ a.red:link {color:#ccc;}
 - ### 其他伪类
     #### :checked     选中状态的元素
     #### :disabled    被禁用状态的元素
-    #### :empty       空的元素 
+    #### :empty       空的元素
     #### :invalid 	  无效状态的元素
     #### :last-child  最后一个子元素
 
@@ -54,6 +54,8 @@ a.red:link {color:#ccc;}
 ## 2. 伪元素（Pseudo-elements）
 
 #### CSS 伪元素允许我们给页面添加额外元素而不扰乱文档本身。
+> 需要特别注意：伪元素都是在容器元素内进行渲染的。由于 input 元素无法容纳其他元素（自封闭标签），因此 input 元素不支持伪元素。
+
 
 ```
 /* 在选择器上插入伪元素的语法 */
@@ -77,7 +79,7 @@ selector.red:before	{
 
 
 ### ::before（IE8 开始支持，需要声明 DOCTYPE）
-- #### 在元素内容的==开始处插入伪元素，插入的伪元素处于目标父元素的流中，相当于目标父元素的子元素。== 
+- #### 在元素内容的==开始处插入伪元素，插入的伪元素处于目标父元素的流中，相当于目标父元素的子元素。==
 
 - #### ==默认伪元素是行内（inline）元素，== 且继承元素可继承的属性。不过该内容的框类型可以用属性 display 控制。
 
@@ -86,7 +88,7 @@ selector.red:before	{
 
 
 ### ::after（IE8 开始支持，需要声明 DOCTYPE）
-- #### 在目标父元素的==内容结束处插入伪元素，插入的伪元素处于目标父元素的流中，相当于目标父元素的子元素。== 
+- #### 在目标父元素的==内容结束处插入伪元素，插入的伪元素处于目标父元素的流中，相当于目标父元素的子元素。==
 
 - #### ==默认伪元素是行内（inline）元素，== 且继承元素可继承的属性。不过该内容的框类型可以用属性 display 控制。
 
@@ -160,7 +162,7 @@ selector.red:before	{
 #### 12. :enabled、:disabled、:hover、和 :active等伪类同样在滚动条中适用
 
 
-### webkit 浏览器的滚动条 DEMO 地址: 
+### webkit 浏览器的滚动条 DEMO 地址:
 #### http://trac.webkit.org/export/41842/trunk/LayoutTests/scrollbars/overflow-scrollbar-combinations.html
 
 
