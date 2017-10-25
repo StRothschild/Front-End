@@ -103,7 +103,7 @@ m.delete('Bob');     // 删除 key, 成功返回 true
 类型 | 键名（key） | 键值（value） | 键名称有重复 | 键值有重复 | 是否有序
 ---|---|---|---|---|---
 Object | String | value | 不可 | 可 | key有序，先数字后文本的顺序
-Map | key | value | 不可 | 不可 | key无序
+Map | key | value | 不可 | 不可 | key无序(按添加的先后来排列)
 Array | 索引 | value | 不可 | 可 | value无序，但可以通过 sort 方法变成有序
 Set | value | value | 不可 | 不可，因为 Set 中的 key 就是 value | value无序
 
