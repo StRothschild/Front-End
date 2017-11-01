@@ -162,10 +162,14 @@
 ---
 - #### $emit 和 $on
   ##### 1. $emit 和 $on 要绑定在同一个 Vue 实例上。
-  
-  
-  
-  
-  ---
-- #### $emit 和 $on
-  ##### 1. $emit 和 $on 要绑定在同一个 Vue 实例上。
+
+
+
+
+
+---
+- #### Vue 的模板绑定
+
+  | | v-bind | v-model | v-on | 绑定class | 绑定style
+  |-|-|-|-|-|-
+  | 使用方式 | v-bind:valueName=" " | v-model="valueName" | v-on:functionName=" " | v-bind:class="objName/{}/[]" | v-bind:style="objName/{}/[]"
