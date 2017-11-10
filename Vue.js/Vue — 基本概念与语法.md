@@ -25,10 +25,9 @@
     return this.foo + this.bar;
   }
   ```
-
-
-
-
+  
+  
+  
 ---
 - #### Vue.filter
   ##### Vue2 已经移除了 Vue1 中默认内置过滤器，例如 "uppercase"。
