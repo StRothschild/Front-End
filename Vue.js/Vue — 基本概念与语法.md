@@ -31,8 +31,8 @@
 
 ---
 - #### Vue.filter
-  ##### Vue2 已经移除了 Vue1 中默认内置过滤器，例如 "uppercase"。
-  ```javascript
+  ##### Vue2 已经移除了 Vue1 中默认内置过滤器，例如 "uppercase"。
+  ```javascript
   // 调用 my-filter 的回调函数
   {{value | my-filter}}
   
