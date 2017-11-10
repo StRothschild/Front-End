@@ -36,7 +36,7 @@
   /* 调用 my-filter 的回调函数 */
   {{value | my-filter}}
   
-  /* 注册 my-filter */
+  /* 注册 my-filter */
   Vue.filter('my-filter', function (value) {
   })
   ```
