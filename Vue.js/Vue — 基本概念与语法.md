@@ -5,6 +5,30 @@
 
 
 
+---
+- #### Vue 与 RequireJs 的区别
+  > 两者都有工程模块化管理的功能，但两者的模块化是有很大区别的。
+
+  ##### RequireJs 的模块化是物理上的模块化，是针对各个文件进行的模块化管理。
+  ##### Vue 的模块化是针对页面结构上的模块化，是针对页面组件进行的模块化管理。
+
+
+
+
+---
+- #### Vue 与 Angular 的区别
+
+  | | Vue | Angular
+  |-|-|-
+  | 独立模板文件的引用 | 只能用字符串（template属性）或者 \<template\> 标签来定义模板，如果需要引入单独的模板文件，需要通过别的加载工具比如 RequireJs | 可以直接使用独立的模板文件
+  | data 属性 | 组件中的 data 只能是函数，并返回一个对象 | 对象
+
+
+
+
+
+
+
 
 ---
 - #### Vue 的数据流
@@ -19,29 +43,52 @@
 ---
 - #### Vue.computed
   ##### Vue.computed 和 data 以及 props 类似，可以设置一个组件作用域内的变量。
+  ##### Vue.computed 与 Vue.watch 类似，根据所需数据的变化来触发回调函数的执行
   ##### Vue.computed 提供的变量可以通过函数计算得出。
-  ```javascript
-  computed: function(){
-      return this.foo + this.bar;
-  }
+  ```javascript
+    /* foo 属性可以直接在模板中引用，得到的值是 foo() 的值 */
+    computed: {
+        // 回调函数默认为 getter 方法
+        foo: function () {
+            return this.bar > 0;     // bar 发生改变，都会触发 foo 函数的执行
+        }
+    }
+
+    /* computed 也可以设置 setter 方法 */
+    computed: {
+        // 不设置回调函数，而是设置为一个对象，内置 get 和 set 两个属性
+        foo: {
+            get: function () {
+                return 'get function called'
+            },
+            set: function (v) {
+                v += 'calling the set function'
+            }
+        }
+
+        Vue.foo          // 执行 get 方法
+        Vue.foo = 'bar'  // 执行 set 方法, v 的值为 "bar calling the set function"
+    }
   ```
-  
-  
-  
+
+
+
+
+
 ---
 - #### Vue.filter
   ##### Vue2 已经移除了 Vue1 中默认内置过滤器，例如 "uppercase"。
   ```javascript
-  /* 调用 my-filter 的回调函数 */
-  {{value | my-filter}}
-  
-  /* 注册 my-filter */
-  Vue.filter('my-filter', function (value) {
-  })
-  ```
-  
-  
-  
+    /* 调用 my-filter 的回调函数 */
+    {{value | my-filter}}
+
+    /* 注册 my-filter */
+    Vue.filter('my-filter', function (value) {
+    })
+  ```
+
+
+
 
 
 ---
@@ -49,30 +96,9 @@
   ##### 这个方法主要用于避开 Vue 不能检测对象属性被添加/修改的限制。
   ##### Vue.set 方法可以设置对象的属性。如果对象是响应式的，确保属性被创建后也是响应式的，同时触发视图更新。
   ##### 注意对象不能是 Vue 实例，或者 Vue 实例的根数据对象。
-  ```javascript
-  Vue.set(obj, key, value);   // 改变 obj 的 key 属性后，然后触发图更新
-  ```
-
-
-
-
-
----
-- #### Vue 与 RequireJs 的区别
-  > 两者都有工程模块化管理的功能，但两者的模块化是有很大区别的。
-  ##### RequireJs 的模块化是物理上的模块化，是针对各个文件进行的模块化管理。
-  ##### Vue 的模块化是针对页面结构上的模块化，是针对页面组件进行的模块化管理。
-
-
-
-
----
-- #### Vue 与 Angular 的区别
-
-  | | Vue | Angular
-  |-|-|-
-  | 独立模板文件的引用 | 只能用字符串（template属性）或者 <template> 标签来定义模板，如果需要引入单独的模板文件，需要通过别的加载工具比如 RequireJs | 可以直接使用独立的模板文件
-  | data 属性 | 组件中的 data 只能是函数，并返回一个对象 | 对象
+  ```javascript
+    Vue.set(obj, key, value);   // 改变 obj 的 key 属性后，然后触发图更新
+  ```
 
 
 
@@ -127,16 +153,19 @@
 
 ---
 - #### Vue.component 与 Vue.extend 的区别和联系
-  ##### 1. Vue.component 与 Vue.data 和 Vue.props 类似，可以定义组件内的 data 数据
-  ##### 2. Vue.component 与 Vue.watch 类似，根据所需数据的变化来触发回调函数的执行
+  ##### 两者都用于返回一个构造器。
   ```javascript
-  /* foo 属性可以直接在模板中引用，得到的值是 foo() 的值 */
-  computed: {
-      foo: function () {
-          return this.bar > 0;     // bar 发生改变，都会触发 foo 函数的执行
-      }
-  }
+    // 注册组件，传入一个扩展过的构造器
+    Vue.component('my-component', Vue.extend({ /* ... */ }))
+
+    // 注册组件，传入一个选项对象 (自动调用 Vue.extend)
+    Vue.component('my-component', { /* ... */ })
+
+    // 获取组件的构造器（getter 方法）
+    var MyComponent = Vue.component('my-component')
   ```
+
+
 
 
 
@@ -176,7 +205,7 @@
 ---
 - #### $emit 和 $on
   ##### 1. $emit 和 $on 要绑定在同一个 Vue 实例上。
-  
+
 
 
 
