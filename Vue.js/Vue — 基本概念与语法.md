@@ -29,6 +29,21 @@
 
 
 
+---
+- #### Vue.filter
+  ##### Vue2 已经移除了 Vue1 中默认内置过滤器，例如 "uppercase"
+  ```javascript
+  // 调用 my-filter 的回调函数
+  {{value | my-filter}}
+  
+  Vue.filter('my-filter', function (value) {
+    // 返回处理后的值
+  })
+  ```
+  
+  
+  
+
 
 ---
 - #### Vue.set(targetObject, key, value)
@@ -168,8 +183,8 @@
 
 ---
 - #### $once 和 $off
-  ##### 1. $once 与 $on 类似，用于监听自定义事件，但是 $once 只触发一次，在第一次触发之后自动移除监听器。
-  ##### 2. $off 用于手动移除自定义事件的监听器。
+  ##### 1. $once 与 $on 类似，用于监听自定义事件，但是 $once 只触发一次，在第一次触发之后自动移除监听器。
+  ##### 2. $off 用于手动移除自定义事件的监听器。
 
 
 
