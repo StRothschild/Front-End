@@ -77,7 +77,7 @@
 
 ---
 - #### Vue.filter
-  ##### Vue2 已经移除了 Vue1 中的内置过滤器，例如 "uppercase"。
+  ##### Vue2 已经移除了 Vue1 中的内置过滤器，例如 "uppercase"。
   ```javascript
     /* 调用 my-filter 的回调函数 */
     {{value | my-filter}}
