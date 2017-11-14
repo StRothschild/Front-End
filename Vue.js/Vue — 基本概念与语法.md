@@ -41,8 +41,8 @@
 
 
 ---
-- #### Vue.computed
-  ##### Vue.computed 和 data 以及 props 类似，可以设置为组件作用域内的变量，但 computed 变量不能作为参数传入组件。
+- #### Vue.computed#
+  #### Vue.computed 和 data 以及 props 类似，可以设置为组件作用域内的变量，但 computed 变量不能作为参数传入组件。
   ##### Vue.computed 与 Vue.watch 类似，根据所需数据的变化来触发回调函数的执行
   ##### Vue.computed 提供的变量可以通过函数计算得出。
   ```javascript
