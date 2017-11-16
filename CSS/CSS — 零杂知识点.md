@@ -114,11 +114,11 @@ margin  | 在相同 BFC 内，子元素之间垂直方向上的 margin 会塌陷
 
 ---
 - #### transparent / rgba 和 opacity 的区别
-  ##### 1. transparent 是全透明黑色的速记法，可以认为 transparent == rgba(0, 0, 0, 0)。在 CSS3 中，transparent 被延伸到任何一个有 color 值的属性上，比如 background-color、border-color、color。
+  ##### 1. transparent 是全黑色透明的速记法，可以认为 transparent == rgba(0, 0, 0, 0)。在 CSS3 中，transparent 被延伸到任何一个有 color 值的属性上，比如 background-color、border-color、color。
 
   ##### 2. rgba(0, 0, 0, 0) 在色彩模式与 rgb 相同，只是在 rgb 模式上新增了 Alpha 透明度。
 
-  ##### 3. opacity 是一个属性，而 transparent 和 rgba 是一个值。这里需要注意的是虽然 opacity 并不会继承，但是 opacity 可以应用于目标元素的所有内容，包含文字、子元素、背景。
+  ##### 3. opacity 是一个属性，而 transparent 和 rgba 是一个值。这里需要注意的是虽然 opacity 并不会继承，但是 opacity 会强制应用于目标元素的所有内容，包含文字、子元素、背景，基于这个特性，opacit不适用于设置模态框的蒙板透明度。
 
   ```css
   /* transparent */
@@ -140,10 +140,11 @@ margin  | 在相同 BFC 内，子元素之间垂直方向上的 margin 会塌陷
   opacity: 0.5;
   ```
 
-- | transparent | rgba | opacity
----|---|---|---
-example | background-color: transparent; | color: rgba(0, 0, 0, 1); | opacity: 0.5;
-元素的属性 |  |  | 是
-属性的值，并且只能用于 color 类型的属性 | 是 | 是 |
-透明度可调节 | 只能是全透明 | 是 | 是
-颜色可设置 | | 是 |
+  | - | transparent | rgba | opacity
+  |---|---|---|---
+  example | background-color: transparent; | color: rgba(0, 0, 0, 1); | opacity: 0.5;
+  元素的属性 |  |  | 是
+  属性的值，并且只能用于 color 类型的属性 | 是 | 是 |
+  透明度可调节 | 只能是全透明 | 是 | 是
+  颜色可设置 | | 是 |
+  强制应用于子元素中 | | | 是
