@@ -18,7 +18,7 @@
 ---
 - #### Vue 与 Angular 的区别
 
-  | | Vue | Angular
+  |-| Vue | Angular
   |-|-|-
   | 独立模板文件的引用 | 只能用字符串（template属性）或者 \<template\> 标签来定义模板，如果需要引入单独的模板文件，需要通过别的加载工具比如 RequireJs | 可以直接使用独立的模板文件
   | data 属性 | 组件中的 data 只能是函数，并返回一个对象 | 对象
