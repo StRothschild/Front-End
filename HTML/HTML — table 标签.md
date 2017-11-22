@@ -16,7 +16,7 @@
   
   - #### colspan 属性
     ##### colspan 是 td 和 th 的属性。
-    ##### colspan 可以在水平方向上合并单元格。
+    ##### colspan 可以在水平方向上合并单元格。
     ```javascript
       // 注意，如果上一行的 <td> 通过 rowspan 占据2行后， 下一行的 <td> 也需要相应的少一个
       <tr>
