@@ -14,18 +14,18 @@
     </tr>
   ```
   
-  - #### colspan 属性
-    ##### colspan 是 td 和 th 的属性。
-    ##### colspan 可以在水平方向上合并单元格。
-    ```javascript
-      // 注意，如果本行的 <td> 通过 colspan 占据2列后， 本行的 <td> 也需要相应的少一个
-      <tr>
-          <td colspan="2">占据2列</td>
-          <td>占据1列</td>
-      </tr> 
-      <tr>
-          <td>占据1列</td>
-          <td>占据1列</td>
-          <td>占据1列</td>
-      </tr>
-     ```
+- #### colspan 属性
+  ##### colspan 是 td 和 th 的属性。
+  ##### colspan 可以在水平方向上合并单元格。
+  ```javascript
+    // 注意，如果本行的 <td> 通过 colspan 占据2列后， 本行的 <td> 也需要相应的少一个
+    <tr>
+        <td colspan="2">占据2列</td>
+        <td>占据1列</td>
+    </tr> 
+    <tr>
+        <td>占据1列</td>
+        <td>占据1列</td>
+        <td>占据1列</td>
+    </tr>
+   ```
