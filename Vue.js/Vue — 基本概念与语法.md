@@ -84,6 +84,7 @@
 
     /* 注册 my-filter */
     Vue.filter('my-filter', function (value) {
+        // do something and return
     })
   ```
 
