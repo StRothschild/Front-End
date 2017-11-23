@@ -40,6 +40,29 @@
 
 
 
+
+
+---
+- #### Vue 的 class 和 style
+  ##### Vue 可以绑定 class 和 style 就像绑定普通的变量。
+  ```javascript
+     /* 绑定class */
+     v-bind:class="{fooClass:isActive}"                   // 对象中可以有变量名，变量值是Boolean
+     v-bind:class="{fooClass:true, barClass:false}"       // 也可以直接用对象表示
+     v-bind:class="[fooClass, barClass]"                  // 数组中存的是对象名
+     v-bind:class="fooClass"                              // 也可以用单个对象名
+
+
+     
+     /* 绑定style */
+     v-bind:style="{color:activeColor, fontSize:fontSize + 'px'}"      // 直接用变量名表示，变量值是style的值，而不是Boolen
+     v-bind:style="[fooStyle, barStyle]"                               // 数组中存的是对象名
+     v-bind:style="objectData"                                         // 也可以用单个对象名
+  ```
+
+
+
+
 ---
 - #### Vue.computed
   ##### Vue.computed 和 data 以及 props 类似，可以设置为组件作用域内的变量，但 computed 变量不能作为参数传入组件。
