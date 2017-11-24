@@ -18,7 +18,7 @@
 ---
 - #### Vue 与 Angular 的区别
 
-  | | Vue | Angular
+  |-| Vue | Angular
   |-|-|-
   | 独立模板文件的引用 | 只能用字符串（template属性）或者 \<template\> 标签来定义模板，如果需要引入单独的模板文件，需要通过别的加载工具比如 RequireJs | 可以直接使用独立的模板文件
   | data 属性 | 组件中的 data 只能是函数，并返回一个对象 | 对象
@@ -36,6 +36,29 @@
   ##### 2. 如果在组件内部改变 props 数据，即使不报错也会有 warning，因为这违反了 Vue 单向数据流的原则。需要注意的是，这里的所说的 props 数据，指的是基本类型的数据，比如 String、Number。但如果 props 数据是个引用类型，则对其属性进行增删改操作都不会违反单向数据流原则，因为引用类型的本质是内存地址，在对其属性进行操作时，都不会影响其内存地址。但不可以改变引用类型 props 数据的对象，因为这样会改变内存地址从而违法单向数据流原则。
   ##### 3. 由于 Vue 中数据流是单向的，所以 v-model 实际上是一个语法糖，它结合了 v-bind 和 v-on:change 这两个语法。
 
+
+
+
+
+
+
+---
+- #### Vue 的 class 和 style
+  ##### Vue 可以绑定 class 和 style 就像绑定普通的变量。
+  ```javascript
+   /* 绑定class */
+   v-bind:class="{fooClass:isActive}"                   // 对象中可以有变量名，变量值是Boolean
+   v-bind:class="{fooClass:true, barClass:false}"       // 也可以直接用对象表示
+   v-bind:class="[fooClass, barClass]"                  // 数组中存的是对象名
+   v-bind:class="fooClass"                              // 也可以用单个对象名
+
+
+
+   /* 绑定style */
+   v-bind:style="{color:activeColor, fontSize:fontSize + 'px'}"      // 直接用变量名表示，变量值是style的值，而不是Boolen
+   v-bind:style="[fooStyle, barStyle]"                               // 数组中存的是对象名
+   v-bind:style="objectData"                                         // 也可以用单个对象名
+  ```
 
 
 
@@ -84,6 +107,7 @@
 
     /* 注册 my-filter */
     Vue.filter('my-filter', function (value) {
+        // do something and return
     })
   ```
 
