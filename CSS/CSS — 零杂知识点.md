@@ -1,13 +1,13 @@
 # CSS 的零杂知识点
 - #### 盒模型
-盒模型 | 特点
----|---
-content-box | 1. float / absolute / fixed 元素的相对起点；2. W3C 浏览器的盒子模型 width 宽度
-padding-box | 1. background-origin 用来设置 background-img 的默认起点；2. overflow（hidden / srcoll）计算的默认起点
-border-box | 1. background-clipe 和 background-color 相对起点；2. 老版本的 IE 浏览器盒子模型 width；3. 需要注意 border 是一个梯形，可用于绘制三角形
-margin  | 在相同 BFC 内，子元素之间垂直方向上的 margin 会塌陷；垂直方向上的 margin 在行内元素非替换（inline）的盒模型中不存在
+  盒模型 | 特点
+  ---|---
+  content-box | 1. float / absolute / fixed 元素的相对起点；2. W3C 浏览器的盒子模型 width 宽度
+  padding-box | 1. background-origin 用来设置 background-img 的默认起点；2. overflow（hidden / srcoll）计算的默认起点
+  border-box | 1. background-clipe 和 background-color 相对起点；2. 老版本的 IE 浏览器盒子模型 width；3. 需要注意 border 是一个梯形，可用于绘制三角形
+  margin  | 在相同 BFC 内，子元素之间垂直方向上的 margin 会塌陷；垂直方向上的 margin 在行内元素非替换（inline）的盒模型中不存在
 
-> 注意：盒模型的 box-sizing 只有 border-box 和 content-box。
+  > 注意：盒模型的 box-sizing 只有 border-box 和 content-box。
 
 
 
@@ -106,6 +106,19 @@ margin  | 在相同 BFC 内，子元素之间垂直方向上的 margin 会塌陷
   height: 0;                               // content 不需要宽高
   border: 10px solid transparent;          // border 需要宽度，并设置 tansparent
   border-right: 10px solid;                // 这个一定要写后面，覆盖前面的 border, 默认为黑色
+  ```
+
+
+
+
+
+---
+- #### 禁止页面中的文本被选中
+  ```css
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   ```
 
 
