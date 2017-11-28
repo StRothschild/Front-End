@@ -115,6 +115,7 @@
 ---
 - #### 禁止页面中的文本被选中
   ```css
+  /* user-select 是非标准的属性，不支持 IE9 及以下的 IE 浏览器 */
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
