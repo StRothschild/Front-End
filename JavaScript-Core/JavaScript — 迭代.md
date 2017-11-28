@@ -5,7 +5,7 @@
 ##### for...in 语句可以用于返回该==对象所有的可枚举属性和方法，包括原型链上的可枚举属性和方法。==
 ```
 for (var propertyName in object) {
-    // do somethin
+    // do something
     object.hasOwnProperty(properyName) // 可以判读是否是自有属性，还是原型链上的属性
 }
 ```
@@ -149,10 +149,10 @@ for (let value of Array/Map/Set/String) {
 
 
 ---
-### 总结
-适用情况 | for | for...in | forEach(不能 break/continue/return) | for...of
+### 总结（[x]表示适用）
+适用情况 | for(let i=0) | for...in | forEach(不能 break/continue/return) | for...of
 ---|---|---|---|---
-Object |  | [x] |  | 
+Object |  | [x] |  |
 Array | [x] | 遍历所有的可枚举属性,用在数组上不合适 | [x] | [x]
 Set | | | [x] | [x]
 Map | | | [x] | [x]
