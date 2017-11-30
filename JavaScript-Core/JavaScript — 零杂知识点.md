@@ -140,7 +140,7 @@
   ##### 1. 函数声明，必须有函数名，但函数表达式不是必须的。
   ##### 2. 函数名一定可以在函数体内被引用，但外部不一定
 
-  ```
+  ```javascript
   function foo(){           // 函数声明，必须有函数名
       return foo.prototype; // 函数体内可以引用函数名
   }
@@ -160,7 +160,7 @@
 
 ---
 - #### null 与 undefined
-  ```
+  ``` javascript
   // null 表示的是意料中的，特意的空
   // undefined 表示的往往是意料之外的空
   /* 在传递空的实参时，最好用 null */
@@ -171,9 +171,28 @@
   ```
 
 
+
+
+---
+- #### 或逻辑 "||"
+  ##### "exp1 || exp2" 可以用于给 exp1 加一个默认值 exp2
+  ```javascript
+  /* exp1 || exp2 会首先对 exp1 的值进行 Boolean 运算，如果是 true 则返回 exp1，否则返回 exp2 */
+  exp1 || exp2   ==   (!!exp1) ? exp1 : exp2   // 此等式成立
+
+  /* 需要注意的是 exp1 的值为 0 */
+  let foo = 0 || 1;         ==>  返回 1， 因为 !!0 为 false
+  let foo = -1 || 1;        ==>  返回 -1， 因为 !!-1 为 true
+  let foo = '' || 'bar';    ==>  返回 'bar'， 因为 !!'' 为 false
+  ```
+
+
+
+
+
 ---
 - #### 取整
-  ```
+  ```javascript
   /* Math.round() 四舍五入取整 */
   // 只对小数点后第一位进行计算，四舍五入后返回一个整数
   Math.round(5.45);           // 5
@@ -194,8 +213,8 @@
 
 ---
 - #### 取随机数
-  ```
-  /* random 返回 0~1 之间的一个随机数，精确到小数点后 15 位 */
+  ```javascript
+  /* random 返回 [0,1) 之间的一个随机数，精确到小数点后 15 位 */
   Math.random();                      // 0.551302460829546
 
   /* 返回 1~100 之内的一个随机数 */
@@ -206,7 +225,7 @@
 
 ---
 - #### 对象属性如果不存在会返回 undefined，但对象的属性值也可以是 undefined，比如属性 delete 之后值就被赋予了 undefined
-  ```
+  ```javascript
   /* 可以通过 in 来区别属性 undefined 的具体是哪一种含义 */
   var o = {x:undefined};
   o.x;       // undefined
