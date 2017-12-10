@@ -257,4 +257,17 @@
   
 ---
 - #### <slot>
-
+  ##### 通过在子组件的模板中设置<slot>标签，相当于打了一个锚点。可以通过在父组件的模板中使用子组件，实现子组件的复用。
+  ```html
+  /* 父组件 */
+  <article>
+     <child-component>
+         <div>此处可以用于取代子元素中slot标签，实现子组件的复用</div>
+     </child-component>
+  </article>
+  
+  /* 子组件 */
+  <article>
+     <slot>这里可以添加默认内容<slot>
+  </article>
+  ```
