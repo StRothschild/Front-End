@@ -262,12 +262,12 @@
   /* 父组件 */
   <article>
      <child-component>
-         <div>此处可以用于取代子元素中slot标签，实现子组件的复用</div>
+         <div>此处可以用于取代子元素中slot标签，实现子组件的复用</div>
      </child-component>
   </article>
-  
-  /* 子组件 */
+
+  /* 子组件 */
   <article>
-     <slot>这里可以添加默认内容<slot>
-  </article>
+     <slot>这里可以添加默认内容<slot>
+  </article>
   ```
