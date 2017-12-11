@@ -243,12 +243,23 @@
 
 
 
+
+
 ---
 - #### Vue 的模板绑定
 
   | | v-bind | v-model | v-on | 绑定class | 绑定style
   |-|-|-|-|-|-
   | 使用方式 | v-bind:valueName=" " | v-model="valueName" | v-on:functionName=" " | v-bind:class="objName/{}/[]" | v-bind:style="objName/{}/[]"
+  
+  
+  
+  
+  
+---
+- #### ref
+  ##### 通过在模板中添加  ref 属性可以帮助 Vue 获取 DOM 对象。
+   
   
   
   
