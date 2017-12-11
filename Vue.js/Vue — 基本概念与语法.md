@@ -264,9 +264,9 @@
   ##### 通过在模板中添加 ref 属性可以帮助 Vue 获取 DOM 对象。
   ```javascript
   <div ref="foo"></div>
-  /* 通过 $refs 获取 DOM 对象 */
-  this.$refs['foo']  => DOM 对象
-  ```
+  /* 通过 $refs 获取 DOM 对象 */
+  this.$refs['foo']  => DOM 对象
+  ```
    
   
   
