@@ -35,15 +35,16 @@
 
   ```Freemarker
     /* 常见的内建函数 */
+    expr?size                  // 给出 expr 序列中 项目 的数量，常用于 list
+
+    expr?length                // 给出 expr 值中 字符 的数量(对于 "John Doe" 来说就是8)
+
     expr?html                  // 给出 expr 的HTML转义版本， 比如 & 会由 &amp; 来代替。
 
     expr?upper_case            // 给出 expr 值的大写版本 (比如 "JOHN DOE" 来替代 "John Doe")
 
     expr?cap_first             // 给出 expr 的首字母大写版本(比如 "Mouse" 来替代 "mouse")
 
-    expr?length                // 给出 expr 值中 字符 的数量(对于 "John Doe" 来说就是8)
-
-    expr?size                  // 给出 expr 序列中 项目 的数量
 
 
     /* 如果在 <#list animals as animal> 和对应的 </#list> 标签中 */
