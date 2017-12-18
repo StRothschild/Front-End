@@ -79,7 +79,7 @@
 
     /* computed 也可以设置 setter 方法 */
     computed: {
-        // 不设置回调函数，而是设置为一个对象，可以内置 get 和 set 两个属性，分别作为 getter 和 setter 方法
+        // 不设置回调函数，而是设置为一个对象，可以内置 get 和 set 两个属性，分别作为 getter 和 setter 方法
         foo: {
             get: function () {
                 return 'get function called'
