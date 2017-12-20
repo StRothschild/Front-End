@@ -42,3 +42,16 @@
 
 
 ##### 由于模块中不仅只有 JavaScript，还有 hmtl 模板或 css 文件，当要加载这些资源时，需要使用 RequireJs 的 text 插件。
+
+
+
+
+
+
+
+
+
+```
+- 常见错误
+#### MISMATCHED ANONYMOUS DEFINE() MODULES ...
+##### 这个错误一般是和现有的其他资源冲突了，重复定义了 define 函数。
