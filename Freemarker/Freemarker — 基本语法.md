@@ -34,10 +34,10 @@
 
 
 - #### 其他内置标签 
-  ```Freemarker
-    /* ?size 用于获取list的长度 */
-    ${fields?size}
-    <#if list?size>0></#if>
+  ```FreeMarker
+  /* ?size 用于获取list的长度 */
+  ${fields?size}
+  <#if list?size>0></#if>
   ```
 
 
