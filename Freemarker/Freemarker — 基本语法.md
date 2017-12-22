@@ -34,7 +34,7 @@
 
 
 - #### 其他内置标签
-  ##### 1. 
+  ##### 1. 
   ```Freemarker
     /* ?size 用于获取list的长度 */
     ${fields?size}
