@@ -212,7 +212,7 @@
 
 ---
 - #### v-if 与 v-show
-  ##### 1. v-if 是惰性加载，只有在后条件满足后才会开始渲染。但 v-if 会确保在条件切换后，事件监听器和子组件适当地被销毁和重建。注意，v-if 会重新执行vue组件（vue 根实例除外）的生命周期，包括 creat、mount、destroy 等。
+  ##### 1. v-if 是惰性加载，只有在后条件满足后才会开始渲染。但 v-if 会确保在条件切换后，事件监听器和子组件适当地被销毁和重建。注意，v-if 在true时会重新执行一遍 vue 组件的生命周期（vue 的根组件除外），包括 creat、mount、destroy 等。
   ##### 2. v-show 不管初始条件是什么，元素总是会被渲染。但 v-show 只是简单地基于 CSS（display：none）进行切换。
   ##### 3. display: none。有 Dom，没有占据空间。
   ##### 4. visibility: hidden。有 Dom，有占据空间。
