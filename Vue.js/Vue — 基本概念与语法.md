@@ -63,6 +63,25 @@
 
 
 
+
+
+
+---
+- #### watch
+  ##### Vue 提供了一种通用的方式来观察和响应 Vue 实例上的数据变动，观察属性 watch。
+  ```javascript
+   watch: {
+    foo: function (nv) {
+      this.bar = nv;
+    }
+  }
+  ```
+  
+  
+  
+  
+
+
 ---
 - #### Vue.computed
   ##### Vue.computed 和 data 以及 props 类似，可以设置为组件作用域内的变量，但 computed 变量不能作为参数传入组件。
