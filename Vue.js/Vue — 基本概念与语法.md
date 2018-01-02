@@ -173,6 +173,24 @@
 
 
 
+
+---
+- #### components
+##### Vue对象中的 components 属性用于注册子组件
+```javascript
+ new Vue({
+    components: {
+      'foo': foo
+    }
+ });
+
+```
+
+
+
+
+
+
 ---
 - #### Vue.component
   ##### 1. Vue.component 方法用于注册组件。
