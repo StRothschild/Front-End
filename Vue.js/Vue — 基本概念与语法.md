@@ -1,6 +1,6 @@
 ## Vue 基本概念与语法
 - #### Vue 的基本概念
-  ##### 1. 传统的页面生命周期是通过事件来驱动的，Vue 页面或者说动态模板的生命周期主要是通过数据来驱动的。
+  ##### 1. 传统的页面生命周期是通过事件来驱动的，Vue 页面或者说动态模板的生命周期主要是通过数据来驱动的。
 
 
 
@@ -41,6 +41,18 @@
 
 
 
+  ---
+  - #### Vue 的生命周期
+    ##### 1. 父组件中的 created 钩子是在子组件的 created 钩子之前。因为子组件的 实例化 和 render 是在父组件编译模板时发生的，而父组件编译模板是在对象实例化之后才发生的。
+
+
+
+
+
+
+
+
+
 ---
 - #### Vue 的 class 和 style
   ##### Vue 可以绑定 class 和 style 就像绑定普通的变量。
@@ -74,10 +86,10 @@
    }
   }
   ```
-  
-  
-  
-  
+
+
+
+
 
 
 ---
@@ -174,15 +186,15 @@
 
 ---
 - #### components
-##### Vue对象中的 components 属性用于注册子组件
-```javascript
- new Vue({
-    components: {
-      'foo': foo
-    }
- });
+  ##### Vue对象中的 components 属性用于注册子组件
+  ```javascript
+   new Vue({
+      components: {
+        'foo': foo
+      }
+   });
 
-```
+  ```
 
 
 
@@ -286,14 +298,14 @@
   | | v-bind | v-model | v-on | 绑定class | 绑定style
   |-|-|-|-|-|-
   | 使用方式 | v-bind:valueName=" " | v-model="valueName" | v-on:functionName=" " | v-bind:class="objName/{}/[]" | v-bind:style="objName/{}/[]"
-  
-  
-  
-  
-  
-  
-  
-  
+
+
+
+
+
+
+
+
 ---
 - #### ref
   ##### 通过在模板中添加 ref 属性可以帮助 Vue 获取 DOM 对象。
@@ -303,13 +315,13 @@
   /* 通过 $refs 和节点名称来获取 DOM 对象，$refs 返回的是一个数组 */
   this.$refs['foo']  => DOM 对象
   ```
-   
-  
-  
-  
-  
-  
-  
+  
+
+
+
+
+
+
 ---
 - #### \<slot>
   ##### 通过在子组件的模板中设置<slot>标签，相当于打了一个锚点。可以通过在父组件的模板中使用子组件，实现子组件的复用。
