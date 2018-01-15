@@ -55,3 +55,6 @@
 - 常见错误
 #### MISMATCHED ANONYMOUS DEFINE() MODULES ...
 ##### 这个错误一般是和现有的其他资源冲突了，重复定义了 define 函数。解决方法是把 requir.js 作为最后一个资源引入。
+
+
+#### Require 不能识别路径中的某一段有两个及以上的大写字母？
