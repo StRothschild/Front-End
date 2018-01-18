@@ -338,7 +338,7 @@
   /* 子组件 */
   <article>
      <slot>这里可以添加默认内容<slot>
-  </article>
+  </article> 
   ```
 
 
