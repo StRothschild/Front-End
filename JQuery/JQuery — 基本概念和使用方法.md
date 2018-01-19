@@ -1,0 +1,13 @@
+## JQuery 的基本概念和使用方法
+
+- #### $.extend 方法
+  > jQuery.extend([deep ], target, object1 [, objectN ]);
+
+  ```javascript
+  /* 将 bar 与 {} 进行合并，并返回这个合并后的对象 */
+  let foo = $.extend({}, bar);            // foo !== bar
+
+  /* 第一个属性是可选值，用来设置是否进行深度拷贝，默认值为 false */
+  let foo = $.extend(true, [], bar);      // foo 数组中的对象  ！== bar 数组中的对象
+  let foo = $.extend([], bar);            // foo 数组中的对象  === bar 数组中的对象
+  ```
