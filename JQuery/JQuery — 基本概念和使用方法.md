@@ -11,3 +11,7 @@
   let foo = $.extend(true, [], bar);      // foo 数组中的对象  ！== bar 数组中的对象
   let foo = $.extend([], bar);            // foo 数组中的对象  === bar 数组中的对象
   ```
+
+
+  - #### jQuery DOM
+    > 通过 jQuery 获取的元素 DOM 和 通过原生 js 方法（getElementBy）获取的 DOM 是不同的
