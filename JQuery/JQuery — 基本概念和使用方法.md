@@ -15,3 +15,7 @@
 
 - #### jQuery DOM
   > 通过 jQuery 获取的元素 DOM 和 通过原生 js 方法（getElementBy）获取的 DOM 是不同的
+
+
+- #### ajax & post & get
+  > $.post 和 $.get 是 $.ajax 的简洁版
