@@ -18,4 +18,4 @@
 
 
 - #### ajax & post & get
-  > $.post 和 $.get 是 $.ajax 的简洁版
+  > $.post 和 $.get 是 $.ajax 的简洁版
