@@ -1,4 +1,4 @@
-.## JQuery 的基本概念和使用方法
+## JQuery 的基本概念和使用方法
 
 - #### $.extend 方法
   > jQuery.extend([deep ], target, object1 [, objectN ]);
