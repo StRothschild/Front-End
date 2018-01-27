@@ -1,4 +1,4 @@
-## JQuery 的基本概念和使用方法
+.## JQuery 的基本概念和使用方法
 
 - #### $.extend 方法
   > jQuery.extend([deep ], target, object1 [, objectN ]);
@@ -18,4 +18,4 @@
 
 
 - #### ajax & post & get
-  > $.post 和 $.get 是 $.ajax 的简洁版
+  > $.post 和 $.get 是 $.ajax 的简洁版，精简了一些设置，比如 timeout 只能在 $.ajax 方法中设置。
