@@ -18,4 +18,4 @@
 
 
 - #### ajax & post & get
-  > $.post 和 $.get 是 $.ajax 的简洁版，精简了一些设置，比如 timeout 只能在 $.ajax 方法中设置。
+  > $.post 和 $.get 是 $.ajax 的简洁版，精简了一些设置，比如 timeout 只能在 $.ajax 方法中设置。
