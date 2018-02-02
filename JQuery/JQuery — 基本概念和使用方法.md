@@ -21,8 +21,8 @@
   // JQuery对象 转化为 原生JS对象
   $("#foo")[index]
   $("#foo").get[index]
-
-  //  原生JS对象 转化为 JQuery对象
+  
+  // 原生JS对象 转化为 JQuery对象
   $(document.getElementById("foo"));
   ```
 
