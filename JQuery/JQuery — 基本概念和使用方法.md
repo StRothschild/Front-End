@@ -34,17 +34,17 @@
   ```javascript
   $.ajax(option)                                  // $.ajax 方法中传入一个对象
   $.get(url, [option], callbackFunction)         // $.get/$.post 方法中传入多个参数
-  
-  // 可选项
-  let option = {
+
+  // 可选项
+  let option = {
       url: '',
       data: '',
       timeout: ''
   };
-  
-  // 回调函数 
-  beforeSend     //在发送请求之前调用，并且传入一个 XMLHttpRequest 作为参数。
-  success        //当请求之后调用。传入返回后的数据，以及包含成功代码的字符串。
+
+  // 回调函数 
+  beforeSend     //在发送请求之前调用，并且传入一个 XMLHttpRequest 作为参数。
+  success        //当请求之后调用。传入返回后的数据，以及包含成功代码的字符串。
   error          //在请求出错时调用。传入 XMLHttpRequest 对象，描述错误类型的字符串以及一个异常对象（如果有的话）
-  complete       //当请求完成之后调用这个函数，无论成功或失败。传入 XMLHttpRequest 对象，以及一个包含成功或错误代码的字符串。
+  complete       //当请求完成之后调用这个函数，无论成功或失败。传入 XMLHttpRequest 对象，以及一个包含成功或错误代码的字符串。
   ```
