@@ -1,4 +1,6 @@
-## JQuery 的基本概念和使用方法
+## jQuery 的基本概念和使用方法
+
+> jQuery 中默认以美元符号 $ 来定义 jQuery 自身
 
 - #### $.extend 方法
   > jQuery.extend([deep ], target, object1 [, objectN ]);
