@@ -1,6 +1,6 @@
 ## jQuery 的基本概念和使用方法
 
-> jQuery 中默认以美元符号 $ 来定义 jQuery 自身
+> jQuery 中默认以美元符号 $ 来定义 jQuery 自身，这是一个全局的命名空间。
 
 - #### $.extend 方法
   > jQuery.extend([deep ], target, object1 [, objectN ]);
@@ -24,7 +24,7 @@
   $("#foo")[index]
   $("#foo").get[index]
 
-  // 原生JS对象 转化为 JQuery对象
+  // 原生JS对象 转化为 jQuery对象
   $(document.getElementById("foo"));
   ```
 
