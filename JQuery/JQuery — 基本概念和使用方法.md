@@ -19,14 +19,15 @@
 
 - #### jQuery DOM
   > 通过 jQuery 获取的元素 DOM 和 通过原生 js 方法（getElementBy）获取的 DOM 是不同的
-  ```javascript
-  // JQuery对象 转化为 原生JS对象
+  ```jQuery对象 转化为 原生JS对象
   $("#foo")[index]
   $("#foo").get[index]
 
   // 原生JS对象 转化为 jQuery对象
   $(document.getElementById("foo"));
   ```
+
+
 
 
 
