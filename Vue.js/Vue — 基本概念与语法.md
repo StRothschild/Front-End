@@ -82,9 +82,9 @@
   ##### Vue 提供了一种通用的方式来观察和响应 Vue 实例上的数据变动，观察属性 watch。
   ```javascript
   watch: {
-   foo: function (nv) {
-     this.bar = nv;
-   }
+      foo: function (nv) {
+          this.bar = nv;
+      }
   }
   ```
 
@@ -245,16 +245,14 @@
 ---
 - #### Vue 的挂载
   ```javascript
-     /* Vue 实例的挂载有两种方式：设置 el 属性和 $mount 手动挂载 */
-     new Vue({
-         el: '#hookElement'        // 在生成 Vue 实例的同时挂载元素
-     });
+    /* Vue 实例的挂载有两种方式：设置 el 属性和 $mount 手动挂载 */
+  new Vue({
+        el: '#hookElement'        // 在生成 Vue 实例的同时挂载元素
+  });
 
-    var foo = new Vue();           // 生成 Vue 实例
-    foo.$mount('#target');         // 手动挂载挂载元素
+   var foo = new Vue();           // 生成 Vue 实例
+   foo.$mount('#target');         // 手动挂载挂载元素
   ```
-
-
 
 
 
@@ -284,8 +282,8 @@
 
 ---
 - #### $once 和 $off
-  ##### 1. $once 与 $on 类似，用于监听自定义事件，但是 $once 只触发一次，在第一次触发之后自动移除监听器。可用于设置默认值。
-  ##### 2. $off 用于手动移除自定义事件的监听器。
+  ##### 1. $once 与 $on 类似，用于监听自定义事件，但是 $once 只触发一次，在第一次触发之后自动移除监听器。可用于设置默认值。
+  ##### 2. $off 用于手动移除自定义事件的监听器。
 
 
 
@@ -317,7 +315,7 @@
   /* 通过 $refs 和节点名称来获取 DOM 对象，$refs 返回的是一个数组 */
   this.$refs['foo']  => DOM 对象
   ```
-  
+
 
 
 
@@ -338,7 +336,7 @@
   /* 子组件 */
   <article>
      <slot>这里可以添加默认内容<slot>
-  </article> 
+  </article>
   ```
 
 
