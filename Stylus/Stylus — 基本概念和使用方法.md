@@ -5,7 +5,7 @@
   ```node
   $ npm install stylus -g
   ```
- 
+
 
 
 
@@ -22,8 +22,22 @@
 
 
 ---  
-- #### gulp-stylus
+- #### gulp-stylus 安装
   ##### gulp-stylus 是基于 gulp 的 stylus 插件。相对于 stylus, gulp-stylus 可以支持 ** 通配符。
+
+  ```
+  // 安装本地 gulp-stylus
+  npm install --save-dev gulp-stylus
+
+  // 安装本地 gulp
+  npm install --save-dev gulp
+  ```
+
+
+
+
+---  
+- #### gulp-stylus 命令
   ```node
   /* stylus 只支持 * 通配符  */
   $ stylus -w stylusFilePath/*.style -o cssFilePath/
