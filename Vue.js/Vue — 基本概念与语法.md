@@ -312,6 +312,7 @@
   ```javascript
   /* 通过 ref 属性来给当前节点设置一个名称 */
   <div ref="foo"></div>
+
   /* 通过 $refs 和节点名称来获取 DOM 对象，$refs 返回的是一个数组 */
   this.$refs['foo']  => DOM 对象
   ```
