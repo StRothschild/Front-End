@@ -132,11 +132,10 @@
   #### visibility: hidden 仍将占据文档流空间，当时元素上绑定的事件不会生效。
   #### opacity: 0 仍将占据文档流空间，并且元素上绑定的事件依然生效。 
   
-  | - | display | visibility | opacity
+  | - | display:none | visibility:hidden | opacity:0
   |---|---|---|---
-  占据空间 | 是 | 否 | 否
-  绑定事件生效 | 否 | 是 | 是
-  transition 生效 | 否 | 是 | 是   
+  占据空间 | 否 | 是 | 是  
+  绑定事件生效 | 否 | 否 | 是  
   
   
 
