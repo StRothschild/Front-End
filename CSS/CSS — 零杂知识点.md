@@ -127,6 +127,22 @@
 
 
 ---
+- #### dispaly 和 visibility 和 opacity 的区别
+  #### display: none 将元素完全从文档流中剔除。
+  #### visibility: hidden 仍将占据文档流空间，当时元素上绑定的事件不会生效。
+  #### opacity: 0 仍将占据文档流空间，并且元素上绑定的事件依然生效。 
+  
+| - | display | visibility | opacity
+|---|---|---|---
+占据空间 | 是 | 否 | 否
+绑定事件生效 | 否 | 是 | 是
+transition 生效 | 否 | 是 | 是   
+  
+  
+
+
+
+---
 - #### transparent / rgba 和 opacity 的区别
   ##### 1. transparent 是全黑色透明的速记法，可以认为 transparent == rgba(0, 0, 0, 0)。在 CSS3 中，transparent 被延伸到任何一个有 color 值的属性上，比如 background-color、border-color、color。
 
