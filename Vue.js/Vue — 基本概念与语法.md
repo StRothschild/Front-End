@@ -306,6 +306,58 @@
 
 
 
+
+
+---
+- #### Vue 的事件修饰符
+  ##### 在事件处理程序中调用 event.preventDefault() 或 event.stopPropagation() 是非常常见的需求。Vue 的方式是：方法只有纯粹的数据逻辑，而不是去处理 DOM 事件细节。
+
+  ```
+  // click 事件
+  <!-- 阻止默认事件 -->
+  <form v-on:submit.prevent></form>
+
+  <!-- 阻止单击事件继续传播并且执行 doThis -->
+  <a v-on:click.stop="doThis"></a>
+
+  <!-- 提交事件不再重载页面并且执行 onSubmit -->
+  <form v-on:submit.prevent="onSubmit"></form>
+
+  <!-- 修饰符可以串联并且执行 doThat -->
+  <a v-on:click.stop.prevent="doThat"></a>
+
+  <!-- 即元素自身触发的事件先在此处处理，然后才交由内部元素进行处理 -->
+  <div v-on:click.capture="doThis">...</div>
+
+  <!-- 只当在 event.target 是当前元素自身时触发处理函数 -->
+  <!-- 即事件不是从内部元素触发的 -->
+  <div v-on:click.self="doThat">...</div>
+  ```
+
+  #### 按键修饰符
+  ```
+  .enter
+  .tab
+  .delete (捕获“删除”和“退格”键)
+  .esc
+  .space
+  .up
+  .down
+  .left
+  .right
+
+  <!-- 只有在 `keyCode` 是 13 时调用 `vm.submit()` -->
+  <input v-on:keyup.13="submit">
+
+  <!-- 删除 或 退格”键时调用 `vm.submit()` -->
+  <input @keyup.delete="submit">
+  ```
+
+
+
+
+
+
 ---
 - #### ref
   ##### 通过在模板中添加 ref 属性可以帮助 Vue 获取 DOM 对象。
