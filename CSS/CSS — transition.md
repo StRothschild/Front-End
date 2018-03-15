@@ -1,6 +1,7 @@
 ## transition
 
-#### 不支持 display 属性
+---
+- #### 不支持 display 属性
 ##### transition 不支持 display 属性。所以在控制元素的 展示/隐藏 时不能用 display 作为 transition 的动画条件。
 
 ```css
