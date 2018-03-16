@@ -33,6 +33,10 @@
       "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "",
-    "license": "ISC"
+    "license": "ISC",
+    
+    // 依赖的其他模块
+    "dependencies": {
+    }
   }
   ```
