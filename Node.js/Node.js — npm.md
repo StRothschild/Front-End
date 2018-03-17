@@ -97,3 +97,29 @@
   /* 如果不在包路径下，则需要使用 npm link <packageName> 命令。如果在全局包目录下不存在同名包, 那么 npm 就会先在全局安装这个包。当全局包存在后，复制这个包到当前路径的 node_modules 目录（如果没有会自动创建）下，同时建立本地包到全局包的软链接 */
   $ npm link <packageName>
   ```
+
+
+
+
+
+
+
+
+---
+- #### npm init
+  ##### 用来初始化并生成一个新的 package.json 文件。如果使用了 -f（代表force）、-y（代表yes），则跳过提问阶段，直接生成一个新的 package.json 文件。
+  ```Node
+  /* npm init -y 产生的 package.json 结果如下 */
+  {
+    "name": "foldName",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+  }
+  ```
