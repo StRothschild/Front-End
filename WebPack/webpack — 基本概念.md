@@ -7,6 +7,9 @@
 #### webpack-dev-server
 ##### webpack 用于开发的本地服务器插件
 
+
+
 ```
- webpack-dev-server --open --host 0.0.0.0     // 启动 webpack-dev-server 并自动打开流浪器 并且指定 host 为 0.0.0.0（其他机器可以通过本机 IP 来访问，不然只能是 localhost 访问）
+// 启动 webpack-dev-server 并自动打开浏览器 并且指定 host 为 0.0.0.0（其他机器可以通过本机 IP 来访问，不然只能是 localhost 访问）
+ webpack-dev-server --open --host 0.0.0.0     
 ```
