@@ -130,7 +130,7 @@
 
 ---
 - #### Vue.filter
-  > 需要注意 filter 中的 this 是没有自动绑定 vue 上下文的。如果需要使用 vue 上下文，则不应该使用 filter，而应该用 methods 或 computed。
+  > 需要注意 filter 中的 this 是没有自动绑定 Vue 上下文的。如果需要使用 Vue 上下文，则不应该使用 filter，而应该用 methods 或 computed。
   ##### Vue2 已经移除了 Vue1 中的内置过滤器，例如 "uppercase"。
   ```javascript
     /* 调用 my-filter 的回调函数 */
@@ -142,6 +142,15 @@
     })
   ```
 
+  ```javascript
+    /* 通过 watch 来实现 filter */
+    v-model = "foo"
+    watch: {
+        foo: function (nv) {
+            this.bar = nv + 1;
+        }
+    }
+  ```
 
 
 
