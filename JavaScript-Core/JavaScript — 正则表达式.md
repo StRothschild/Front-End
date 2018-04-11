@@ -1,7 +1,9 @@
-## JavaScript 的正则表达式
+## JavaScript 的正则表达式(Regular Expression)
 #### JavaScript 生成正则对象
 ```
+// 语法
 以 '/' 开头，以 '/' 结尾
+/正则表达式主体/修饰符(可选)
 ```
 
 #### 检测是否存在英文字母
