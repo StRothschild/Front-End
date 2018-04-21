@@ -1,4 +1,6 @@
 ## Promise
+
+
 ```javascript
 /* 链式调用 */
 const promise = new Promise(function (resolve) {
