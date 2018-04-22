@@ -1,7 +1,11 @@
 ## JavaScript 中常见的异步函数
 
-- #### forEach 中的回调函数
-
+- #### Array 中的回调函数
+```javascript
+Array.prototype.forEach(
+  fucntion(){}
+);
+```
 
 
 
