@@ -1,7 +1,6 @@
 ## JavaScript 的正则表达式(Regular Expression)
 #### JavaScript 生成正则对象
 ```
-// 语法
 以 '/' 开头，以 '/' 结尾
 /正则表达式主体/修饰符(可选)
 ```
@@ -43,6 +42,6 @@ m 执行多行匹配
 #### 常用的字符串方法
 ##### search() 和 replace()
 ```JavaScript
-'bar'.search(/a/);         =>1
+'bar'.search(/a/);         => 1
 'foo'.replace(/f/, 't');   =>'too'
 ```
