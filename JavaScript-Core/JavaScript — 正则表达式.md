@@ -42,3 +42,7 @@ m 执行多行匹配
 ---
 #### 常用的字符串方法
 ##### search() 和 replace()
+```JavaScript
+'bar'.search(/a/);        =>1
+'foo'.search(/f/, 't');   =>'too'
+```
