@@ -2,6 +2,7 @@
 
 - #### Array 中的回调函数
 ```javascript
+/* forEach、 filter、 map、 every、 some  */
 Array.prototype.forEach(
   fucntion(){}
 );
