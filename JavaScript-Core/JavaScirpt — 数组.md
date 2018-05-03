@@ -11,15 +11,18 @@ new Array(10)
 
 
 
-
+---
 #### 类数组
 ##### 比较常见的类数组如下： arguments、dragEvent.DataTransfer.files、element.querySelectorAll 的返回值 都是类数组。
+
+##### 函数中的 arguments （变长实参列表）就是一个类数组，==类数组不是 Array，是 Object。它有数组的部分方法和属性，比如 length 属性，arguments 的 length 属性代表的就是传入的实参个数。==
 
 ##### 将类数组转化为数组后，就可以使用数组的方法。
 
 ```javascript
+/* 将类数组转化为数组 */
 Array.prototype.slice.call(arguments) 
 ```
 
 
-#### 函数中的 arguments （变长实参列表）就是一个类数组，==类数组不是 Array，是 Object。它有数组的部分方法和属性，比如 length，arguments 的 length 代表的就是传入的实参个数。==
+
