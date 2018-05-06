@@ -3,7 +3,7 @@
 
 ```Javascript
 /* 链式调用 */
-const promise = new Promise(function (resolve) {
+const promise = new Promise(function (resolve, reject) {
     // doSomething1
     resolve();
 });
