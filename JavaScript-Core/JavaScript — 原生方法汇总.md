@@ -2,7 +2,7 @@
 
 ## Array.prototype
 - ### 会改变原数组的方法
-1. #### array.push（*item.*..）
+1. #### array.push(*item.*..)
    ##### 原数组 ：末尾加入 *item*
    #####  返回 ：操作后的数组长度
 
@@ -10,7 +10,7 @@
    ##### 原数组 ：末尾 *item* 被移除
    #####  返回 ：被移除的*item* || undefined
 
-3. #### array.unshift（*item*...）
+3. #### array.unshift(*item*...)
    ##### 原数组 ：头部加入 *item*
    #####  返回 ：操作后的数组长度
 
@@ -18,7 +18,7 @@
    ##### 原数组 ：头部 *item* 被移除
    #####  返回 ：被移除的 item || undefined
 
-5. #### array.reverse（）
+5. #### array.reverse()
    ##### 原数组 : 元素排序反转
    ##### 返回 ： 将原数组反转后返回原数组
 
@@ -60,7 +60,7 @@
 
 ---
 - ### 不改变原数组的方法
-1. #### ==array.join（*separator*）==
+1. #### array.join（*separator*）
    ##### 把原数组中的每一项item用给定的连接符 separator 拼成一个字符串。
    ##### 原数组 : 不变
    ##### 返回 ：产生的新字符串
