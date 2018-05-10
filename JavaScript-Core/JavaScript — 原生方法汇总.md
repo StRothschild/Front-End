@@ -48,7 +48,7 @@
    ```
 
 
-7. #### ==array.splice（*start, deleteCount, [item...]*）==
+7. #### array.splice(*start, deleteCount, [item...]*)
    ##### 从原数组中的 ==*start*== 位置开始，删除 *deleteCount* 个元素, 然后替换上若干个 *item...* 元素。==如果 *item...* 为 undefined， 则功能类似于删除==。
    ##### 原数组 :  被替换元素
    ##### 返回 ：从原数组中被删除的那段元素。
