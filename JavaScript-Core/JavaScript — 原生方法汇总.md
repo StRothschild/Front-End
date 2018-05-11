@@ -73,7 +73,7 @@
 
 
 
-2. #### ==array.concat（*item...*）==
+2. #### array.concat(*item...*)
    ##### 通过原数组的==浅复制==产生一个新数组，在新的数组里加入item。
    ##### 原数组 : 不变，但由于是==浅复制，所以元数组内的对象元素可能被新数组 的操作改变==。
    ##### 返回 ：产生的新数组
@@ -81,7 +81,7 @@
 
 
 
-3. #### ==array.slice（*[start]*, *[end]*）==
+3. #### array.slice(*[start]*, *[end]*)
    ##### 对array指定段 ==[*start*, end)== 的元素，进行==浅复制==。
    ##### 原数组 : 不变，但由于是==浅复制，所以元数组内的对象元素可能被新数组 的操作改变==。
    ##### 返回 ：从缘数组浅复制的新数组
@@ -96,8 +96,8 @@
 
 ---
 ## String（可视为==只读数组，== 数组中不改变自身的方法在字符串中都有）
-1. #### ==string.split（*separator*, *[limit]*）==
-   ##### ==与 Array 的 join 方法相反==，把字符串通过 *separator* 分隔成数组并返回。*separator* 可以是字符串，也可以是正则表达式。
+1. #### string.split (*separator*, *[limit]*)
+   ##### 与 Array 的 join 方法相反，把字符串通过 *separator* 分隔成数组并返回。*separator* 可以是字符串，也可以是正则表达式。
    ##### *[limit]* 是可选的。它==控制了返回数组的长度。==
 
    ```
@@ -108,50 +108,50 @@
    ```
 
 
-2. #### ==string.concat（*str...*）==
+2. #### string.concat (*str...*)
    ##### 和 Array 的 concat 方法相似，把若干个字符串组合在一起返回一个新的字符串，可以用 “+” 代替，不常用。
 
 
 
-3. #### ==string.slice（*[start]*, *[end]*）==
+3. #### string.slice (*[start]*, *[end]*)
    ##### 与 Array 的 slice 方法类似。==用于获取 [*start*, *end*) 中间的字符串==。*start* 默认为0， *end* 默认为 string.length。==具体可以参考 Array.slice()。==
 
 
 
 
 
-4. #### ==string.substring（*start*, *[end]*）==
+4. #### string.substring(*start*, *[end]*)
    ##### 与 slice 方法一样，但是 substring 方法不能处理负数。==不建议使用。用 slice 方法替代。==
 
 
-5. #### ==string.substr（*start*, *[length]*）==
+5. #### string.substr (*start*, *[length]*)
    ##### 非EcmaScript标准化方法。==不建议使用。用 slice 方法替代。==
 
 
-6. #### ==string.indexOf（*str*, *[pos]*）==
+6. #### string.indexOf (*str*, *[pos]*)
    ##### 获取 *str* 字符串在 string 中==第一次出现的位置==。 如果有 *pos* 则指定开始查找的位置。如果没有找到则返回 -1。
 
 
-7. #### ==string.lastIndexOf（*str*, *[pos]*）==
+7. #### string.lastIndexOf (*str*, *[pos]*)
    ##### 等同于 indexOf ,不过 lastIndexOf 是从末尾开始找。
 
 
-8. #### ==string.search（*regexp*）==
+8. #### string.search (*regexp*)
    ##### 与 indexOf 方法类似，但它是通过 reg 正则表达式进行查找， 并且只返回第一个匹配的位置。
 
 
-9. #### ==string.match（*regexp*）==
+9. #### string.match (*regexp*)
    ##### 通过 reg 正则表达式进行匹配并返回。结果与 regexp.exec(*string*) 一样。
 
 
-10. #### ==string.replace（*searchValue*, *replaceValue*）==
+10. #### string.replace（*searchValue*, *replaceValue*)
     ##### 查找并替换字符串，并返回一个新的字符串。
     ##### *searchValue* 可以是字符串，也可以是正则表达式。
     ##### *replaceValue* 可以是字符串，也可以是函数。如果是函数，每一次匹配，都会调用一次。
 
 
 
-11. #### ==string.charAt（*pos*）==
+11. #### string.charAt(*pos*)
     ##### 获取 *pos* 位置的字符。
 
 12. #### ==string.charCodeAt（*pos*）==
@@ -177,17 +177,17 @@
 
 ---
 ## Function
-1. #### ==function.apply（*[thisArg]*, *[argArray]*）==
-   ##### 指定 ==在 *thisArg* 的上下文环境中执行 function。==
+1. #### function.apply (*[thisArg]*, *[argArray]*)
+   ##### 指定 ==在 *thisArg* 的上下文环境中执行 function。
    ##### 如果 *argArray* 不是数组或者 arguments 对象，那么将导致 TypeError。
    ##### 如果没有提供 thisArg 参数，那么 Global(浏览器中就是window) 对象会被用作thisArg。
 
 
-2. #### ==function.call（*[thisArg]*, *[arg1,arg2...]*）==
+2. #### function.call (*[thisArg]*, *[arg1,arg2...]*)
    ##### function.call 的功能和 function.apply 一样。但传入参数的方式不一样。 前者是参数序列 ，后者将参数合入一个 array 中。
 
 
-3. #### ==function.bind（*thisArg*, *[ arg1, arg2...]*）== 
+3. #### function.bind (*thisArg*, *[ arg1, arg2...]*)
    ##### EcmaScript5中的扩展方法。==IE6,7,8不支持。==
 
    ##### ==功能和 apply 、call 类似，参数和 call 一样==
