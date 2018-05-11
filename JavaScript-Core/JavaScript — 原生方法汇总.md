@@ -56,8 +56,6 @@
 
 
 
-
-
 ---
 - ### 不改变原数组的方法
 1. #### array.join(*separator*)
@@ -95,7 +93,7 @@
 
 
 ---
-## String（可视为==只读数组，== 数组中不改变自身的方法在字符串中都有）
+## String（可视为==只读数组，数组中不改变自身的方法在字符串中都有）
 1. #### string.split (*separator*, *[limit]*)
    ##### 与 Array 的 join 方法相反，把字符串通过 *separator* 分隔成数组并返回。*separator* 可以是字符串，也可以是正则表达式。
    ##### *[limit]* 是可选的。它==控制了返回数组的长度。==
@@ -190,7 +188,7 @@
 3. #### function.bind(*thisArg*, *[ arg1, arg2...]*)
    ##### EcmaScript5中的扩展方法。==IE6,7,8不支持。
 
-   ##### 功能和 apply 、call 类似，参数和 call 一样
+   ##### 功能和 apply、 call 类似，参数和 call 一样
 
    ##### apply 和 call 是立即执行，而bind 则是返回一个新的函数。
 
@@ -214,7 +212,7 @@
 
 ```
 ```
-## toString、toLocaleString、valueOf 的区别
+## toString、toLocaleString、 valueOf 的区别
 
 - ### toString
 - ### toLocaleString
