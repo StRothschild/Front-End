@@ -80,7 +80,8 @@
 ---
 - #### watch
   ##### Vue 提供了一种通用的方式来观察和响应 Vue 实例上的数据变动，观察属性 watch。
-  ```javascript
+  ##### 注意, watch 的数据需要有初始值，不能为 undefined。
+  ```javascript
   watch: {
       foo: function (nv) {
           this.bar = nv;
