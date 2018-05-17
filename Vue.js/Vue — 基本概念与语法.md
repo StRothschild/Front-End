@@ -54,11 +54,11 @@
 ---
 - #### Vue 的绑定名称中不能出现大写
   ```javascript
-   /* 绑定名称为 bind-bar */
-   <foo :bind-bar="obj"></foo>
+  /* 绑定名称为 bind-bar */
+  <foo :bind-bar="obj"></foo>
 
-   /* 报错 */
-  <foo :bindBar="obj"></foo>
+  /* 报错 */
+  <foo :bindBar="obj"></foo>
   ```
 
 
