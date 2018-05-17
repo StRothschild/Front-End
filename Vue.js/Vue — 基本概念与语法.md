@@ -51,6 +51,15 @@
 
 
 
+---
+- #### Vue 的绑定名称中不能出现大写
+  ```javascript
+   /* 绑定名称为 bind-bar */
+   <foo :bind-bar="obj"></foo>
+
+   /* 报错 */
+  <foo :bindBar="obj"></foo>
+  ```
 
 
 
@@ -80,11 +89,12 @@
 ---
 - #### watch
   ##### Vue 提供了一种通用的方式来观察和响应 Vue 实例上的数据变动，观察属性 watch。
+  ##### 注意, watch 的数据需要有初始值，不能为 undefined。
   ```javascript
   watch: {
-      foo: function (nv) {
-          this.bar = nv;
-      }
+    foo: function (nv) {
+        this.bar = nv;
+    }
   }
   ```
 
@@ -199,12 +209,15 @@
 - #### components
   ##### Vue对象中的 components 属性用于注册子组件
   ```javascript
-   new Vue({
+  // 将 foo 注册成 foo-component 组件
+  // 此处注意虽然 HTML 大小写不敏感（小写是规范的），但此处组件的命名是区分大小写的
+  new Vue ({
       components: {
-        'foo': foo
+          'foo-component': foo
       }
-   });
-
+  });
+  // 在 html 中使用 foo-component 组件
+  <foo-component></foo-component>
   ```
 
 
