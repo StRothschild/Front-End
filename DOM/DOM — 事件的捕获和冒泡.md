@@ -207,6 +207,38 @@ event.preventDefault();
 - #### ==如果用 jQuery 绑定事件的话，回调函数返回 false 的话既能阻止默认行为又可以停止冒泡。==
 
 
+
+
+
+
+
+
+
+
+
+
+## 9. 获取事件冒泡路径上所有元素的方法
+  ```javascript
+  ancestorElement.addEventListener('click', function(event){
+    // 获取源元素
+    let target = event.target;
+    // 打印元素
+    console.log(target);
+
+    // 判断是到达本当前元素
+    while (target != event.currentTarget) {
+        // 如果未到达当前元素，则通过获取下一个元素
+        target = target.parentElement;
+        // 打印元素
+        console.log(target);
+    }
+  });
+  ```
+
+
+
+
+
 ```
 ```
 ## 参考
