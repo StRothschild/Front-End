@@ -319,7 +319,7 @@
 
   | | v-bind | v-model | v-on | 绑定class | 绑定style
   |-|-|-|-|-|-
-  | 使用方式 | v-bind:valueName=" " | v-model="valueName" | v-on:functionName=" " | v-bind:class="objName/{}/[]" | v-bind:style="objName/{}/[]"
+  | 使用方式 | v-bind:propertyName="" | v-model="valueName" | v-on:functionName="" | v-bind:class="objName/{}/[]" | v-bind:style="objName/{}/[]"
 
 
 
