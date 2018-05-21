@@ -96,7 +96,7 @@
 ## String（可视为只读数组，数组中不改变自身的方法在字符串中都有）
 1. #### string.split (*separator*, *[limit]*)
    ##### 与 Array 的 join 方法相反，把字符串通过 *separator* 分隔成数组并返回。*separator* 可以是字符串，也可以是正则表达式。
-   ##### *[limit]* 是可选的。它==控制了返回数组的长度。==
+   ##### *[limit]* 是可选的。它控制了返回数组的长度。
 
    ```
    // 注意 string.split() 与 string.split("") 的区别
@@ -123,11 +123,11 @@
 
 
 5. #### string.substr(*start*, *[length]*)
-   ##### 非EcmaScript标准化方法。==不建议使用。用 slice 方法替代。==
+   ##### 非EcmaScript标准化方法。不建议使用。用 slice 方法替代。
 
 
 6. #### string.indexOf(*str*, *[pos]*)
-   ##### 获取 *str* 字符串在 string 中==第一次出现的位置==。 如果有 *pos* 则指定开始查找的位置。如果没有找到则返回 -1。
+   ##### 获取 *str* 字符串在 string 中第一次出现的位置。 如果有 *pos* 则指定开始查找的位置。如果没有找到则返回 -1。
 
 
 7. #### string.lastIndexOf(*str*, *[pos]*)
