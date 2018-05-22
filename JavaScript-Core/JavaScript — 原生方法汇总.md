@@ -119,7 +119,7 @@
 
 
 4. #### string.substring(*start*, *[end]*)
-   ##### 与 slice 方法一样，但是 substring 方法不能处理负数。==不建议使用。用 slice 方法替代。==
+   ##### 与 slice 方法一样，但是 substring 方法不能处理负数。不建议使用。用 slice 方法替代。
 
 
 5. #### string.substr(*start*, *[length]*)
