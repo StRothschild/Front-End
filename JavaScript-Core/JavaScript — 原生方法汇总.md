@@ -112,7 +112,7 @@
 
 
 3. #### string.slice(*[start]*, *[end]*)
-   ##### 与 Array 的 slice 方法类似。==用于获取 [*start*, *end*) 中间的字符串==。*start* 默认为0， *end* 默认为 string.length。==具体可以参考 Array.slice()。==
+   ##### 与 Array 的 slice 方法类似。用于获取 [*start*, *end*) 中间的字符串。*start* 默认为0， *end* 默认为 string.length。具体可以参考 Array.slice()。
 
 
 
