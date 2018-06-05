@@ -3,4 +3,10 @@
 ##### 浏览器一般把 localStorage 存储在 UserData 中，比如 chrome 的存储地址是 "C:\Users\YourComputerName\AppData\Local\Google\Chrome\User Data\Default\Local Storage"。
 
 
-loaclStorage 的存储格式是字符串。
+localStorage 的存储格式是字符串。
+
+```javascript
+window.localStorage.setItem('foo', '');    // 设置
+window.localStorage.getItem('foo');        // 获取
+window.localStorage.removeItem('foo');     // 移除
+```
