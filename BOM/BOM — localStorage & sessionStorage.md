@@ -5,8 +5,8 @@
 
 - ##### localStorage 的存储格式是字符串
 
-```javascript
-window.localStorage.setItem('foo', '');    // 设置
-window.localStorage.getItem('foo');        // 获取
-window.localStorage.removeItem('foo');     // 移除
-```
+  ```javascript
+  window.localStorage.setItem('foo', '');    // 设置
+  window.localStorage.getItem('foo');        // 获取
+  window.localStorage.removeItem('foo');     // 移除
+  ```
