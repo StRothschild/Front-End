@@ -5,6 +5,8 @@
 
 - ##### localStorage 的存储格式是字符串
 
+- ##### localStorage 不会被发送到服务器端
+
   ```javascript
   window.localStorage.setItem('foo', '');    // 设置
   window.localStorage.getItem('foo');        // 获取
