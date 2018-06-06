@@ -7,6 +7,8 @@
 
 - ##### localStorage 不会被发送到服务器端
 
+- ##### 在绝大部分浏览器中 localStorage 的空间是 4.98M
+ 
   ```javascript
   window.localStorage.setItem('foo', '');    // 设置
   window.localStorage.getItem('foo');        // 获取
