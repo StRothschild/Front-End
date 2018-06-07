@@ -14,3 +14,8 @@
   window.localStorage.getItem('foo');        // 获取
   window.localStorage.removeItem('foo');     // 移除
   ```
+
+
+---
+## sessionStorage
+- ##### sessionStorage 作为客户端的持久化方案，一般由浏览器实现，并挂载在 Window 对象下。
