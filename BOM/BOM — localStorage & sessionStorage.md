@@ -25,3 +25,12 @@
 - ##### 在新标签或窗口打开一个页面会初始化一个新的 session, 这一点和 session cookie 是不同的。
 
 - ##### 页面 session 在浏览器打开期间一直保持，并且重新加载或恢复页面仍会保持原来的页面 session。
+
+
+
+
+
+---
+ | localStorage | sessionStorage 
+---|---|---
+有效期 | 永久 | tab 生命周期
