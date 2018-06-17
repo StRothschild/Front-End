@@ -31,6 +31,6 @@
 
 
 ---
- | localStorage | sessionStorage 
+| - | localStorage | sessionStorage 
 ---|---|---
 有效期 | 永久 | tab 生命周期
