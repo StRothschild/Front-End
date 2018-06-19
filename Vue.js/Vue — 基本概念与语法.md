@@ -49,6 +49,18 @@
 
 
 
+---
+- #### Vue 的组件名称和绑定中不能出现大写
+  ```javascript
+  /* 注意，html自动把大写 T 转换成小写 t */
+  <non-realTime ></non-realTime>
+
+  /* 虽然定义了 non-realTime 组件，但是由于 html 会自动把大写字母自动转换为小写，所以此处组件会解析失败 */
+  Vue.component('non-realTime', nonRealTime);
+  ```
+
+
+
 
 
 ---
