@@ -34,3 +34,8 @@ module.exports = {
     },
 };
 ```
+
+
+---
+#### webpack + babel
+##### webpack 可以通过使用 babel 来将 ES6 的代码转化成 ES5。
