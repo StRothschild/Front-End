@@ -31,6 +31,8 @@
 
 
 ---
-| - | localStorage | sessionStorage 
----|---|---
-有效期 | 永久 | tab 生命周期
+| - | localStorage | sessionStorage | cookie
+---|---|---|---
+有效期 | 永久 | tab 生命周期 | 
+存储位置 | 本地硬盘 | 本地硬盘 | 
+发送到服务器端 | 否 | 否 | 是 
