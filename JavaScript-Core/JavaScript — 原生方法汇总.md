@@ -34,7 +34,7 @@
    ```
    /*以下比较函数可以给一组数字升序排序*/
    array.sort(function(a, b){
-      return a-b; 
+      return a-b;
    });
 
    /*如果同时有字符串和数字，则需要分4种情况处理:
@@ -42,14 +42,14 @@
 
    /*拓展一个 string.localeCompare(str) 方法， 用本地排序规则比较 string 和 str：
      如果 string 小于 str，则返回负数；
-     如果 string 大于 str，则返回正数; 
+     如果 string 大于 str，则返回正数;
      如果相等则返回 0.
    */
    ```
 
 
 7. #### array.splice(*start, deleteCount, [item...]*)
-   ##### 从原数组中的 *start* 位置开始，删除 *deleteCount* 个元素, 然后替换上若干个 *item...* 元素。如果 *item...* 为 undefined， 则功能类似于删除。
+   ##### 从原数组中的 *start* 位置开始，删除 *deleteCount* 个元素, 然后替换上若干个 *item...* 元素。如果 *item...* 为 undefined， 则功能类似于删除。注意，此方法在 String 中不存在。
    ##### 原数组 :  被替换元素
    ##### 返回 ：从原数组中被删除的那段元素。
 
@@ -85,7 +85,7 @@
    ##### 返回 ：从缘数组浅复制的新数组
    ##### 注意 ：
    ##### 1. *start* 默认为0，*end* 默认为array.length。
-   ##### 2. 如果 *start* 或 *end* 中任意一个为负数, 则会通过和 array.length 相加的方式来试图把它变回正数。 
+   ##### 2. 如果 *start* 或 *end* 中任意一个为负数, 则会通过和 array.length 相加的方式来试图把它变回正数。
    ##### 3. 如果 *start* 大于 array.length 或者大于 *end* 都会返回一个新的空数组。
 
 

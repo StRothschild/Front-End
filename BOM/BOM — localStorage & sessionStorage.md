@@ -10,7 +10,7 @@
 - ##### localStorage 不会被发送到服务器端
 
 - ##### 在绝大部分浏览器中 localStorage 的空间是 4.98M
- 
+
   ```javascript
   window.localStorage.setItem('foo', '');    // 设置
   window.localStorage.getItem('foo');        // 获取
@@ -33,7 +33,8 @@
 ---
 | - | localStorage | sessionStorage | cookie
 ---|---|---|---
-有效期 | 永久 | tab 生命周期 | 
-存储位置 | 本地硬盘 | 本地硬盘 | 
-发送到服务器端 | 否 | 否 | 是 
-存储形式 | 字符串 | 字符串 | 
+有效期 | 永久 | tab 生命周期 | expires / 浏览器生命周期
+存储位置 | 本地硬盘 | 本地硬盘 | 有 expires 的 cookie 存在本地硬盘中
+发送到服务器端 | 否 | 否 | 是
+存储形式 | 字符串 | 字符串 | 字符串("key=value;")
+挂载对象 | window.sessionStorage | window.sessionStorage | document.cookie
