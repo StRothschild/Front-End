@@ -55,7 +55,7 @@ element.removeEventListener("click", handlerFn, true);
 - #### 由于 IE8 及以下版本的浏览器不支持 DOM2 级事件流中的事件捕获，所以==在 IE8 及以下版本的浏览器的事件监听都是针对冒泡阶段的。==
 
 - #### IE8 及以下版本的浏览器的事件冒泡监听方法
-    ##### 在 IE8 及以下版本的浏览器中==分别定义了 attachEvent() 和 detachEvent() 方法来挂载和移除事件。==
+  ##### 在 IE8 及以下版本的浏览器中==分别定义了 attachEvent() 和 detachEvent() 方法来挂载和移除事件。==
 ```
 /* IE8 及以下版本的浏览器是用 attachEvent 绑定冒泡事件的。特别要注意，若同一个事件中绑定了多个
 函数，那么这些函数的触发顺序是和绑定顺序相反的。所以，本例中的函数 “callbackFn” 会先执行，然后才是
@@ -110,7 +110,6 @@ function addEvent(type, element, fun) {
 
 
 - #### 所有浏览器的事件冒泡监听方法
-
 ```
 /* 以下方法兼容所有浏览器，但是它只能捕捉冒泡事件而且每个元素只能绑定一个事件，后面的同元素事件会覆盖前面的事件 */
 element.'on' + type = function() {
@@ -198,6 +197,8 @@ event.preventDefault();
 
 
 
+
+
 ```
 ```
 ## 8. return false
@@ -205,9 +206,6 @@ event.preventDefault();
 - #### 原生 JavaScript 中的 return false 只会阻止默认行为，不会停止冒泡。
 
 - #### 如果用 jQuery 绑定事件的话，回调函数返回 false 的话既能阻止默认行为又可以停止冒泡。
-
-
-
 
 
 
