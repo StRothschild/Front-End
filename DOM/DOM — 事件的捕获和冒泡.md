@@ -202,11 +202,9 @@ event.preventDefault();
 ```
 ## 8. return false
 
-- #### 原生 JavaScript 中的 return false ==只会阻止默认行为，不会停止冒泡。==
+- #### 原生 JavaScript 中的 return false 只会阻止默认行为，不会停止冒泡。
 
-- #### ==如果用 jQuery 绑定事件的话，回调函数返回 false 的话既能阻止默认行为又可以停止冒泡。==
-
-
+- #### 如果用 jQuery 绑定事件的话，回调函数返回 false 的话既能阻止默认行为又可以停止冒泡。
 
 
 
@@ -217,6 +215,9 @@ event.preventDefault();
 
 
 
+
+```
+```
 ## 9. 获取事件冒泡路径上所有元素的方法
   ```javascript
   ancestorElement.addEventListener('click', function(event){
