@@ -48,9 +48,37 @@
   ```
   D:\Backup\nodeTest> node foo.js                   // 在命令行中执行 foo.js
   D:\Backup\nodeTest> node --use_strict foo.js      // 在命令行中以严格模式执行 foo.js
+  <!-- 命令行模式只会执行代码，不会返回结果。如果要输出，需要用 console.log() -->
 
 
   D:\Backup\nodeTest> node     // 在命令行中执行 node, 进入node交互模式
   > x = 'Hello' + 'World';     // 在node交互模式中直接输入 JavaScript 代码并执行
-  > 'HelloWorld'               // node交互模式会直接返回执行结果
+  > 'HelloWorld'               // 注意，node交互模式会直接返回执行结果
+  ```
+
+
+
+
+
+
+
+---
+- #### 模块系统
+  ##### 在 Node.js 模块系统中，每个文件都被视为一个独立的模块。
+  ##### 每模块（文件）都会自动创建一个 module 对象，module 对象会创建一个 exports 属性，初始值是 {}。
+  ##### 模块通过 module.experts 对象输出。
+  ##### 模块通过 require 方法用于输入。
+
+  ```
+  /* helloWorld.js */
+  'use strict'
+  module.exports.foo = () => console.log('Hello World!');   // 给 experts 对象的 foo 属性赋值
+  module.exports.bar = 'bar';                               // 给 experts 对象的 bar 属性赋值
+
+
+  /* main.js */
+  'use strict'
+  let helloWorld = require('./helloWorld.js');       // 通过 require 获取 experts 对象，并赋值给 helloWorld
+  helloWorld.foo();                                  // 执行 helloWorld(experts) 对象中的 foo 方法
+  console.log(helloWorld.bar);                       // 打印 helloWorld(experts) 对象中的 bar 属性
   ```

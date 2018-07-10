@@ -79,7 +79,8 @@
 - #### npm 包的存放路径
   ##### npm 包的安装分为本地安装（local）和 全局安装（global）。
   ##### 本地安装的 npm 包，会被下载至在当前命令行所在路径下的 node_module 目录中。
-  ##### 全局安装的 npm 包，会被下载至 prefix 属性设置的路径下。此属性值可以通过  npm config ls 查看。
+  ##### 全局安装的 npm 包，会被下载至 prefix 属性设置的路径下。此属性值可以通过 npm config ls 查看。
+  ##### 本地安装的 npm 包可以在代码中通过 require 调用。全局安装的 npm 包可以在命令行中直接调用。
   ```
   /* 全局 npm 包在 Windows 中的默认下载路径 */
   prefix = "C:\Users\<userName>\AppData\Roaming\npm"
