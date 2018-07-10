@@ -1,36 +1,36 @@
 # 事件的捕获和冒泡
 
 ## 1. 事件的两种模型
-- #### DOM2级事件流包括三个阶段：==事件捕获阶段、处于目标阶段和事件冒泡阶段。==
+- #### DOM2级事件流包括三个阶段：事件捕获阶段、处于目标阶段和事件冒泡阶段。
 
-- #### 根据事件流的不同阶段，对于事件的监听有两种不同的类型：==事件捕获（event capture）和事件冒泡（event bubbling）。==
+- #### 根据事件流的不同阶段，对于事件的监听有两种不同的类型：事件捕获（event capture）和事件冒泡（event bubbling）。
 
 
-- #### ==捕获事件先于冒泡事件，== 如下图所示：
+- #### 捕获事件先于冒泡事件，如下图所示：
 ![事件模型图](https://github.com/StRothschild/DOM/blob/master/resource/DOM%20%E2%80%94%20%E4%BA%8B%E4%BB%B6%E6%A8%A1%E5%9E%8B%E5%9B%BE.jpg?raw=true)
 
 
-- #### ==IE8 及以下版本的浏览器只支持冒泡模型，而 W3C 标准浏览器（IE9 及以上）同时支持捕获和冒泡，为了兼容 IE8 一般统一在事件冒泡阶段绑定监听。==
+- #### IE8 及以下版本的浏览器只支持冒泡模型，而 W3C 标准浏览器（IE9 及以上）同时支持捕获和冒泡，为了兼容 IE8 一般统一在事件冒泡阶段绑定监听。
 
-- #### ==IE8 及以下版本的浏览器无法在回调函数中传入 event 对象，只能直接获取 window.event。== FireFox 只支持回调函数参数传入 event 对象。其他 W3C 标准浏览器两种方式都支持。
+- #### IE8 及以下版本的浏览器无法在回调函数中传入 event 对象，只能直接获取 window.event。FireFox 只支持回调函数参数传入 event 对象。其他 W3C 标准浏览器两种方式都支持。
 
 
-- #### DOM0 级的事件，==只会在冒泡阶段被执行。==
+- #### DOM0 级的事件，只会在冒泡阶段被执行。
 
-- #### DOM0 级的事件处理是==给一个事件的处理程序属性赋予一个处理函数==，比如 element.onclick；或 onclick="alert();"。
+- #### DOM0 级的事件处理是给一个事件的处理程序属性赋予一个处理函数，比如 element.onclick；或 onclick="alert();"。
 
-- #### DOM0 级函数（<div onclick="myClick(event)"）的作用域是==全局作用域（window）==。而 DOM2 级事件（attachEvent、removeEventListener、element.onclick）中的处理函数则处于==事件绑定的元素。==
+- #### DOM0 级函数（<div onclick="myClick(event)"）的作用域是全局作用域（window）。而 DOM2 级事件（attachEvent、removeEventListener、element.onclick）中的处理函数则处于==事件绑定的元素。
 
-- #### 在 DOM2 级事件处理时，既可以添加事件，还可以移除事件。==还允许给元素添加多个事件回调函数。==
+- #### 在 DOM2 级事件处理时，既可以添加事件，还可以移除事件。还允许给元素添加多个事件回调函数。
 
-- #### ==DOM2 级事件处理完全解耦了表现和逻辑。==
+- #### DOM2 级事件处理完全解耦了表现和逻辑。
 
 
 ```
 ```
 ## 2. 捕获
 
-#### 由于 IE8 及以下版本的浏览器不支持事件捕获，所以要绑定事件捕获阶段的事件，必须使用 W3C 标准的浏览器和接口 addEventListener() 和 removeEventListener()。由于这两个接口==默认都是在冒泡阶段执行，所以需要把接口的第三个参数显式的设置为 true，才能在事件捕获阶段上绑定。==
+#### 由于 IE8 及以下版本的浏览器不支持事件捕获，所以要绑定事件捕获阶段的事件，必须使用 W3C 标准的浏览器和接口 addEventListener() 和 removeEventListener()。由于这两个接口==默认都是在冒泡阶段执行，所以需要把接口的第三个参数显式的设置为 true，才能在事件捕获阶段上绑定。
 
 ```
 /* 第三个参数代表了是否在事件的捕获阶段执行回调函数，默认为 false（冒泡），需要手动设置为 true */
@@ -55,7 +55,7 @@ element.removeEventListener("click", handlerFn, true);
 - #### 由于 IE8 及以下版本的浏览器不支持 DOM2 级事件流中的事件捕获，所以==在 IE8 及以下版本的浏览器的事件监听都是针对冒泡阶段的。==
 
 - #### IE8 及以下版本的浏览器的事件冒泡监听方法
-    ##### 在 IE8 及以下版本的浏览器中==分别定义了 attachEvent() 和 detachEvent() 方法来挂载和移除事件。==
+  ##### 在 IE8 及以下版本的浏览器中==分别定义了 attachEvent() 和 detachEvent() 方法来挂载和移除事件。==
 ```
 /* IE8 及以下版本的浏览器是用 attachEvent 绑定冒泡事件的。特别要注意，若同一个事件中绑定了多个
 函数，那么这些函数的触发顺序是和绑定顺序相反的。所以，本例中的函数 “callbackFn” 会先执行，然后才是
@@ -110,7 +110,6 @@ function addEvent(type, element, fun) {
 
 
 - #### 所有浏览器的事件冒泡监听方法
-
 ```
 /* 以下方法兼容所有浏览器，但是它只能捕捉冒泡事件而且每个元素只能绑定一个事件，后面的同元素事件会覆盖前面的事件 */
 element.'on' + type = function() {
@@ -198,15 +197,15 @@ event.preventDefault();
 
 
 
+
+
 ```
 ```
 ## 8. return false
 
-- #### 原生 JavaScript 中的 return false ==只会阻止默认行为，不会停止冒泡。==
+- #### 原生 JavaScript 中的 return false 只会阻止默认行为，不会停止冒泡。
 
-- #### ==如果用 jQuery 绑定事件的话，回调函数返回 false 的话既能阻止默认行为又可以停止冒泡。==
-
-
+- #### 如果用 jQuery 绑定事件的话，回调函数返回 false 的话既能阻止默认行为又可以停止冒泡。
 
 
 
@@ -215,8 +214,8 @@ event.preventDefault();
 
 
 
-
-
+```
+```
 ## 9. 获取事件冒泡路径上所有元素的方法
   ```javascript
   ancestorElement.addEventListener('click', function(event){

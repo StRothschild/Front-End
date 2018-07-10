@@ -34,7 +34,7 @@
 | - | localStorage | sessionStorage | cookie
 ---|---|---|---
 有效期 | 永久 | tab 生命周期 | expires / 浏览器生命周期
-存储位置 | 本地硬盘 | 本地硬盘 | 有 expires 的 cookie 存在本地硬盘中
+存储位置 | 本地硬盘 | 本地硬盘 | 有 expires 的 cookie 存在本地硬盘中，没有的只存储在内存中
 发送到服务器端 | 否 | 否 | 是
 存储形式 | 字符串 | 字符串 | 字符串("key=value;")
 挂载对象 | window.sessionStorage | window.sessionStorage | document.cookie
