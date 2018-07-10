@@ -18,8 +18,7 @@
 
 ---
 - #### package.json 文件
-  ##### 每个 Node 项目的根路径下都有一个 package.json 文件，用于定义项目的元数据（比如名称、版本、许可证等），以及所依赖的各种模块。
-
+  ##### 每个 Node 项目的根路径下都有一个 package.json 文件，用于定义项目的元数据(比如名称、版本、许可证)以及所依赖的各种模块。
   ##### package.json 文件可以手工编写，也可以使用 npm init 命令生成。
 
   ```
@@ -34,9 +33,24 @@
     },
     "author": "",
     "license": "ISC",
-    
+     
     // 依赖的其他模块
-    "dependencies": {
+     "dependencies": {
     }
   }
+  ```
+
+
+
+---
+- #### 用 Node.js 执行 JavaScript
+  ##### Node.js 提供两种方式执行 JavaScript。命令行模式 和 Node交互模式。
+  ```
+  D:\Backup\nodeTest> node foo.js                   // 在命令行中执行 foo.js
+  D:\Backup\nodeTest> node --use_strict foo.js      // 在命令行中以严格模式执行 foo.js
+
+
+  D:\Backup\nodeTest> node     // 在命令行中执行 node, 进入node交互模式
+  > x = 'Hello' + 'World';     // 在node交互模式中直接输入 JavaScript 代码并执行
+  > 'HelloWorld'               // node交互模式会直接返回执行结果
   ```
