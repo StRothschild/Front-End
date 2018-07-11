@@ -49,7 +49,7 @@
   ```JavaScript
   // 导入 require.js
   <script src="scripts/require.js"></script>
-  // 入口
+  // 入口文件
   <script>
       // require 是 require.js 定义的一个全局方法，同时也是一个对象，可以通过 config 属性进行定义
       require.config({
@@ -81,7 +81,7 @@
         props: ['articleContent']
       });
   });
-  ```
+```
 
 
 
