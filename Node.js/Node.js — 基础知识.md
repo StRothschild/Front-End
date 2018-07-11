@@ -1,10 +1,9 @@
 # Node.js 基础知识
-#### Node.js 提供基于 V8 引擎的服务器端(系统级) JavaScript 执行环境。
-#### Node.js 提供基于 npm 的包管理服务。
-#### Node.js 的概念与对比如下图所示：
+#### 1. Node.js 提供基于 V8 引擎的服务器端(系统级) JavaScript 执行环境。
+#### 2. Node.js 提供基于 npm 的包管理服务。
+#### 3. Node.js 的概念与对比如下图所示：
 
-
-![Node.js概念图](https://github.com/StRothschild/Front-End/blob/master/Node.js/resouces/Node.js%20%E2%80%94%20%E6%A6%82%E5%BF%B5.jpg?raw=true)
+  ![Node.js概念图](https://github.com/StRothschild/Front-End/blob/master/Node.js/resouces/Node.js%20%E2%80%94%20%E6%A6%82%E5%BF%B5.jpg?raw=true)
 
 
 
@@ -18,8 +17,8 @@
 
 ---
 - #### package.json 文件
-  ##### 每个 Node 项目的根路径下都有一个 package.json 文件，用于定义项目的元数据(比如名称、版本、许可证)以及所依赖的各种模块。
-  ##### package.json 文件可以手工编写，也可以使用 npm init 命令生成。
+  ##### 1. 每个 Node 项目的根路径下都有一个 package.json 文件，用于定义项目的元数据(比如名称、版本、许可证)以及所依赖的各种模块。
+  ##### 2. package.json 文件可以手工编写，也可以使用 npm init 命令生成。
 
   ```
   /* 以下是通过 $ npm init 生成的 package.json（仅有元信息），注意 json 文件是不能有注释的，以下注释仅供参考 */
@@ -64,11 +63,10 @@
 
 ---
 - #### 模块系统
-  ##### 在 Node.js 模块系统中，每个文件都被视为一个独立的模块。
-  ##### 每模块（文件）都会自动创建一个 module 对象，module 对象会创建一个 exports 属性，初始值是 {}。
-  ##### 模块通过 module.experts 对象输出(注意和 exprots 对象的区别)。
-  ##### 模块通过 require 方法用于输入。
-  ##### exports 对象是对 module.exports 的引用，如果 exports 对象出现变更，则 exports != module.exports。由于调用模块调用的是 module.exports 对象，所以要注意此时更改 exports 对象将对调用模块无效。
+  ##### 1. 在 Node.js 模块系统中，每个文件都被视为一个独立的模块。
+  ##### 2. 每模块（文件）都会自动创建一个 module 对象，module 对象会创建一个 exports 属性，初始值是 {}。
+  ##### 3. 模块通过 module.experts 对象输出(注意和 exprots 对象的区别)。
+  ##### 4. 模块通过 require 方法用于输入。
 
   ```
   /* helloWorld.js */
@@ -84,3 +82,23 @@
   helloWorld.foo();                              // 执行 helloWorld(experts) 对象中的 foo 方法
   console.log(helloWorld.bar);                   // 打印 helloWorld(experts) 对象中的 bar 属性
   ```
+
+
+
+
+
+
+---
+- #### module.exports 和 exports
+  ##### 1. exports 对象是对 module.exports 的引用。（exports = module.exports）
+  ##### 2. 调用模块调用的是 module.exports 对象。
+  ##### 3. 如果 exports 对象出现变更，则会造成 exports != module.exports。所以要注意此时更改 exports 对象将对调用模块无效。
+  ##### 4. 需要输出属性时可以使用 module.exports 或 exports。要输出一个新对象，则必须使用 module.exports 。
+
+
+
+
+
+---
+- #### require
+  ##### 1. Node.js 使用 CommonJs 规范来进行模块的同步加载。
