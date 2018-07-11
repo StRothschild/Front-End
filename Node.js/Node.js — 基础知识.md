@@ -91,7 +91,7 @@
 ---
 - #### module.exports 和 exports
   ##### 1. exports 对象是对 module.exports 的引用。（exports = module.exports）
-  ##### 2. 调用模块调用的是 module.exports 对象。
+  ##### 2. 调用模块调用的是 module.exports 对象的一个深拷贝，所以在被调用模块的值最后一次 exports 之后，就无法改变调用模块获取到的值了。
   ##### 3. 如果 exports 对象出现变更，则会造成 exports != module.exports。所以要注意此时更改 exports 对象将对调用模块无效。
   ##### 4. 需要输出属性时可以使用 module.exports 或 exports。要输出一个新对象，则必须使用 module.exports 。
 
@@ -103,3 +103,10 @@
 - #### require
   ##### 1. Node.js 使用 CommonJs 规范来进行模块的同步加载。
   ##### 2. require 方法会加载并执行一个JS文件（模块），然后返回该模块的 module.exports 对象，如果没有发现指定模块会报错。
+  ##### 3. 模块加载的顺序，按照其在代码中 require 调用的顺序。
+  ##### 4. 第一次加载模块时，Node.js会缓存该模块。以后再加载该模块，就直接从缓存取出该模块的 module.exports 属性。
+  ##### 5. require 方法根据参数的不同格式，去不同路径寻找模块文件，具体如下：
+
+        以 "/" 开头，则表示通过绝对路径加载模块文件。
+        以 "./" 开头，则表示通过相对路径加载模块文件。
+        不以 "/" 或 "./" 开头，而直接是模块名称。则表示加载的是一个核心模块（全局安装的包或局部安装在 node_modules 目录的包）
