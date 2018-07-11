@@ -51,8 +51,8 @@
   <script src="scripts/require.js"></script>
   // 入口文件
   <script>
-      // require 是 require.js 定义的一个全局方法，同时也是一个对象，可以通过 config 属性进行定义
-      require.config({
+      // requirejs 是 require.js 定义的一个全局方法，同时也是一个对象，可以通过其有用的 config 方法进行定义
+      requirejs.config({
           baseUrl: "/another/path",
           paths: {
               Vue: 'vendors/vue/vue',
