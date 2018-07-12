@@ -5,6 +5,24 @@
   ##### 无意义函数命名： fun
 
 
+---
+- #### 全局对象
+  > 全局变量 和 全局函数都绑定在全局对象上
+
+  ##### 浏览器中的全局对象： window
+  ##### Node.js 中的全局对象： global
+  ```javascript
+  /* 区别浏览器环境 和 Node环境 */
+  if (typeof window == 'object') {
+      console.log('Browser');
+  } else if (typeof global == 'object') {
+      console.log('Node.js');
+  }
+  ```
+
+
+
+
 
 
 ---
