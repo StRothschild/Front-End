@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<H1 id="result">Hello World!</H1>
+	<script src="http://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script>
+		$.post('/data', {name: 'foo'}, function(result){
+	        if (result && result.code == 200){
+	            $('#result').val(result.msg);
+	        }
+	    }.bind(this));
+	</script>
+</body>
+</html>
