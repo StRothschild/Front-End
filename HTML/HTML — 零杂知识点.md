@@ -1,7 +1,7 @@
 # HTML 的零杂知识点
 
 - #### \<!DOCTYPE html>
-  ##### \<!DOCTYPE> 声明位于文档中的最前面的位置，<html> 标签之前。用于告知浏览器文档使用的是哪种 HTML 或 XHTML 规范。
+  ##### \<!DOCTYPE> 声明位于文档中的最前面的位置，<html>标签之前。用于告知浏览器文档使用的是哪种 HTML 或 XHTML 规范。
   ##### \<!DOCTYPE html> 是 html5 标准的网页声明，表明当前网页采用的是 html5 标准。
 
 
