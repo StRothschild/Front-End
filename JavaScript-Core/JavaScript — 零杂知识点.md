@@ -42,6 +42,7 @@
   ---|---
   RequireJS（AMD ）| CommonJS
   SeaJS（CMD）|
+  import |
 
 
 
