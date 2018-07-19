@@ -1,7 +1,7 @@
 # Node.js 基础知识
   #### 1. Node.js 提供基于 V8 引擎的服务器端(系统级) JavaScript 执行环境。
   #### 2. Node.js 和 chrome 一样是基于事件驱动的异步架构。
-  #### 3. Node.js 提供基于 npm 的包管理服务。
+  #### 3. Node.js 提供包管理服务 Node Package Manage(npm)。
   #### 4. Node.js 的概念与对比如下图所示：
 
   ![Node.js概念图](https://github.com/StRothschild/Front-End/blob/master/Node.js/resouces/Node.js%20%E2%80%94%20%E6%A6%82%E5%BF%B5.jpg?raw=true)
