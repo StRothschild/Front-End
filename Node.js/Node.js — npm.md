@@ -54,6 +54,8 @@
   $ npm install <packageName> -g
   $ npm install --global <packageName>
 
+
+
   /* 卸载本地 npm 包 */
   $ npm uninstall <packageName>
 
@@ -62,15 +64,18 @@
   $ npm uninstall --global <packageName>
 
 
+
   /* 基于 package.json 依赖配置（dependencies 和 devDependencies）的包安装，详见 package.json 介绍 */
   $ npm install
   /* --save 参数会将包写入到 package.json 的 dependencies */
   $ npm install <packageName> --save
   /* --save-dev 参数会将包写入到 package.json 的 devDependencies */
   $ npm install <packageName> --save-dev
-
-  // --save 和 --save-dev 参数的好处在于，即使删除了项目的 node_modules，依然可以通过 package.json 内保存的依赖配置，用 $ npm intall 命令来恢复 node_modules。
   ```
+
+  ##### 1. --save 和 --save-dev 参数的好处在于，即使删除了项目的 node_modules，依然可以通过 package.json 内保存的依赖配置，用 $ npm intall 命令来恢复 node_modules。
+
+  ##### 2. 使用原则: 运行时需要用到的包使用 --save, 否则使用 --save-dev。
 
 
 
@@ -129,6 +134,15 @@
 ---
 - #### 包的内容
   ##### 一个规范的包目录结构一般有如下几个目录和文件：package.json（包描述文件）、Bin（存放可执行的二进制文件目录）、Lib（存放JS代码的目录）、Doc（存放文档的目录）、Test（存放单元测试的目录）。
+
+
+
+
+
+---
+- #### package.json
+  ##### 每个 Node.js 项目的根目录下，一般都有一个 package.json 文件，用于定义这个项目所需要的各种模块，以及项目的元信息（比如名称、版本、许可证等）。在此目录下执行 npm install 命令时，就是根据这个配置文件来自动下载所需的模块，也就是配置项目所需的运行和开发环境。
+
 
 
 
