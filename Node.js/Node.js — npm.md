@@ -80,6 +80,31 @@
 
 
 
+
+---
+- #### package.json 文件
+  ##### 1. 每个 Node 项目的根路径下都有一个 package.json 文件，用于定义项目的元数据(比如名称、版本、许可证)以及所依赖的各种模块。
+  ##### 2. package.json 文件可以手工编写，也可以使用 npm init 命令生成。
+
+  ```
+  /* 以下是通过 $ npm init 生成的 package.json（仅有元信息），注意 json 文件是不能有注释的，以下注释仅供参考 */
+  {
+    "name": "packageName",        // 必须          
+    "version": "1.0.0",           // 必须   
+    "description": "",
+    "main": "index.js",           // 模块的入口文件
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "",
+    "license": "ISC",
+     
+    // 依赖的其他模块
+     "dependencies": {
+    }
+  }
+  ```
+
 ---
 - #### npm 包的存放路径
   ##### npm 包的安装分为本地安装（local）和 全局安装（global）。
