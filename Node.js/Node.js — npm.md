@@ -73,7 +73,7 @@
   $ npm install <packageName> --save-dev
   ```
 
-  ##### 1. --save 和 --save-dev 参数的好处在于，即使删除了项目的 node_modules，依然可以通过 package.json 内保存的依赖配置，用 $ npm intall 命令来恢复 node_modules。
+  ##### 1. --save 和 --save-dev 参数的好处在于，即使删除了项目的 node_modules，依然可以通过 package.json 内保存的依赖配置，用 npm intall 命令来恢复 node_modules。
 
   ##### 2. 使用原则: 运行时需要用到的包使用 --save, 否则使用 --save-dev。
 
@@ -102,8 +102,13 @@
     // 依赖的其他模块
      "dependencies": {
     }
+    
+    "devDependencies": {
+    }
   }
   ```
+
+
 
 ---
 - #### npm 包的存放路径
