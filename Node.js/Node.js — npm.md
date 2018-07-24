@@ -45,37 +45,41 @@
 
 ---
 - #### npm 包的安装/卸载
-  ##### npm 中的包，也可以理解为一个模块，类似于 Java 中的 jar 包。
-  ```
-  /* 安装本地 npm 包 */
-  $ npm install <packageName>
+  > npm 中的包，也可以理解为一个模块，类似于 Java 中的 jar 包。
+  - 1.安装本地 npm 包
+    ```
+    $ npm install <packageName>
+    ```
+  - 2.安装全局 npm 包，用 -g 参数来代表 glabol
+    ```
+    $ npm install <packageName> -g
+    $ npm install --global <packageName>
+    ```
+  - 3.卸载本地 npm 包
+    ```
+    $ npm uninstall <packageName>
+    ```
+  - 4.卸载全局 npm 包
+    ```
+    $ npm uninstall <packageName> -g
+    $ npm uninstall --global <packageName>
+    ```
+  - 5.基于 package.json 依赖配置（dependencies 和 devDependencies）的包安装，详见 package.json 介绍
+    ```
+    $ npm install
+    ```
+  - 6.--save 参数会将包写入到 package.json 的 dependencies
+    ```
+    $ npm install <packageName> --save
+    ```
+  - 7.--save-dev 参数会将包写入到 package.json 的 devDependencies
+    ```
+    $ npm install <packageName> --save-dev
+    ```
 
-  /* 安装全局 npm 包，用 -g 参数来代表 glabol */
-  $ npm install <packageName> -g
-  $ npm install --global <packageName>
+  - 可选参数 --save 和 --save-dev 的作用在于，即使删除了项目的 node_modules 文件夹，依然可以通过 package.json 内保存的依赖配置，用 npm intall 命令来恢复 node_modules 文件夹。
 
-
-
-  /* 卸载本地 npm 包 */
-  $ npm uninstall <packageName>
-
-  /* 卸载全局 npm 包 */
-  $ npm uninstall <packageName> -g
-  $ npm uninstall --global <packageName>
-
-
-
-  /* 基于 package.json 依赖配置（dependencies 和 devDependencies）的包安装，详见 package.json 介绍 */
-  $ npm install
-  /* --save 参数会将包写入到 package.json 的 dependencies */
-  $ npm install <packageName> --save
-  /* --save-dev 参数会将包写入到 package.json 的 devDependencies */
-  $ npm install <packageName> --save-dev
-  ```
-
-  ##### 1. --save 和 --save-dev 参数的好处在于，即使删除了项目的 node_modules，依然可以通过 package.json 内保存的依赖配置，用 npm intall 命令来恢复 node_modules。
-
-  ##### 2. 使用原则: 运行时需要用到的包使用 --save, 否则使用 --save-dev。
+  - 使用原则: 运行时需要用到的包使用 --save, 否则使用 --save-dev。
 
 
 
@@ -98,12 +102,11 @@
     },
     "author": "",
     "license": "ISC",
-     
-    // 依赖的其他模块
-     "dependencies": {
+   
+     "dependencies": {            // 依赖的其他模块
     }
-    
-    "devDependencies": {
+
+    "devDependencies": {          // 开发时依赖的其他模块
     }
   }
   ```
@@ -115,8 +118,11 @@
   ##### npm 包的安装分为本地安装（local）和 全局安装（global）。
   ##### 本地安装的 npm 包，会被下载至在当前命令行所在路径下的 node_module 目录中。
   ##### 全局安装的 npm 包，会被下载至 prefix 属性设置的路径下。此属性值可以通过 npm config ls -l 查看。
-  ##### 本地安装的 npm 包可以在代码中通过 require 调用。全局安装的 npm 包可以在命令行中直接调用。
+  ##### 本地安装的 npm 包可以在代码中通过 require 调用。而全局安装的 npm 包需要在命令行中调用。
   ```
+  /* 查看 npm 的默认设置 */
+  $ npm config ls -l
+
   /* 全局 npm 包在 Windows 中的默认下载路径 */
   prefix 默认值为: "C:\Users\<userName>\AppData\Roaming\npm"
   {prefix}\node_modules
