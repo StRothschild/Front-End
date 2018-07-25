@@ -120,7 +120,8 @@
   - 7.全局 npm 包的默认 cache 路径
     ```
     cache 默认值为: "C:\Users\<userName>\AppData\Roaming\npm-cache
-    npm 包的默认: cache 地址为: {cache}
+    windwos 中 cache 的默认地址为: {cache}
+    Linux 中 cache 的默认地址为: ~/.npm/_cacache
     ```
 
 
@@ -183,6 +184,8 @@
   - bin（存放可执行的二进制文件目录）
 
   - lib（存放JS代码的文件目录）
+
+  - node_modules（存放依赖包的文件目录）
 
   - doc（存放文档的文件目录）
 
