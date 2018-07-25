@@ -1,6 +1,7 @@
 # npm
 > npm（node package manage） 是 Node.js 的包管理工具，会随同 Node.js 一起被安装。
 
+> 环境变量会在安装 Node.js 时自动配置，所以 'node' 和 'npm' 可以在命令行中直接执行。
 
 
 ---
@@ -129,18 +130,23 @@
 
 ---
 - #### 修改 npm 全局包存放的默认路径
-  - 1.修改全局 npm 包的默认下载路径
+  - 1.查看当前全局 npm 包的默认下载路径
+    ```
+    $ npm config get prefix
+    ```
+  - 2.修改全局 npm 包的默认下载路径
     ```
     $ npm config set prefix <path>
     ```
 
-  - 2.修改全局 npm 包的默认 cache 路径
+  - 3.查看当前全局 npm 包的默认下载路径
+    ```
+    $ npm config get cache
+    ```
+  - 4.修改全局 npm 包的默认 cache 路径
     ```
     $ npm config set cache <path>
     ```
-
-
-  2. 还要修改 NODE_PATH
 
 
 
@@ -174,13 +180,13 @@
 
   - package.json（包描述文件）
 
-  - Bin（存放可执行的二进制文件目录）
+  - bin（存放可执行的二进制文件目录）
 
-  - Lib（存放JS代码的目录）
+  - lib（存放JS代码的文件目录）
 
-  - Doc（存放文档的目录）
+  - doc（存放文档的文件目录）
 
-  - Test（存放单元测试的目录）
+  - test（存放单元测试的文件目录）
 
 
 
