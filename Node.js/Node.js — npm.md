@@ -62,7 +62,7 @@
     ```
   - 2.安装全局 npm 包，用 -g 参数来代表 glabol
     ```
-    $ npm install <packageName> -g
+    $ npm install -g <packageName>
     $ npm install --global <packageName>
     ```
   - 3.卸载本地 npm 包
@@ -71,7 +71,7 @@
     ```
   - 4.卸载全局 npm 包
     ```
-    $ npm uninstall <packageName> -g
+    $ npm uninstall -g <packageName>
     $ npm uninstall --global <packageName>
     ```
   - 5.基于 package.json 依赖配置（dependencies 和 devDependencies）的包安装，详见 package.json 介绍
@@ -80,11 +80,11 @@
     ```
   - 6.--save 参数会将包写入到 package.json 的 dependencies
     ```
-    $ npm install <packageName> --save
+    $ npm install --save <packageName>
     ```
   - 7.--save-dev 参数会将包写入到 package.json 的 devDependencies
     ```
-    $ npm install <packageName> --save-dev
+    $ npm install --save-dev <packageName>
     ```
 
   - 可选参数 --save 和 --save-dev 的作用在于，即使删除了项目的 node_modules 文件夹，依然可以通过 package.json 内保存的依赖配置，用 npm intall 命令来恢复 node_modules 文件夹。
