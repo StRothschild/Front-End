@@ -1,9 +1,6 @@
 # npm
 > npm（node package manage） 是 Node.js 的包管理工具，会随同 Node.js 一起被安装。
 
-> 环境变量会在安装 Node.js 时自动配置，所以 'node' 和 'npm' 可以在命令行中直接执行。
-
-
 ---
 - #### cnpm
   > cnpm 是淘宝提供的国内 npm 仓库镜像。
@@ -99,32 +96,28 @@
 - #### npm 包的存放路径
   - 1.npm 包的安装分为本地安装（local）和 全局安装（global）。
 
-  - 2.本地安装的 npm 包，会被下载至在当前命令行所在路径下的 node_module 目录中。
+  - 2.本地安装的 npm 包可以在代码中通过 require 调用。而全局安装的 npm 包需要在命令行中调用。
 
-  - 3.全局安装的 npm 包，会被下载至 prefix 属性设置的路径下。此属性值可以通过 npm config ls -l 查看。
+  - 3.本地安装的 npm 包，会被下载至在当前命令行所在路径下的 node_module 目录中。
 
-  - 4.本地安装的 npm 包可以在代码中通过 require 调用。而全局安装的 npm 包需要在命令行中调用。
-
-  - 5.通过 npm config ls -l 查看 prefix 参数的值
+  - 4.全局安装的 npm 包，会在 prefix 属性设置所的路径下。通过 npm config ls -l 查看所有属性（包括prefix）的值（分号代表注释）:
     ```
     $ npm config ls -l
     ```
 
-  - 6.全局 npm 包在 Windows 中的默认下载路径
+  - 5.全局 npm 包在 Windows 中的默认下载路径
     ```
     prefix 默认值为: "C:\Users\<userName>\AppData\Roaming\npm"
     windwos 中 npm 包的默认地址为: {prefix}\node_modules
-    Linux 中 npm 包的默认地址为: {prefix}/lib/node_modules
+    Unix 中 npm 包的默认地址为: {prefix}/lib/node_modules
     ```
 
-  - 7.全局 npm 包的默认 cache 路径
+  - 6.全局 npm 包的默认 cache 路径
     ```
     cache 默认值为: "C:\Users\<userName>\AppData\Roaming\npm-cache
     windwos 中 cache 的默认地址为: {cache}
-    Linux 中 cache 的默认地址为: ~/.npm/_cacache
+    Unix 中 cache 的默认地址为: ~/.npm/_cacache
     ```
-
-
 
 
 
@@ -160,7 +153,7 @@
 
   - 2.全局安装的包，不可以直接在工程中引用，需要在命令行中使用。这样做，虽然可以多个工程共用一个包，避免包的重复，但不利于版本控制，所以只在有命令行需求时使用。所以一般不推荐安装全局包。
 
-  - 3.如果需要兼有两者的功能，可以用两种方法各安装一次。或使用 npm link 将全局包和本地包做一个软链接。
+  - 3.如果需要兼有两者的功能，有两种方式: 1.用两种方法各安装一次。2.使用 npm link 给全局包和本地包做一个软链接。
 
   - 4.如果当前路径是在包路径下，可以直接使用 npm link 将当前包链接到全局的同名包上。
     ```
@@ -215,10 +208,10 @@
       "author": "",
       "license": "ISC",
      
-       "dependencies": {            // 依赖的其他模块
+      "dependencies": {            // 依赖的其他模块，非必须
       }
 
-      "devDependencies": {          // 开发时依赖的其他模块
+      "devDependencies": {         // 开发时依赖的其他模块，非必须
       }
     }
     ```
