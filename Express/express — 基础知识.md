@@ -23,8 +23,13 @@
     // 通过 express 模块实例化一个 app 对象
     let app = express();  
 
-    // 配置 app 的拦截路径和返回回调
-    app.get('/', function (req, res) {
+    // 配置路由
+    app.get('/', function (req, res, next) {
+        console.log('Enter callBackFun1 ...');
+        // 调用下一个回调函数
+        next();
+    }, function(req, res){
+        console.log('Enter callBackFun2 ...');
         // 返回内容
         res.send('Hello World!');
     });
