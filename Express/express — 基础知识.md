@@ -104,8 +104,8 @@
     ```JavaScript
     $ node app.js
 
-    // 有前缀
+    // 有前缀情况下
     localhost:8080/independentRouter                  => 'Home Page'
-    // 无前缀
-    localhost:8080/independentRouter/about            => 'About Page'  
+    // 无前缀情况下
+    localhost:8080/about            => 'About Page'  
     ```
