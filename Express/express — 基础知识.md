@@ -83,17 +83,15 @@
 
     // 通过 express 模块实例化一个 app 对象
     let app = express();  
-    // 使用 router 作为 app 的路由,
+    // 直接使用 router 作为 app 的路由,
     app.use(router);
     // 也可以在所有 router 匹配的 url 之前加一个前缀
     //app.use('/independenRouter', router);
 
-
-
     // 通过 app 对象启动一个server
     let server = app.listen(8080, function () {
-    let host = server.address().address;
-    let port = server.address().port;
+      let host = server.address().address;
+      let port = server.address().port;
       console.log('app listening at http://localhost:' + port);
     });
     ```
@@ -105,7 +103,7 @@
     $ node app.js
 
     // 有前缀情况下
-    localhost:8080/independentRouter                  => 'Home Page'
+    localhost:8080/independentRouter    => 'Home Page'
     // 无前缀情况下
-    localhost:8080/about            => 'About Page'  
+    localhost:8080/about                => 'About Page'  
     ```
