@@ -63,11 +63,11 @@
 
     // 定义主页面的路由
     router.get('/', function(req, res) {
-      	res.send('Home Page');
+      res.send('Home Page');
     });
     // 定义 about 页面的路由
     router.get('/about', function(req, res) {
-      	res.send('About Page');
+      res.send('About Page');
     });
 
     module.exports = router;
@@ -84,13 +84,13 @@
     // 通过 express 模块实例化一个 app 对象
     let app = express();  
     // 使用 router 作为 app 的路由
-    app.use('/independentouter', router);
+    app.use('/independenRouter', router);
 
     // 通过 app 对象启动一个server
     let server = app.listen(8080, function () {
     let host = server.address().address;
     let port = server.address().port;
-        console.log('app listening at http://localhost:' + port);
+      console.log('app listening at http://localhost:' + port);
     });
     ```
 
@@ -100,6 +100,6 @@
     ```
     $ node app.js
 
-    /independentRouter                  => 'Home Page'
-    /independentRouter/about            => 'About Page'  
+    localhost:8080/independentRouter                  => 'Home Page'
+    localhost:8080/independentRouter/about            => 'About Page'  
     ```
