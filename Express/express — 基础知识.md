@@ -46,3 +46,60 @@
     ```
     $ node app.js
     ```
+
+
+
+
+
+---
+- 3.Router
+
+  - 创建 router.js
+    ```JavaScript
+    // 导入 express 模块
+    let express = require('express');
+    // 获取 Router 对象
+    let router = express.Router();
+
+    // 定义主页面的路由
+    router.get('/', function(req, res) {
+      	res.send('Home Page');
+    });
+    // 定义 about 页面的路由
+    router.get('/about', function(req, res) {
+      	res.send('About Page');
+    });
+
+    module.exports = router;
+    ```
+
+
+  - 创建 app.js
+    ```JavaScript
+    // 导入 express 模块
+    let express = require('express');
+    // 导入 router.js
+    let router = require('./router');
+
+    // 通过 express 模块实例化一个 app 对象
+    let app = express();  
+    // 使用 router 作为 app 的路由
+    app.use('/independentouter', router);
+
+    // 通过 app 对象启动一个server
+    let server = app.listen(8080, function () {
+    let host = server.address().address;
+    let port = server.address().port;
+        console.log('app listening at http://localhost:' + port);
+    });
+    ```
+
+
+
+  - 启动 app 后访问
+    ```
+    $ node app.js
+
+    /independentRouter                  => 'Home Page'
+    /independentRouter/about            => 'About Page'  
+    ```
