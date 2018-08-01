@@ -107,3 +107,9 @@
     // 无前缀情况下
     localhost:8080/about                => 'About Page'  
     ```
+
+
+
+
+---
+- 4.static 静态文件
