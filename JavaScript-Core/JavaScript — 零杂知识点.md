@@ -40,8 +40,8 @@
 
   浏览器（异步） | NodeJS（同步）
   ---|---
-  RequireJS（AMD ）| CommonJS
-  SeaJS（CMD）|
+  RequireJS（AMD规范）| NPM(CommonJS规范）
+  SeaJS（CMD规范）|
   import |
 
 
