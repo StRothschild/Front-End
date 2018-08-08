@@ -1,4 +1,5 @@
 let fs = require('fs');
+//let cookies = require('cookies');
 let koa = require('koa');
 let app = new koa;
 
@@ -25,16 +26,37 @@ let app = new koa;
 // app.use(three);
 
 
-// 获取
+
+// 入口方法
 const main = ctx => {
     if (ctx.request.url == '/') {
 		ctx.response.body = 'Hello World!';
 	} else if (ctx.request.url == '/index') {
-		ctx.set('Content-Type', 'text/html');
+		// ctx.set('Content-Type', 'text/html');只能指定 Content-Type,无法指定 charset
+        // ctx.response.type 会自动设置 charset ，也可以用 ctx.type = 'text/html; charset=utf-8'; 来明确指定 charset 
+        ctx.response.type = 'text/html';
+        
+        // 设置返回内容  
   		ctx.response.body = fs.createReadStream('./static/index.html');
 	} else if (ctx.request.url == '/index.js') {
-		//ctx.set('Content-Type', 'text/plain');
+		// 默认的 Content-Type 为
   		ctx.response.body = fs.createReadStream('./static/index.js');
+	} else if (ctx.request.url == '/name') {
+	    // set a regular cookie
+	    ctx.cookies.set('myName1', 
+	    				'myValue1',
+	    	            {
+	    	            	'maxAge': Date.now(),
+	    	             	'httpOnly': false
+	    	            });
+
+	    ctx.cookies.set('myName2', 
+						'myValue2',
+			            {
+			            	'maxAge': Date.now(),
+			             	'httpOnly': false
+			            });
+		ctx.response.body = {name: 'test'};
 	}
 }
 
