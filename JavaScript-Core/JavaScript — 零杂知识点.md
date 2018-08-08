@@ -38,7 +38,7 @@
 ---
 - #### JavaScript 模块化的实现
 
-  浏览器（异步） | NodeJS（同步）
+  浏览器（异步——网络加载） | NodeJS（同步——本地加载）
   ---|---
   RequireJS（AMD规范）| NPM(CommonJS规范）
   SeaJS（CMD规范）|
