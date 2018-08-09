@@ -42,20 +42,14 @@ const main = ctx => {
 		// 默认的 Content-Type 为
   		ctx.response.body = fs.createReadStream('./static/index.js');
 	} else if (ctx.request.url == '/name') {
-	    // set a regular cookie
-	    ctx.cookies.set('myName1', 
-	    				'myValue1',
+	    // set a cookie
+	    ctx.cookies.set('maxAge', 
+	    				'666',
 	    	            {
-	    	            	'maxAge': Date.now(),
-	    	             	'httpOnly': false
+	    	            	// 'maxAge': Date.now(),
+	    	            	// 'httpOnly': false
 	    	            });
 
-	    ctx.cookies.set('myName2', 
-						'myValue2',
-			            {
-			            	'maxAge': Date.now(),
-			             	'httpOnly': false
-			            });
 		ctx.response.body = {name: 'test'};
 	}
 }
