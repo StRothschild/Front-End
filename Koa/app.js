@@ -41,16 +41,16 @@ const main = ctx => {
 	} else if (ctx.request.url == '/index.js') {
 		// 默认的 Content-Type 为
   		ctx.response.body = fs.createReadStream('./static/index.js');
-	} else if (ctx.request.url == '/name') {
+	} else if (ctx.request.url == '/name') {		
+		ctx.response.type = 'application/json';
+ 		ctx.response.body = {'jump': 'login'};
 	    // set a cookie
-	    ctx.cookies.set('maxAge', 
-	    				'666',
+	    ctx.cookies.set('sessionId', 
+	    				'66666',
 	    	            {
-	    	            	// 'maxAge': Date.now(),
-	    	            	// 'httpOnly': false
+	    	            	'maxAge': 60*60*24,
+	    	            	'httpOnly': false
 	    	            });
-
-		ctx.response.body = {name: 'test'};
 	}
 }
 

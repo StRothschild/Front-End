@@ -5,7 +5,8 @@ document.addEventListener('readystatechange', function(){
 			let xmlHttp = new XMLHttpRequest();
 			xmlHttp.onreadystatechange = function() {
 				if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
-					xmlHttp.responseText;
+					// 解析返回值
+					JSON.parse(xmlHttp.responseText);
 				}
 			}
 			xmlHttp.open("GET", "name", true);
