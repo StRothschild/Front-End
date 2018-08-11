@@ -41,7 +41,7 @@ const main = ctx => {
 	} else if (ctx.request.url == '/index.js') {
 		// 默认的 Content-Type 为
   		ctx.response.body = fs.createReadStream('./static/index.js');
-	} else if (ctx.request.url == '/name') {		
+	} else if (ctx.request.url == '/setCookie') {		
 		ctx.response.type = 'application/json';
  		ctx.response.body = {'jump': 'login'};
 	    // set a cookie

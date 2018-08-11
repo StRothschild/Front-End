@@ -1,5 +1,10 @@
+let setCookieUrl = 'setCookie';
+
+
+
+// 原生JS 调用Ajax
 document.addEventListener('readystatechange', function(){
-	if(document.readyState == 'complete'){
+	if (document.readyState == 'complete'){
 		document.getElementById('button').addEventListener('click', function() {
 			// Ajax 请求
 			let xmlHttp = new XMLHttpRequest();
@@ -9,16 +14,10 @@ document.addEventListener('readystatechange', function(){
 					JSON.parse(xmlHttp.responseText);
 				}
 			}
-			xmlHttp.open("GET", "name", true);
+			xmlHttp.open("GET", setCookieUrl, true);
 			xmlHttp.send();
 		});
-
-
-
 	}	
 });
 
-
-window.onload = function(){
-	console.log('onload');
-}
+// jQuery
