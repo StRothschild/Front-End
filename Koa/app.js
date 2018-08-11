@@ -37,10 +37,10 @@ const main = ctx => {
         ctx.response.type = 'text/html';
         
         // 设置返回内容  
-  		ctx.response.body = fs.createReadStream('./static/index.html');
+  		ctx.response.body = fs.createReadStream('./src/index.html');
 	} else if (ctx.request.url == '/index.js') {
 		// 默认的 Content-Type 为
-  		ctx.response.body = fs.createReadStream('./static/index.js');
+  		ctx.response.body = fs.createReadStream('./src/index.js');
 	} else if (ctx.request.url == '/setCookie') {		
 		ctx.response.type = 'application/json';
  		ctx.response.body = {'jump': 'login'};
