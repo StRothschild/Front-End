@@ -25,13 +25,13 @@ app.use(first);
 
 
 
-
 // 获取静态文件
-// 返回js文件。默认 content-type 既可
-// ctx.response.body = fs.createReadStream('./src/index.js');
-const staticResource = serve(__dirname + '/src/vendor');
+const staticResource = serve(__dirname + '/src/vendor');  // __dirname 为绝对路径前缀
 app.use(staticResource);
 
+
+// 返回js文件。默认 content-type 既可
+// ctx.response.body = fs.createReadStream('./src/index.js');
 
 
 
