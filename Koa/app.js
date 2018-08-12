@@ -1,73 +1,73 @@
-let fs = require('fs');
-//let cookies = require('cookies');
-let koa = require('koa');
-let app = new koa;
+// 引入核心模块
+const fs = require('fs');
+const koa = require('koa');
+const router = require('koa-route');
+const serve = require('koa-static');
 
-// const one = (ctx, next) => {
-//   console.log('>> one');
-//   next();
-//   console.log('<< one2');
-// }
-
-// const two = (ctx, next) => {
-//   console.log('>> two');
-//   //next();
-//   console.log('<< two2');
-// }
-
-// const three = (ctx, next) => {
-//   console.log('>> three');
-//   next();
-//   console.log('<< three2');
-// }
-
-// app.use(one);
-// app.use(two);
-// app.use(three);
+// 实例化 koa
+const app = new koa;
 
 
-
-// 入口方法
-const main = ctx => {
+// 不使用 koa-route 模块来设置路由
+const first = (ctx, next) => {
     if (ctx.request.url == '/') {
-		ctx.response.body = 'Hello World!';
-	} else if (ctx.request.url == '/index') {
 		// ctx.set('Content-Type', 'text/html');只能指定 Content-Type,无法指定 charset
         // ctx.response.type 会自动设置 charset ，也可以用 ctx.type = 'text/html; charset=utf-8'; 来明确指定 charset 
         ctx.response.type = 'text/html';
-        
         // 设置返回内容  
   		ctx.response.body = fs.createReadStream('./src/index.html');
-	} else if (ctx.request.url == '/index.js') {
-		// 默认的 Content-Type 为
-  		ctx.response.body = fs.createReadStream('./src/index.js');
-	} else if (ctx.request.url == '/setCookie') {		
-		ctx.response.type = 'application/json';
- 		ctx.response.body = {'jump': 'login'};
-	    // set a cookie
-	    ctx.cookies.set('sessionId', 
-	    				'66666',
-	    	            {
-	    	            	'maxAge': 60*60*24,
-	    	            	'httpOnly': false
-	    	            });
 	}
+
+	// 执行下一个模块
+	next();
 }
+app.use(first);
 
 
 
 
+// 获取静态文件
+// 返回js文件。默认 content-type 既可
+// ctx.response.body = fs.createReadStream('./src/index.js');
+const staticResource = serve(__dirname + '/src/vendor');
+app.use(staticResource);
 
 
-// const second = router.get('/about', function(req, res) {
-//   	res.send('About Page');
-// });
 
-app.use(main);
+
+// 用 koa-route 模块来设置路由
+const third = router.get('/jsonData', (ctx, next) => {
+    // json 数据接口
+	ctx.response.type = 'application/json';
+	ctx.response.body = {'foo': 'bar'};
+
+  	// 执行下一个模块
+	next();
+});
+app.use(third);
+
+
+// use 方法直接调用 koa-route 模块
+app.use(router.get('/setCookie', (ctx, next) => {
+  		// 设置 cookie
+	    ctx.cookies.set('sessionId', 
+	    				new Date().getTime(),
+	    	            {
+	    	            	'maxAge': 60*60*24,   // 1天有效期
+	    	            	'httpOnly': false
+	    	            }
+	    );
+
+	    // 执行下一个模块
+	    next();
+	})
+);
+
+
 
 // 通过 app 对象启动一个server
-let server = app.listen(3000, function () {
-	let host = server.address().address;
-	let port = server.address().port;
+const server = app.listen(3000, function () {
+	const host = server.address().address;
+	const port = server.address().port;
     console.log('app listening at http://localhost:' + port);
 });

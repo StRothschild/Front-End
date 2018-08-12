@@ -1,11 +1,9 @@
-let setCookieUrl = 'setCookie';
-
-
+const setCookieUrl = 'setCookie';
 
 // 原生JS 调用Ajax
 document.addEventListener('readystatechange', function(){
 	if (document.readyState == 'complete'){
-		document.getElementById('button').addEventListener('click', function() {
+		document.getElementById('cookieButton').addEventListener('click', function() {
 			// Ajax 请求
 			let xmlHttp = new XMLHttpRequest();
 			xmlHttp.onreadystatechange = function() {
