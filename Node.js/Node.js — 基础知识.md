@@ -1,6 +1,8 @@
 ## Node.js 基础知识
 
   - Node.js 提供基于 V8 引擎的服务器端(系统级) JavaScript 执行环境。
+ 
+  - Node.js 中的 JavaScript 是单线程的，Node.js 本身是多线程的。
 
   - Node.js 和 chrome 一样是基于事件驱动的异步架构。
 
