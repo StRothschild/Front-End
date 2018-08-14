@@ -1,6 +1,8 @@
 ## Node.js 基础知识
 
   - Node.js 提供基于 V8 引擎的服务器端(系统级) JavaScript 执行环境。
+ 
+  - Node.js 中的 JavaScript 是单线程的，Node.js 本身是多线程的。
 
   - Node.js 和 chrome 一样是基于事件驱动的异步架构。
 
@@ -109,7 +111,7 @@
 
 ---
 - #### require 方法
-  - 1.Node.js 使用 CommonJs 规范来进行模块的同步加载。
+  - 1.Node.js 通过实现 CommonJs 规范来进行模块的同步加载。
 
   - 2.require 方法会加载并执行一个JS文件（模块），然后返回该模块的 module.exports 对象，如果没有发现指定模块会报错。
 
