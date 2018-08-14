@@ -1,9 +1,11 @@
-const setCookieUrl = 'setCookie';
+const getJsonDataUrl = 'jsonData';
+const downloadUrl = 'download';
+
 
 // 原生JS 调用Ajax
 document.addEventListener('readystatechange', function(){
 	if (document.readyState == 'complete'){
-		document.getElementById('cookieButton').addEventListener('click', function() {
+		document.getElementById('jsonButton').addEventListener('click', function() {
 			// Ajax 请求
 			let xmlHttp = new XMLHttpRequest();
 			xmlHttp.onreadystatechange = function() {
@@ -12,10 +14,15 @@ document.addEventListener('readystatechange', function(){
 					JSON.parse(xmlHttp.responseText);
 				}
 			}
-			xmlHttp.open("GET", setCookieUrl, true);
+			xmlHttp.open("GET", getJsonDataUrl, true);
 			xmlHttp.send();
 		});
 	}	
 });
 
-// jQuery
+// jQuery 调用 Ajax
+$(document).ready(function() {
+	$('#downlodButton').click(function() {
+		window.open(downloadUrl);
+	});
+});
