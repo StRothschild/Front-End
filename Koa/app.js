@@ -1,6 +1,6 @@
 // 引入核心模块
 const fs = require('fs');
-const path = require('path')
+const path = require('path');
 // 引入 koa 模块
 const koa = require('koa');
 const router = require('koa-route');
@@ -11,15 +11,10 @@ const app = new koa;
 
 
 // 拦截静态资源请求
-let staticPath = path.join(__dirname, 'static/vendor');  // Node.js 通过 __dirname 获取当前文件所在目录
-app.use(static(staticPath));
+let staticPath = path.join(__dirname, 'static');  // Node.js 通过 __dirname 获取当前文件所在目录
+app.use(static(staticPath));           // koa-static 会将请求拦截并映射到 staticPath 路径下，比如 localhost:3000/js/bar 就会被映射到 __dirname/static/js/bar 
 
-app.use(static('static/css'));
-app.use(static('static/image'));
-app.use(static('static/js'));
-
-// static 中间件会在目录下查找目标资源失败后默认返回 index.html。所以如果 static 目录下正好有个 index.html 文件，就会把它作为静态资源返回。
-// app.use(static('static'));  
+// 注意：koa-static 中间件在对应目录下查找目标资源失败后会默认返回 index.html。所以如果目录下正好有个 index.html 文件，则作为静态资源被返回。
 
 
 
@@ -31,7 +26,7 @@ const foo = (ctx, next) => {
         // ctx.response.type 会自动设置 charset ，也可以用 ctx.type = 'text/html; charset=utf-8'; 来明确指定 charset 
         ctx.response.type = 'text/html';
         // 设置返回内容  
-  		ctx.response.body = fs.createReadStream('./static/index.html');
+  		ctx.response.body = fs.createReadStream('./static/view/index.html');
 
 		// 设置 cookie
 	    ctx.cookies.set('timeStamp', 
@@ -75,8 +70,8 @@ app.use(bar);
 // use 方法直接调用 koa-route 模块
 app.use(router.get('/download', (ctx, next) => {
 	    // 设置 Content-disposition 为 attachment 实现下载
-  		ctx.set('Content-disposition', 'attachment; filename=index.html');
-  		ctx.response.body = fs.createReadStream('./static/index.html');
+  		ctx.set('Content-disposition', 'attachment; filename=h5.gif');
+  		ctx.response.body = fs.createReadStream('./static/image/h5.gif');
 	    // 执行下一个模块
 	    next();
 	})
