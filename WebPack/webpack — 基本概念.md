@@ -1,6 +1,7 @@
 ## webapck 基本概念
-> 基于 node.js 的开发、测试、编译、打包工具。
-> 通过 webpack 可以将多个资源模块打包成一个 js 文件，业务逻辑和资源的加载都在这个打包好的 js 文件中。
+> 基于 node.js 的前端开发、测试、编译、打包工具。
+
+> 通过 webpack 可以将多个静态资源模块打包成一个 js 文件，业务逻辑和资源的加载都在这个打包好的 js 文件中。
 
 
 ---
@@ -27,25 +28,25 @@
 
 
 ---
-- #### webpack.config.js：
-  ```
-  // 使用 path 模块，可以实现相对于配置文件的路径
-  const path = require('path');
-  module.exports = {
-      entry: path.resolve(__dirname, 'main.js'),
+- #### webpack.config.js
+    ```
+    // 使用 path 模块，可以实现相对于配置文件的路径
+    const path = require('path');
+    module.exports = {
+        entry: path.resolve(__dirname, 'main.js'),
 
-      devServer: {
-          contentBase: 'src/main/resources/static',
-          proxy: {
-              // 前端请求 http://localhose:8080/api/vi/test 代理后变成 http://newsrec.netease.com/zhimei/api/vi/test
-              "/api": {
-                  target: "http://newsrec.netease.com/zhimei",
-                  changeOrigin: true    //changes the origin of the host header to the target URL
-              }
-          }
-      },
-  };
-  ```
+        devServer: {
+            contentBase: 'src/main/resources/static',
+            proxy: {
+                // 前端请求 http://localhose:8080/api/vi/test 代理后变成 http://newsrec.netease.com/zhimei/api/vi/test
+                "/api": {
+                    target: "http://newsrec.netease.com/zhimei",
+                    changeOrigin: true    //changes the origin of the host header to the target URL
+                }
+            }
+        },
+    };
+    ```
 
 
 ---
