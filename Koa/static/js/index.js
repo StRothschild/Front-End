@@ -1,7 +1,6 @@
 const getJsonDataUrl = 'jsonData';
 const downloadUrl = 'download';
 
-
 // 原生JS 调用Ajax
 document.addEventListener('readystatechange', function(){
 	if (document.readyState == 'complete'){
@@ -14,7 +13,7 @@ document.addEventListener('readystatechange', function(){
 					JSON.parse(xmlHttp.responseText);
 				}
 			}
-			xmlHttp.open("GET", getJsonDataUrl, true);
+			xmlHttp.open("POST", getJsonDataUrl, true);
 			xmlHttp.send();
 		});
 	}	

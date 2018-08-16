@@ -46,7 +46,7 @@ app.use(foo);
 
 
 // 用 koa-route 模块来设置路由
-const bar = router.get('/jsonData', (ctx, next) => {
+const bar = router.post('/jsonData', (ctx, next) => {
     // json 数据接口
 	ctx.response.type = 'application/json';
 	ctx.response.body = {'foo': 'bar'};
