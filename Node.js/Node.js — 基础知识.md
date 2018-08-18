@@ -138,3 +138,27 @@
   - 4.既不是核心模块，也不以 "/" 或 "./" 开头的，则表示加载的是第三方模块，也就是包（package）。Node.js 默认会从 当前js所在目录的 node_modules 下寻找同名的包(文件夹) 如果没有找到，则到父目录下的 node_modules 继续寻找，如此递归直到根目录。（最后，还会根据环境变量 NODE_PATH 的配置继续寻找）？
 
   - 5.对于已加载的模块 Node.js 会作自动缓存，下次引用同一个模块时，就不必重新加载了。
+
+
+
+
+
+
+---
+- #### path 模块
+  > path 是 Node.js 内置的核心模块
+
+  - path.join([path1][, path2][, ...]) 
+    ```JavaScript
+    /* 用于连接路径。该方法的主要用途在于，会正确使用当前系统的路径分隔符，Unix系统是/，Windows系统是\ */
+    path.join('/foo', '/bar');       =>  '/foo/bar'
+    path.join(__dirname, '/foo');    =>  '当前文件的绝对路径/foo'
+    ```
+
+  - path.resolve([from ...], to) 
+    ```JavaScript
+    /* 返回一个以相对于当前的工作目录（working directory）的绝对路径
+      最终会将 to 参数解析为绝对路径 */
+    path.resolve('/foo', '/bar');       =>  '/foo'
+    path.resolve('./foo', './bar');     =>  '当前文件的绝对路径/foo/bar'
+    ```
