@@ -4,7 +4,13 @@
 
 #### 刷新
 - F5: 刷新
-- Ctrl + F5: 强制刷新
+
+- Ctrl + F5: 强制刷新（非Chrome）
+
+- Ctrl + Shift + R: 强制刷新（Chrome）
+
+- Ctrl + Shift + Del: 清除缓存（Chrome）
+
 
 
 
