@@ -3,7 +3,7 @@
 
 > 通过 webpack 可以将多个静态资源模块打包成一个 js 文件，业务逻辑和资源的加载都在这个打包好的 js 文件中。
 
-
+> build：整体工程编译；  make: 改动的文件编译；    compile: 单个文件编译   
 ---
 - #### webpack 的安装
     > webpack4 之后的版本需要同时安装 webpack-cli
