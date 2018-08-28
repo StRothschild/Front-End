@@ -12,7 +12,7 @@
 
 
 
-#### 3. 变量对象与作用域链（scope chain）
+- 3.变量对象与作用域链（scope chain）
 ##### ==每个执行环境都会有多个对象来存储变量，当前作用域内所有的变量都会定义在这些对象上，包括 this 和 arguments 等特殊变量。== 正是由这些变量对象构成了作用域链（scope chain），使得执行环境可以有序的访问变量。==在作用域链的最前端，始终是当前作用域中定义的变量对象（也称活动变量 activity object，包括了自定义的变量和 this / arguments）==，然后是外层作用域的变量对象，以此类推直到最后是全局对象的变量对象。==执行环境的作用域链在定义的时候就已经确定，直到执行环境销毁，作用域链才会一起销毁。==
 
 ```javascript
@@ -34,7 +34,7 @@ var str = "out";
 ```
 ![作用域图](https://github.com/StRothschild/JavaScript-Core/blob/master/resource/JavaScript%20%E2%80%94%20%E4%BD%9C%E7%94%A8%E5%9F%9F%E9%93%BE.jpg?raw=true)
 
-#### 4. 延长作用域链
+- 4.延长作用域链
 ##### 在 JavaScript 中有两种语句可以延长作用域链，==使用其中任何一种，都会在当前作用域的最前端添加一个变量对象。==
 
 - ###### try-catch 语句中的 catch 块
@@ -85,7 +85,7 @@ graph LR
 
 
 ---
-### 5. 闭包（closure）
+- 5.闭包（closure）
 > 一句话概况闭包：利用作用域链来保存外层作用域中的变量的一种特性。
 
 > 从命名上看，闭包（closure）就像是对作用域的一种闭合（closing），在闭包定义的时候，其作用域已经决定了，并且后续使用不会再改变，即作用域已经闭合了。
@@ -94,7 +94,7 @@ graph LR
 
 
 
-##### 闭包的出现形式:
+- 闭包的出现形式:
 ```javascript
 /* 作为返回值 */
 function foo() {
@@ -241,7 +241,7 @@ bar2(); //1000 103
 ```
 
 ---
-### 闭包总结：
+- 闭包总结：
 #### 1. 可以通过闭包来访问函数内部变量。
 #### 2. 闭包的实现原理是作用域链，通过作用域链来访问或存储上一级作用域的变量。
 #### 3. 从技术上来说，每一个函数口可以成为闭包。
@@ -307,7 +307,7 @@ console.log(name);       // 报错 Uncaught ReferenceError
 
 
 ---
-### 参考
+- 参考
 [https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures)
 
 [https://www.nowcoder.com/discuss/2085](https://www.nowcoder.com/discuss/2085)
