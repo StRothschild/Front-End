@@ -43,9 +43,9 @@
 
   浏览器（异步——网络加载） | NodeJS（同步——本地加载）
   ---|---
-  RequireJS（AMD规范）| NPM(CommonJS规范）
+  RequireJS（AMD规范）| NPM(CommonJS规范）—— require 
   SeaJS（CMD规范）|
-  import |
+  ES6 —— import |
 
 
 
