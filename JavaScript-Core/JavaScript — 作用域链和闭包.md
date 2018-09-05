@@ -95,69 +95,69 @@ graph LR
 
 
 - 闭包的出现形式:
-```javascript
-/* 作为返回值 */
-function foo() {
-    max = 100;
-    var max = 10;
-    return function(x) {
+    ```javascript
+    /* 作为返回值 */
+    function foo() {
+        max = 100;
+        var max = 10;
+        return function(x) {
+            if (x > max) {
+                console.log(x);
+            } else {
+                console.log(max);
+            }
+        };
+    };
+    foo()(50);     // 50
+
+
+
+    /* 作为回调函数 */
+    function addEvent() {
+      var name = 'foo';
+      element.addEventListener('click', function(){
+          console.log(name);
+      }, false);
+      // 或者
+      setTimeout(function(){
+          console.log(name);
+      }, 1000);
+      name = 'bar';
+    }
+    addEvent();
+
+
+
+    /* 作为参数 */
+    var foo = function(x) {
         if (x > max) {
-    	    console.log(x);
+            console.log(x);
         } else {
             console.log(max);
         }
     };
-};
-foo()(50);     // 50
+
+    (function(f){
+        var max = 10;              // foo 函数中无法获取
+        window.max = 100;          // foo 函数可以获取，因为 foo 定义在 window 对象中
+        f(50);
+    })(foo);       // 100
 
 
 
-/* 作为回调函数 */
-function addEvent() {
-  var name = 'foo';
-  element.addEventListener('click', function(){
-      console.log(name);
-  }, false);
-  // 或者
-  setTimeout(function(){
-      console.log(name);
-  }, 1000);
-  name = 'bar';
-}
-addEvent();
-
-
-
-/* 作为参数 */
-var foo = function(x) {
-    if (x > max) {
-        console.log(x);
-    } else {
-        console.log(max);
-    }
-};
-
-(function(f){
-    var max = 10;              // foo 函数中无法获取
-    window.max = 100;          // foo 函数可以获取，因为 foo 定义在 window 对象中
-    f(50);
-})(foo);       // 100
-
-
-
-/* 与 this 结合 */
-var name = "window";
-var object = {
-    name : "Object",
-    getNameFunc : function(){
-        return function(){
-            console.log(name);       // 从作用域上查找
-            console.log(this.name);  // 在调用对象查找
-        };
-    }
-};
-object.getNameFunc()();   // "window"  "window"
-```
+    /* 与 this 结合 */
+    var name = "window";
+    var object = {
+        name : "Object",
+        getNameFunc : function(){
+            return function(){
+                console.log(name);       // 从作用域上查找
+                console.log(this.name);  // 在调用对象查找
+            };
+        }
+    };
+    object.getNameFunc()();   // "window"  "window"
+    ```
 
 
 
@@ -166,79 +166,81 @@ object.getNameFunc()();   // "window"  "window"
 
 
 ```javascript
-/*
-关键一：函数的可获取的变量必须在函数定义时的作用域链上，不然会报错
-关键二：只有在执行函数的时候，才去作用域链上获取变量的值
-关键三：函数每次执行都会产生新的活动对象，同级的活动对象互不干扰
-*/
+    /*
+    关键一：函数的可获取的变量必须在函数定义时的作用域链上，不然会报错
+    关键二：只有在执行函数的时候，才去作用域链上获取变量的值
+    关键三：函数每次执行都会产生新的活动对象，同级的活动对象互不干扰
+    */
 
-/* 例一：闭包的应用，定义内部函数 */
-var result = [];
-(function foo(){
-    for (var i=0; i<3; i++){
-        result[i] = function() {   //foo 函数正在执行，i 会被接卸
-            console.log(i);  //这个 i 是个变量，存储在父函数的活动对象上，子活动对象只有在作用域被执行时才会向父活动对象获取这个变量的值，此时只是内部匿名函数的定义，所以 i 没有被解析
-        }
-    }
-})();
-result[0]();   // 3
-result[1]();   // 3
-result[2]();   // 3
-
-
-
-/* 例二：为了避免上述情况出现，解决办法是立即执行一个函数来获取当时的变量 */
-var result = [];
-(function foo(){
-    for (var i=0; i<3; i++){
-        result[i] = (function bar(j){
-            return function() {
-                console.log(j); //bar 执行了三次，每次都会产生新的活动对象，每个活动对象中的 j 各自解析
-                console.log(i); //foo 中定义的 i 变量被所有子作用域活动对象共用
+    /* 例一：闭包的应用，定义内部函数 */
+    var result = [];
+    (function foo(){
+        for (var i=0; i<3; i++){
+            result[i] = function() {   //foo 函数正在执行，i 会被接卸
+                console.log(i);  //这个 i 是个变量，存储在父函数的活动对象上，子活动对象只有在作用域被执行时才会向父活动对象获取这个变量的值，此时只是内部匿名函数的定义，所以 i 没有被解析
             }
-        })(i);
-    }
-})();
-result[0]();   // 0   3
-result[1]();   // 1   3
-result[2]();   // 2   3
+        }
+    })();
+    result[0]();   // 3
+    result[1]();   // 3
+    result[2]();   // 3
 
 
 
-/* 例三：除了立即执行一个函数来避免例一的问题，还可以通过 let 来保存一个块级活动对象 */
-var result = [];
-(function foo(){
-  for(let i=0; i<3; i++) {
-    result[i] = function() {
-      console.log(i);
+    /* 例二：为了避免上述情况出现，解决办法是立即执行一个函数来获取当时的变量 */
+    var result = [];
+    (function foo(){
+        for (var i=0; i<3; i++){
+            result[i] = (function bar(j){
+                return function() {
+                    console.log(j); //bar 执行了三次，每次都会产生新的活动对象，每个活动对象中的 j 各自解析
+                    console.log(i); //foo 中定义的 i 变量被所有子作用域活动对象共用
+                }
+            })(i);
+        }
+    })();
+    result[0]();   // 0   3
+    result[1]();   // 1   3
+    result[2]();   // 2   3
+
+
+
+    /* 例三：除了立即执行一个函数来避免例一的问题，还可以通过 let 来保存一个块级活动对象 */
+    var result = [];
+    (function foo(){
+      for(let i=0; i<3; i++) {
+        result[i] = function() {
+          console.log(i);
+        };
+      }
+    })();
+    result[0]();   // 0
+    result[1]();   // 1
+    result[2]();   // 2
+
+
+
+    /* 例四：函数每次执行都就会生成一个独立的活动对象，所以以下两个闭包部共享本级函数作用域的活动对象，注意与上例的区别 */
+    var outn = 99;
+    var foo = function() {
+            var n = 999;
+            return function bar() {
+                console.log(n++);
+                console.log(outn++);
+            };
     };
-  }
-})();
-result[0]();   // 0
-result[1]();   // 1
-result[2]();   // 2
+    var bar1 = foo();
+    bar1(); //999 99
 
+    var bar2 = foo();
+    bar2(); //999 100
 
-
-/* 例四：函数每次执行都就会生成一个独立的活动对象，所以以下两个闭包部共享本级函数作用域的活动对象，注意与上例的区别 */
-var outn = 99;
-var foo = function() {
-    	var n = 999;
-    	return function bar() {
-        	console.log(n++);
-        	console.log(outn++);
-    	};
-};
-var bar1 = foo();
-bar1(); //999 99
-
-var bar2 = foo();
-bar2(); //999 100
-
-bar1(); //1000 101
-bar1(); //1001 102
-bar2(); //1000 103
+    bar1(); //1000 101
+    bar1(); //1001 102
+    bar2(); //1000 103
 ```
+
+
 
 ---
 - 闭包总结：
