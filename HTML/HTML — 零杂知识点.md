@@ -63,6 +63,33 @@
 
 
 ---
+- #### \<input> 标签的文件上传
+  > input 标签的 type=file 时调用的是打开本地资源的接口，用于上传文件。
+  
+  ##### 
+  ```html
+  /* input 通过文件名 change 事件来触发回调。
+  所以当前后两次选择的是同一个文件名的文件时, change 事件不会被触发 */
+
+  <input type="file" onchange="fileChanged">
+
+  fileChanged: function(file) {
+    $.ajax({
+        url: 'outHotContent/unprocessed/uploadFile',
+        type: 'POST',                                    // 必须
+        data: new FormData().append('uploadFile', file),    // 必须 FormData 类型
+        contentType: false,                              // 不设置内容类型，必须
+        processData: false,                              // 不处理（序列化）数据，必须
+        success: function(){}.bind(this)
+    });
+  }
+  ```
+
+
+
+
+
+---
 - #### url 与 src 与 href 与 \@import 的区别
 
   ##### url（统一资源定位符），一般用于 CSS 属性。比如，background-image:url("/bg.png");
