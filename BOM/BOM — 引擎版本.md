@@ -5,7 +5,6 @@
 
 - #### =="JavaScript引擎"用于解释执行 JavaScript 脚本，相当于的 JavaScript 的解释器（脚本语言边解释边执行，无需编译，但运行时依赖解释器）。== 比较著名的有 chrome V8 引擎，NodeJs 也是基于 Chrome V8 引擎。
 
-
 ---
 ##### [浏览器的 HTML 和 CSS 特性支持可以在此查看： http://caniuse.com/](http://caniuse.com/)
 ##### [浏览器的 JavaScript 特性支持可以在此查看：http://kangax.github.io/compat-table/es5/#experimental-flag-note](http://kangax.github.io/compat-table/es5/#experimental-flag-note)
