@@ -52,4 +52,4 @@ http://www.cnblogs.com/fsjohnhuang/p/5364580.html
 # 行内格式化上下文（Inline Formatting Context）
 
 
-### IFC（Inline Formatting Contexts）行内格式化上下文"，IFC 的 line box（行框模型）高度由其包含行内元素中最高的实际高度计算而来（不受到竖直方向的padding/margin影响)
+#### IFC（Inline Formatting Contexts）行内格式化上下文"，IFC 的 line box（行框模型）高度由其包含行内元素中最高的实际高度计算而来（不受到竖直方向的padding/margin影响)
