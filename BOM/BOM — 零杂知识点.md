@@ -17,4 +17,4 @@
 
 ---
 #### 浏览器执行代码顺序
-> 浏览器中 JavaScript 的执行 和 UI 的渲染是单线程的，所以为了避免 JavaScrip t代码执行阻塞 UI 的响应，一般要在 document.ready 之后再执行JavaScript。
+> 浏览器中 JavaScript 的执行 和 UI 的渲染是单线程的，所以为了避免 JavaScript 代码执行阻塞 UI 的渲染，一般要在 document.ready 之后再执行JavaScript 代码。
