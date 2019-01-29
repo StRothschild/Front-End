@@ -400,7 +400,7 @@
   <div ref="foo"></div>
 
   /* 通过 $refs 和节点名称来获取 DOM 对象，$refs 返回的是一个数组 */
-  this.$refs['foo']  => DOM 对象
+  this.$refs['foo']  => DOM 对象数组
   ```
 
 
