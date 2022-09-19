@@ -25,4 +25,11 @@ Array.prototype.slice.call(arguments)
 ```
 
 
-
+---
+#### 内置方法
+| 方法名 | 描述 | 使用方式 | 跳过此项 | 结束循环 | 改变原数组 | 返回值 |
+| ------ | ------ | ------ | ------ | ------ | ------ | ------ |
+| forEach | 遍历 | array.forEach(function(currentValue, index, arr), thisValue) | return | 不能 | 不能 | undefined
+| map | 遍历 | array.map(function(currentValue, index, arr), thisValue) | return | 不能 | 不能 | 新数组
+| some | 遍历 | array.some(function(currentValue, index, arr), thisValue) | 不能 | return true | 不能 | boolean
+| every | 遍历 | array.every(function(currentValue, index, arr), thisValue) | 不能 | return true | 不能 | boolean
