@@ -31,5 +31,5 @@ Array.prototype.slice.call(arguments)
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 | forEach | 遍历 | array.forEach(function(currentValue, index, arr), thisValue) | return | 不能 | 不能 | undefined
 | map | 遍历 | array.map(function(currentValue, index, arr), thisValue) | return | 不能 | 不能 | 新数组
-| some | 遍历 | array.some(function(currentValue, index, arr), thisValue) | 不能 | return true | 不能 | boolean
-| every | 遍历 | array.every(function(currentValue, index, arr), thisValue) | 不能 | return true | 不能 | boolean
+| some | 遍历 | array.some(function(currentValue, index, arr), thisValue) | return false | return true | 不能 | boolean
+| every | 遍历 | array.every(function(currentValue, index, arr), thisValue) | return true | return false | 不能 | boolean
