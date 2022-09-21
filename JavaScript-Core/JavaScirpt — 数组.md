@@ -33,3 +33,4 @@ Array.prototype.slice.call(arguments)
 | map | 遍历 | array.map(function(currentValue, index, arr), thisValue) | return | 不能 | 不能 | 新数组
 | some | 遍历 | array.some(function(currentValue, index, arr), thisValue) | return false | return true | 不能 | boolean
 | every | 遍历 | array.every(function(currentValue, index, arr), thisValue) | return true | return false | 不能 | boolean
+| splice | 删除/添加/替换 | array.splice(index,howmany,item1,.....,itemX) | 不能 | 不能 | 能 | 返回被删除的item组成的数组
