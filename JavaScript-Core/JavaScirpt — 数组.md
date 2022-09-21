@@ -30,7 +30,10 @@ Array.prototype.slice.call(arguments)
 | 方法名 | 描述 | 使用方式 | 跳过此项 | 结束循环 | 改变原数组 | 返回值 |
 | ------ | ------ | ------ | ------ | ------ | ------ | ------ |
 | forEach | 遍历 | array.forEach(function(currentValue, index, arr), thisValue) | return | 不能 | 不能 | undefined
-| map | 遍历 | array.map(function(currentValue, index, arr), thisValue) | return | 不能 | 不能 | 新数组
-| some | 遍历 | array.some(function(currentValue, index, arr), thisValue) | return false | return true | 不能 | boolean
-| every | 遍历 | array.every(function(currentValue, index, arr), thisValue) | return true | return false | 不能 | boolean
-| splice | 删除/添加/替换 | array.splice(index,howmany,item1,.....,itemX) | 不能 | 不能 | 能 | 返回被删除的item组成的数组
+| map | 遍历 | array.map(function(currentValue, index, arr), thisValue) | return | 不能 | 不能 | 返回长度和原数组相同的新数组
+| filter | 遍历后生成新数组 | array.filter(function(currentValue, index, arr), thisValue) | return | 不能 | 不能 | 返回符合条件的item组成的新数组
+| some | 是否存在符合条件的值 | array.some(function(currentValue, index, arr), thisValue) | return false | return true | 不能 | boolean
+| every | 是否全部符合条件 | array.every(function(currentValue, index, arr), thisValue) | return true | return false | 不能 | boolean
+| find | 第一个符合条件的值 | array.find(function(currentValue, index, arr), thisValue) | 不能 | 不能 | 不能 | 第一个为true的item,如果没有返回undefined
+| findIndex | 第一个符合条件的索引 | array.findIndex(function(currentValue, index, arr), thisValue) | 不能 | 不能 | 不能 | 第一个为true的索引,如果没有返回 -1
+| splice | 删除/添加/替换 | array.splice(index,howmany,item1,.....,itemX) | 不能 | 不能 | 能 | 返回被删除的item组成的新数组
