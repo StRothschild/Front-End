@@ -38,3 +38,4 @@ Array.prototype.slice.call(arguments)
 | findIndex | 第一个符合条件的索引 | array.findIndex(function(currentValue, index, arr), thisValue) | 不能 | 不能 | 不能 | 第一个为true的索引,如果没有返回 -1
 | splice | 删除/添加/替换 | array.splice(index,howmany,item1,.....,itemX) | 不能 | 不能 | 能 | 返回被删除的item组成的新数组
 | slice | 根据入参返回一个新数组 | array.slice(start, end) | 不能 | 不能 | 不能 | 返回start开始，到end结束的新数组
+| concat | 数组合并后返回一个新数组 | array.concat(array2,array3,...,arrayX) | 不能 | 不能 | 不能 | 返回合并后的新数组
