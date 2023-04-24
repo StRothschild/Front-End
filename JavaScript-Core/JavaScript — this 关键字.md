@@ -1,6 +1,7 @@
 # JavaScript 中的 this 关键字
 
-> this 关键字是对定义当前方法的对象的引用。
+> this 关键字是对调用当前方法的对象的引用。
+> this 的值应该通过当前方法的是谁在调用，而不是在哪里调用来判断。
 
 - 概念：JavaScript 中函数的 this 指向当前执行环境的上下文（Execution Context），也就是调用该函数的对象。和函数作用域链不同的是，执行环境上下文是在函数执行的时候才能确定的，而作用域链则是在函数定义的时候就已经确定了。通过 this 来引用执行上下文环境，可以帮助函数获取执行环境的变量和方法。
 
@@ -37,7 +38,6 @@ bar.foo();     // function
 /* 作为构造函数调用时，this 指向新对象 */
 var name = "window";
 var Bar = function(name) {
-    var name = "function"
     this.name = name;
 };
 var bar = new Bar("newBar");
@@ -116,6 +116,23 @@ var foo = {
 
 ### 5. 关于 this 不易理解的例子
 ```
+/* 理解 this 取决于谁在调用函数，而不是在哪里调用 */
+var a = 1;
+function foo() {
+    var a = 2;
+    var obj = {
+        a: 3,
+        bar: bar
+    }
+    this.bar();
+    obj.bar();
+}
+function bar() {
+    console.log(this.a);
+}
+foo();                // 1
+                      // 3
+
 /* 注意隐式赋值操作，赋值操作会返回操作所赋的值 */
 var name = "window";  
 var bar = { 
@@ -206,3 +223,4 @@ foo.bind(bar, "arg2")();       // "bar"
 ### 参考：
 http://blog.csdn.net/u013063153/article/details/52424155
 https://www.nowcoder.com/discuss/3433?pos=1149&type=0&order=0
+http://www.ruanyifeng.com/blog/2010/04/using_this_keyword_in_javascript.html
